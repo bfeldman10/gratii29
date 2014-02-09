@@ -68,7 +68,7 @@ setInterval(  function(){
 
   console.log('Requesting Auction Winners');
 
-  request('http://localhost/gratii12/backend/public/api/v1/auction/winners', function (error, response, body) {
+  request('http://localhost/gratii29/backend/public/api/v1/auction/winners', function (error, response, body) {
     console.log('Requested Auction Winners');
   });
 
@@ -76,7 +76,7 @@ setInterval(  function(){
 
 setInterval(function () {
   console.log('Refreshing auctions');
-  request('http://localhost/gratii12/backend/public/api/v1/auction/refresh', function (error, response, body) {
+  request('http://localhost/gratii29/backend/public/api/v1/auction/refresh', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       //console.log(body) // Print the google web page.
       var data =  JSON.parse(body);
