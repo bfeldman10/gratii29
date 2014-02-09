@@ -1,0 +1,232 @@
+#content-main-text{
+	width:630px;
+	height:100%;
+	float: left;
+}
+
+#content-main-text-title{
+	width:600px;
+	margin-left:15px;
+	margin-top: 15px;
+	font-family: Century Gothic, Arial;
+	font-weight: bold;
+	font-size:50px;
+}
+
+#content-main-text-subtext{
+	width:600px;
+	margin-left:15px;
+	margin-top: 10px;
+	font-family: Century Gothic, Arial;
+	font-size:35px;
+}
+
+#content-main-image{
+	width:300px;
+	height:100%;
+	float:left;
+}
+
+#content-main-image-dynamic{
+	position: absolute;
+	margin-top: 76px;
+	margin-left: 61px;
+	width:187px;
+	height:316px;
+	background-image: url('images/titleScreenshot.png');
+	background-size: 187px 316px;
+}
+
+#content-main-image-static{
+	position: absolute;
+	width:312px;
+	height:477px;
+	background-image: url('images/iPhone5Transparent.png');
+	background-size: 312px 477px;
+}
+
+#content-main-dots-wrapper{
+	margin-top: 220px;
+	width:200px;
+	height:20px;
+	position: absolute;
+	margin-top: 370px;
+	margin-left: 300px;
+}
+
+#dot{
+	display: inline-block;
+	border: 3px solid #bababa;
+	background: #FFFFFF;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-left: 30px;
+    
+}
+
+#dot.d1{
+	background: #000000;    
+}
+
+#content-scroller-content-wrapper{
+	height:100%;
+	margin: 0 auto;
+}
+
+#content-scroller-logos-wrapper{
+	height:130px;
+	margin-left: 1000px;
+	width: 1098px;
+	height: 100px;
+	overflow: visible;
+}
+
+#content-scroller-logos{
+	margin-top: 10px;
+	margin-right: 15px;
+	float:left;
+}
+
+#content-acclaimations-wrapper{
+	margin: 0 auto;
+	width: 100%;
+	min-width:960px;
+	height: 980px;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 25%, rgba(244,244,244,1) 54%, rgba(255,255,255,1) 69%, rgba(193,193,193,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(25%,rgba(255,255,255,1)), color-stop(54%,rgba(244,244,244,1)), color-stop(69%,rgba(255,255,255,1)), color-stop(100%,rgba(193,193,193,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c1c1c1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#content-acclaimations-content-wrapper{
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#content-acclaimations-row{
+	margin: 0 auto;
+	width:800px;
+	height: 150px;
+}
+
+#content-acclaimations-1-image{
+	float:left;
+	width:288px;
+	height: 130px;
+	background-image: url('images/hotTicketAwards.png');
+	background-size: 288px 130px;
+}
+
+#content-acclaimations-1-text{
+	float:right;
+	width:500px;
+	height: 130px;
+	font-family: Century Gothic, Arial;
+	font-size: 26px;
+}
+
+#content-acclaimations-2-text{
+	margin-top: 10px;
+	float:right;
+	width:500px;
+	height: 130px;
+	font-family: Century Gothic, Arial;
+	font-size: 26px;
+}
+
+#content-acclaimations-2-image{
+	margin-top: 10px;
+	float:left;
+	width:290px;
+	height: 104px;
+	background-image: url('images/cooleyLLP.png');
+	background-size: 290px 104px;
+}
+
+#content-acclaimations-row-tweet{
+	margin: 0 auto;
+	width:700px;
+	height: 150px;
+	margin-top: 15px;
+	font-family: Century Gothic, Arial;
+	font-size: 18px;
+}
+
+#content-tweet-wrapper{
+	margin: 0 auto;
+	width:282px;
+	height: 150px;
+	background-image: url('images/speechBubbleTweet.png');
+	background-size: 282px 150px;
+	background-repeat: no-repeat;
+}
+
+#content-tweet-wrapper.left{
+	float:left;
+}
+
+#content-tweet-wrapper.right{
+	float:right;
+}
+
+#content-tweet-text{
+	margin: 0 auto;
+	width: 270px;
+	margin-top: 10px;
+}
+
+#content-media-wrapper{
+	width:100%;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 25%, rgba(244,244,244,1) 54%, rgba(255,255,255,1) 69%, rgba(193,193,193,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(25%,rgba(255,255,255,1)), color-stop(54%,rgba(244,244,244,1)), color-stop(69%,rgba(255,255,255,1)), color-stop(100%,rgba(193,193,193,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c1c1c1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#content-media-content-wrapper{
+	margin: 0 auto;
+	width:960px;
+}
+
+#theDailyRecordLogo{
+	width:490px;
+	height:100px;
+	background-image: url("images/theDailyRecord.jpg");
+	background-repeat: no-repeat;
+	background-size: 490px 100px;
+	float: right;
+}
+
+#content-media-title{
+	width:370px;
+	height: 50px;
+	font-family: Century Gothic, Arial;
+	font-size: 40px;
+	float: left;
+}
+
+#content-media-subtitle{
+	margin-top: 8px;
+	width:250px;
+	height: 50px;
+	font-family: Century Gothic, Arial;
+	font-size: 16px;
+	float: right;
+}
+
+#content-media{
+	margin-top: 50px;
+	width:960px;
+	height: 520px;
+	box-shadow: 0px 2px 10px #1c1c1c;
+}

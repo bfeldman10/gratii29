@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=320, height=430, user-scalable=no, initial-scale=1.0, maximum-scale=1.0; user-scalable=0;" />
+	<link rel="apple-touch-startup-image" href="iphonestartup.png" />
+	<link rel="stylesheet" href="../api/gameOver.css" />
+
+	<title> Space! </title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+
+<style type="text/css">
+body { background: #000; margin: 0; padding: 0; -webkit-user-select: none;}
+
+#spaceGame { display: block; width: 320px; height: 430px; margin: 0 auto; background: #000; position: relative; }
+
+#spaceGame canvas { display: block; background: #333 url(bg.jpg) 0 0 no-repeat; }
+
+#spaceGame .controls a:active { background: #ff1493; }
+
+.noDisplay{
+	display:none;
+}
+#gamesAlert{
+	position:absolute;
+	text-align:center;
+	z-index:105;
+	width:85%;
+	margin-left:5%;
+	margin-top:20%;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius:5px;
+	-webkid-border-radius:5px;
+	-moz-border-radius:5px;
+	padding:10px;
+}
+#gameOver{
+	font-size:22px;
+	font-weight:bold;
+	text-shadow: 0px 0px 7px #FFF;
+}
+#replay{
+	font-size:22px;
+	font-weight:bold;
+	text-shadow: 0px 0px 7px #FFF;
+}
+#gratiiWon{
+	color:#F7E600;
+	font-size:36px;
+	font-weight:bold;
+	text-shadow: 0px 0px 12px #FFF;
+}
+
+*{
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+
+</style>
+</head>
+
+<body>
+<div id="gamesAlert" class="noDisplay">
+	<font id="gameOver">Game Over</font></br></br>
+	<font id="gratiiWon"></font></br></br>
+	<font id="replay">Play again?</font></br></br>
+	<input type="button" value="Play Again" id="playAgain"/>
+	<input type="button" value="Exit" id="close"/>
+</div>
+<div id="spaceGame">
+	<canvas id="spaceCanvas"></canvas>
+	</div>
+</div>
+
+<script type="text/javascript" src="space.js?v=1"> </script>
+
+<script>
+
+	$(document).bind('touchmove', function(e){
+	  // console.log( 'Document Touch Move on Space' );
+	  // console.log( e.originalEvent.target );
+	  // console.log( e.target );
+	  e.preventDefault();
+	  // console.log( e.originalEvent.target.id );
+
+	  // if ($(e.target).parents().is(".content")) {
+	  //   console.log( 'touched element that is inside content list' );
+	  //   if (app.UIState.contentScrollLock) {
+	  //     e.preventDefault();
+	  //   }
+	  // }
+	  // else{
+	  //   e.preventDefault();
+	  // }
+	});
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+[
+	{
+		"id": "1", 
+		"title": "$5 off Starter Kit", 
+		"client": "blu",
+		"image":"bluDroff2.png",
+		"secondsUntilStart":73,
+		"clickthrough":"http://www.blucigs.com/",
+		"fb":"https://facebook.com/gratiiapp",
+		"twitter":"blucigs"
+	},
+	{
+		"id": "2", 
+		"title": "Free T-shirt", 
+		"client": "PLNDR",
+		"image":"plunder.jpg",
+		"secondsUntilStart":4500,
+		"clickthrough":"---",
+		"fb":"https://facebook.com/plndr",
+		"twitter":"---"
+	},
+	{
+		"id": "3", 
+		"title": "$10 Off any order!", 
+		"client": "Route 1 Apparel",
+		"image":"route.jpg",
+		"secondsUntilStart":4500,
+		"clickthrough":"---",
+		"fb":"---",
+		"twitter":"---"
+	},
+	{
+		"id": "4", 
+		"title": "$5 Gift Card", 
+		"client": "Vaperfy",
+		"image":"vaperfy.jpg",
+		"secondsUntilStart":4500,
+		"clickthrough":"---",
+		"fb":"---",
+		"twitter":"---"
+	},
+	{
+		"id": "5", 
+		"title": "Free t-shirt", 
+		"client": "Gratii",
+		"image":"gratii-tee.jpg",
+		"secondsUntilStart":4500,
+		"clickthrough":"---",
+		"fb":"---",
+		"twitter":"---"
+	}
+]

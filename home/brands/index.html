@@ -1,0 +1,185 @@
+<html>
+<head>
+	<title>Gratii</title>
+	<meta name="description" content="The free app that pays you to play. Virtual currency, real world goods.">
+	<meta name="keywords" content="promo, codes, promotional, distributor, digital, engagement, gaming, virtual currency, virtual money, startup, sampling, distribution, Brian Feldman, marketing, mobile, html5, games, arcade">
+	<meta name="author" content="Gratii, Inc.">
+	<link rel="shortcut icon" href="../home/images/favicon.ico" />
+	<link rel="stylesheet" href="../home/main.css" type="text/css" />
+	<link rel="stylesheet" href="brands.css" type="text/css" />
+</head>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29653874-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="../home/main.js"></script>
+<script type="text/javascript" src="../home/jquery.min.js"></script>
+<body>
+	<div id="background_wrap"></div>
+	<div id="header-wrapper">
+		<div id="header-logo">
+		</div>
+		<div id="header-navi-wrapper">
+			<div id="header-navi-button" class="home"><a id="nav-link" href="../home">Home</a>
+			</div>
+			<div id="header-navi-button" class="brands"><a id="nav-link" href="../brands">For brands</a>
+			</div>
+			<div id="header-navi-button" class="download"><a id="nav-link" href="../download">Download</a>
+			</div>
+			<div id="header-navi-button" class="about"><a id="nav-link" href="../about">About</a>
+			</div>
+		</div>
+	</div>
+	<div id="content-main-wrapper">
+		<div id="content-main-content-wrapper">
+			<div id="content-main-image">
+				<div id="content-main-image-dynamic">
+				</div>
+			</div>
+			<div id="content-main-dots-wrapper">
+				<div id="dot" class="d1">
+				</div>
+				<div id="dot" class="d2">
+				</div>
+				<div id="dot" class="d3">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="content-scroller-wrapper">
+		<div id="content-scroller-content-wrapper">
+			<a id="pdfLink" href="docs/BrandsDeck_11_17.pdf" target="_blank" onClick="_gaq.push(['_trackEvent', 'Download', 'Click', 'BrandsDeck_Brands']);">
+				<div id="content-scroller-pdf-button">
+				</div>
+				<div id="content-scroller-pdf-text">Download the full deck
+				</div>
+			</a>
+			<a id="shareLink" href="mailto:?subject=Gratii&body=Thought you might want to check out this startup. http://gratii.com/brands" onClick="_gaq.push(['_trackEvent', 'Email', 'Click', 'ShareWithFriends_Brands']);">
+				<div id="content-scroller-share-text">Share this page with a friend
+				</div>
+				<div id="content-scroller-share-button">
+				</div>
+			</a>
+		</div>
+	</div>
+	<div id="line-break" style="width:100%; height:15px; background-color:black;border-top:1px solid grey;">
+	</div>
+	<div id="content-social-wrapper">
+		<a href="http://facebook.com/gratiiapp" target="_blank" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Facebook_Brands']);">
+			<div href="http://facebook.com/gratiiapp" id="content-social-facebook-button">
+			</div>
+		</a>
+		<a href="http://twitter.com/gratiiapp" target="_blank" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Twitter_Brands']);">
+			<div id="content-social-twitter-button">
+			</div>
+		</a>
+	</div>
+	<div id="line-break" style="width:100%; height:15px; background-color:black;border-bottom:1px solid grey;">
+	</div>
+	<div id="content-beta-wrapper">
+		<div id="content-beta-content-wrapper"></br></br>
+			<div id="content-beta-title">Join the beta
+			</div>
+			<div id="content-beta-subtitle">Gratii is currently accepting new brands*
+			</div>
+			<div id="content-beta-subtitle2">You send us your promo codes. We handle it from there.</br>A free mobile campaign in seconds.
+			</div>
+			<div id="content-beta-image">
+			</div>
+			<div id="content-beta-subtitle3">*Limited slots available
+			</div></br></br></br>
+			<div id="content-contact-content">Get started today: <a id="contactLink" href="mailto:info@gratii.com?subject=Gratii Brands Inquiry&body=I would like to speak with someone regarding a free trial for Gratii."
+			onClick="_gaq.push(['_trackEvent', 'Email', 'Click', 'Info_Text_Brands']);">info@gratii.com</a>
+			</div>
+			<div id="content-contact-subtext">A representative will contact you within 24 hours!
+			</div>
+		</div>
+	</div>
+	<div id="footer-wrapper">
+		<div id="footer-text"></br>&copy;Gratii, Inc. 2013</br>
+							<a href="mailto:info@gratii.com" style="color:white;" onClick="_gaq.push(['_trackEvent', 'Email', 'Click', 'Info_Footer_Brands']);">info@gratii.com</a></br>
+							Gratii&reg; is a registered trademark of Gratii, Inc.
+		</div>
+	</div>
+</body>
+<script>
+	navBarDecorate();
+
+	function preloadImages(arrayOfImages) {
+	    $(arrayOfImages).each(function(){
+	        $('<img/>')[0].src = this;
+	    });
+	}
+
+	preloadImages([
+	    'images/brandsSlide1.png',
+	    'images/brandsSlide2.png',
+	    'images/brandsSlide3.png'
+	]);
+
+	$("#dot.d1").click(function(){
+		window.clearInterval(intervalID);
+		$('#dot.d1').css("background","#000000");
+		$('#dot.d2').css("background","#FFFFFF");
+		$('#dot.d3').css("background","#FFFFFF");
+		$('#content-main-image-dynamic').css("background-image", "url(images/brandsSlide1.png)"); 
+	});
+	$("#dot.d2").click(function(){
+		window.clearInterval(intervalID);
+		$('#dot.d1').css("background","#FFFFFF");
+		$('#dot.d2').css("background","#000000");
+		$('#dot.d3').css("background","#FFFFFF");
+		$('#content-main-image-dynamic').css("background-image", "url(images/brandsSlide2.png)"); 
+	});
+	$("#dot.d3").click(function(){
+		window.clearInterval(intervalID);
+		$('#dot.d1').css("background","#FFFFFF");
+		$('#dot.d2').css("background","#FFFFFF");
+		$('#dot.d3').css("background","#000000");
+		$('#content-main-image-dynamic').css("background-image", "url(images/brandsSlide3.png)");  
+	});
+
+	var main = 1;
+	var intervalID = window.setInterval(changeContentMain, 7000);
+	function changeContentMain() {
+		if(main==1){
+			main=2;
+			$('#content-main-image-dynamic').fadeOut("slow", function(){
+				$('#dot.d1').css("background","#FFFFFF");
+				$('#dot.d2').css("background","#000000");
+				$('#dot.d3').css("background","#FFFFFF");
+				$('#content-main-image-dynamic').css("background-image", "url(images/brandsSlide2.png)"); 
+				$('#content-main-image-dynamic').fadeIn("slow");
+			});
+		}else if(main==2){
+			main=3;
+			$('#content-main-image-dynamic').fadeOut("slow", function(){
+				$('#dot.d1').css("background","#FFFFFF");
+				$('#dot.d2').css("background","#FFFFFF");
+				$('#dot.d3').css("background","#000000");
+				$('#content-main-image-dynamic').css("background-image", "url(images/brandsSlide3.png)"); 
+				$('#content-main-image-dynamic').fadeIn("slow");
+			});
+		}else if(main==3){
+			main=1;
+			$('#content-main-image-dynamic').fadeOut("slow", function(){
+				$('#dot.d1').css("background","#000000");
+				$('#dot.d2').css("background","#FFFFFF");
+				$('#dot.d3').css("background","#FFFFFF");
+				$('#content-main-image-dynamic').css("background-image", "url(images/brandsSlide1.png)"); 
+				$('#content-main-image-dynamic').fadeIn("slow");		
+			});
+		}
+
+	}
+</script>
+</html>

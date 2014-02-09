@@ -1,0 +1,544 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+   @import "compass";
+
+    *
+    {
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    html,body{
+        width:100%;
+        height:100%;
+        font-family: "lucida grande";
+    }
+
+    #game-area{
+        min-width: 640px;
+        min-height:960px;
+
+        width:100%;
+        height:100%;
+
+
+        @include box-shadow(inset 0 42px 36px 7px rgba(0,0,0,.22)); // inner shadow
+        @include background-image(radial-gradient(center center, 100% 100%, rgba(255,0,0,.5) 0%, rgba(0,255,0,.5) 66.99%, rgba(255,255,0,.5) 84.01%, rgba(255,0,0,.5) 100%)); // gradient overlay
+
+        #wrapper{
+            width:100%;
+            min-height:100%;
+
+            background-image: url("../gfx/icon-bg.png");
+
+
+            #status{
+
+                color:#FFF;
+                text-transform: uppercase;
+
+                width:100%;
+                height:88px;
+
+                // background-color: #7d91ab; // layer fill content
+                // @include box-shadow(0 5px 5px rgba(0,0,0,.46), inset 0 2px 0 rgba(255,255,255,.45)); // drop shadow and inner shadow
+                // @include background-image(linear-gradient(bottom, rgba(1,0,0,.8) -25%, rgba(46,43,43,.8) 125%)); // gradient overlay
+
+                background-color: red;
+
+                .tab{
+
+                    width:39%;
+                    height:69px;
+
+                    float:left;
+
+                    margin-top: 10px;
+
+
+                    //@include opacity(.19); // layer alpha
+                    border: 1px solid rgba(255,255,255,.19); // stroke
+                    @include border-radius(6px); // border radius
+                    @include background-clip(padding-box); // prevents bg color from leaking outside the border
+                    //background-color: #363938; // layer fill content
+                    background-color:rgba(44,43,42,0.20);
+
+
+                }
+
+                #cash-out{
+
+                    margin-right: 1%;
+                    margin-left: 1%;
+
+                  .btn{
+                    float:left;
+                    display:block;
+
+                    width:35px;
+                    height:35px;
+
+                    text-align:center;
+
+                    padding-top: 2px;
+
+                    color: #fff;
+                    font-size:20px;
+                    // font-weight:bold;
+                    //
+
+                    position: relative;
+                    top:17px;
+                    left:17px;
+
+                    border: 1px solid #fff; // stroke
+                    @include border-radius(4px); // border radius
+                    @include background-clip(padding-box); // prevents bg color from leaking outside the border
+                    background-color: #f9b549; // layer fill content + color overlay
+
+
+                  }
+
+                  span{
+                    float:left;
+                    position: relative;
+                    top:21px;
+                    left:27px;
+                    font-size:21px;
+                  }
+                }
+
+                #gratii-coins{
+
+                    margin-right: 1%;
+                    width:58%;
+
+                    span{
+                        float:right;
+                        position: relative;
+                        top:10px;
+
+                        color: #fff; // text color + color overlay
+                        font-size: 35px;
+                        font-weight: bold;
+                        @include text-shadow(0 0 10px rgba(245,237,125,.62)); // outer glow
+                    }
+
+                    img{
+                        float:right;
+                        margin-right: 10px;
+                        margin-left: 10px;
+                        position: relative;
+                        top:9px;
+                    }
+                }
+
+            }
+
+            #lights{
+                position: absolute;
+                z-index: 500;
+                width:640px;
+                height:118px;
+                background-image: url("../gfx/lights.png");
+
+                margin-top:-60px;
+                left:50%;
+                margin-left:-320px;
+            }
+
+            #machine{
+
+                width:640px;
+                height:732px;
+                background-image: url("../gfx/machine.png");
+                margin: 0 auto;
+                margin-top: 58px;
+
+                position: relative;
+
+                #canvas{
+                    width:420px;
+                    position: absolute;
+                    left:111px;
+                    top:168px;
+                }
+
+                #screen{
+                    // border:1px dashed blue;
+                    position: absolute;
+                    top:158px;
+                    left:66px;
+                }
+
+                #legend{
+                    // border:1px dashed blue;
+                    color:#FFF;
+
+                    font-weight: bold;
+
+                    position: absolute;
+                    top:490px;
+                    left:102px;
+
+                    img,p{
+                        float:left;
+                    }
+
+                    img{
+                        margin-right:10px;
+                        margin-top: 6px;
+                    }
+
+                    div{
+                        width:150px;
+                        float:left;
+                        // border:1px dashed red;
+                    }
+                }
+
+                #jackpot{
+                    color:#FFF;
+                    font-weight: bold;
+
+                    // border:1px dashed blue;
+                    position: absolute;
+                    left:235px;
+                    top:585px;
+
+                    width:300px;
+
+                    img{
+                        float:left;
+                        margin-right:10px;
+                        @include opacity(.76); // layer alpha
+
+                    }
+                    p{
+                        float:left;
+                        margin-top: 19px;
+                    }
+                }
+
+                #spin{
+                    display:inline-block;
+                    background-image: url("../gfx/spin-btn.png");
+                    width:186px;
+                    height:84px;
+                    @include opacity(.72); // layer alpha
+
+                    text-align:center;
+                    padding-top: 20px;
+
+                    font-size:33px;
+                    color:#FFF;
+                    font-weight:bold;
+                    text-decoration:none;
+
+                    position: absolute;
+                    z-index:100;
+                    top:670px;
+                    left:409px;
+                }
+
+                #bet-box{
+                    width:150px;
+                    height:150px;
+                    position: absolute;
+                    // border:1px dashed blue;
+
+                    z-index:100;
+
+                    top:670px;
+                    left:50px;
+
+                    color:#FFF;
+                    text-transform:uppercase;
+
+                    span,a{
+                        display:block;
+                        @include border-radius(5px); // border radius
+                        @include background-clip(padding-box); // prevents bg color from leaking outside the border
+                        text-align:center;
+                    }
+
+                    #bet-lbl{
+
+                        display:block;
+                        background-color: #525456;
+
+                        width:75px;
+                        height:25px;
+
+                        padding-top: 1px;
+
+                    }
+
+                    #bet{
+                        width:75px;
+                        height:55px;
+                        background-color: #c2c7c0;
+                        border:1px solid #535456;
+                        color:#535456;
+                        font-size: 30px;
+                        padding-top: 5px;
+                        margin-top: 8px;
+                    }
+
+                    .btn{
+                        width:50px;
+                        height:40px;
+                        @include opacity(.46); // layer alpha
+                        border: 1px solid rgba(0,0,0,.71); // stroke
+                        @include border-radius(5px / 4px); // border radius
+                        @include background-clip(padding-box); // prevents bg color from leaking outside the border
+                        @include background-image(linear-gradient(bottom, rgba(0,0,0,.41) 0%, rgba(255,255,255,.41) 100%)); // gradient overlay
+
+                        text-decoration:none;
+                        color:#FFF;
+                        font-size: 20px;
+                        padding-top: 4px;
+
+                        position: absolute;
+
+                        top:-1px;
+                        left:85px;
+                    }
+
+                    #decrement-bet{
+                        top:47px;
+                    }
+                }
+            }
+
+
+            #controls{
+
+                position: relative;
+
+                width:100%;
+                min-height:124px;
+
+                position: absolute;
+                top: 795px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                @include opacity(.83); // layer alpha
+                background-color: #7d91ab; // layer fill content
+                @include box-shadow(inset 0 2px 0 rgba(255,255,255,.45)); // inner shadow
+                @include background-image(linear-gradient(bottom, rgba(0,0,0,.8) -25%, rgba(255,255,255,.8) 125%)); // gradient overlay
+
+
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+

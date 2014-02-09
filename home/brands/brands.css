@@ -1,0 +1,185 @@
+#content-main-image{
+	width:960px;
+	height:100%;
+	float:left;
+}
+
+#content-main-image-dynamic{
+	position: absolute;
+	width:960px;
+	height:405px;
+	background-image: url('images/brandsSlide1.png');
+	background-size: 960px 405px;
+}
+
+#content-main-dots-wrapper{
+	margin-top: 220px;
+	width:200px;
+	height:20px;
+	position: absolute;
+	margin-top: 370px;
+	margin-left: 380px;
+}
+
+#dot{
+	display: inline-block;
+	border: 3px solid #bababa;
+	background: #FFFFFF;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-left: 30px;
+    
+}
+
+#dot.d1{
+	background: #000000;    
+}
+
+#content-scroller-content-wrapper{
+	margin: 0 auto;
+	margin-top: 10px;
+	height:80px;
+	width:800px;
+	font-family: Century Gothic, Arial;
+	font-weight: regular;
+	font-size: 24px;
+	color: blue;
+}
+
+#content-scroller-pdf-button{
+	float:left;
+	width:70px;
+	height:80px;
+	background-image: url('images/pdfButton.png');
+	background-size: 70px 80px
+}
+
+#content-scroller-pdf-text{
+	float:left;
+	margin-top: 25px;
+	z-index: 10000000;
+}
+
+#pdfLink{
+	color:blue;
+}
+
+#pdfLink:visted{
+	color:blue;
+}
+
+#shareLink:visited{
+	color:blue;
+}
+
+
+#pdfLink:hover{
+	color:red;
+	text-decoration:underline;
+}
+
+#content-scroller-share-button{
+	float:right;
+	width:80px;
+	height:80px;
+	background-image: url('images/shareButton.png');
+	background-size: 80px 80px;
+}
+
+#content-scroller-share-text{
+	float:right;
+	margin-top: 25px;
+}
+
+#shareLink{
+	color:blue;
+}
+
+#shareLink:visited{
+	color:blue;
+}
+
+#shareLink:hover{
+	color:red;
+	text-decoration:underline;
+}
+
+#content-beta-wrapper{
+	margin: 0 auto;
+	width: 100%;
+	min-width:960px;
+	height: 820px;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 25%, rgba(244,244,244,1) 54%, rgba(255,255,255,1) 69%, rgba(193,193,193,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(25%,rgba(255,255,255,1)), color-stop(54%,rgba(244,244,244,1)), color-stop(69%,rgba(255,255,255,1)), color-stop(100%,rgba(193,193,193,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(255,255,255,1) 25%,rgba(244,244,244,1) 54%,rgba(255,255,255,1) 69%,rgba(193,193,193,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c1c1c1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#content-beta-content-wrapper{
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#content-beta-title{
+	font-family: Century Gothic, Arial;
+	font-size: 64px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#content-beta-subtitle{
+	font-family: Century Gothic, Arial;
+	font-size: 46px;
+	text-align: center;
+}
+
+#content-beta-subtitle2{
+	font-family: Century Gothic, Arial;
+	font-size: 24px;
+	text-align: center;
+}
+
+#content-beta-image{
+	margin: 0 auto;
+	width:629px;
+	height: 427px;
+	background-image: url('images/trialTriangle.png');
+	background-size: 629px 427px;
+}
+
+#content-beta-subtitle3{
+	font-family: Century Gothic, Arial;
+	font-size: 18px;
+	text-align: left;
+	width: 400px;
+	height: 30px;
+	float: right;
+}
+
+#content-contact-content{
+	font-family: Century Gothic, Arial;
+	font-size: 45px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#contactLink{
+	color: blue;
+	text-decoration: none;
+}
+
+#contactLink:hover{
+	color: red;
+}
+
+#content-contact-subtext{
+	font-family: Century Gothic, Arial;
+	font-size: 24px;
+	text-align: center;
+}

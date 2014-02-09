@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Slots</title>
+
+        <meta name="viewport" content="width=320, height=430, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css?c=1">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+        <div id="game-area"><div id="wrapper">
+
+          <div id="status">
+            <!--
+            <div id="cash-out" class="tab btn">
+              <a class="btn">X</a> <span>Cash Out</span>
+            </div>
+            <div id="gratii-coins" class="tab">
+              <img src="gfx/gratiicoin50.png" height="50" width="50"><span> &nbsp; </span>
+            </div>
+            -->
+
+            <div class="prev-jackpot">
+              <span class="title">Previous JackPot:</span> <span class="amount">2500</span> g
+              <div class="icon avatar"></div><span class="user">bookem</span>
+            </div>
+
+            <div class="cur-jackpot">
+              <span class="title">Current Jackpot:</span> <span class="amount">309</span> g
+            </div>
+
+          </div>
+
+          <div id="machine">
+
+            <canvas id="canvas"></canvas>
+            <img src="gfx/screen.png" height="117" width="510" id="screen">
+
+            <div id="legend">
+
+              <div id="a">
+                <div class="win">+<span></span>g</div>
+
+                <img src="gfx/cherry-symbol.png" height="42" width="49" alt="Cherry">
+                <p> 2X </p>
+              </div>
+
+              <div id="b">
+                <div class="win">+<span></span>g</div>
+                <img src="gfx/gold-symbol.png" height="42" width="49" alt="Jackpot">
+                <p> 3X </p>
+              </div>
+
+              <div id="c">
+                <div class="win">+<span></span>g</div>
+                <img src="gfx/bar-symbol.png" height="42" width="49" alt="Bar">
+                <p> Jackpot! </p>
+              </div>
+
+            </div>
+
+            <div id="jackpot">
+             <!--  <img src="gfx/jackpot.png" height="65" width="65" alt="current jackpot">
+              <p>Jackpot: <span>10</span></p> -->
+            </div>
+
+            <a href="#" id="spin" class="btn"> SPIN </a>
+
+            <div id="bet-box">
+              <span id="bet-lbl">Bet</span>
+              <span id="bet">5</span>
+              <a href="#" id="increment-bet" class="btn"> + </a>
+              <a href="#" id="decrement-bet" class="btn"> - </a>
+            </div>
+
+            <a href="#" id="hurry"></a>
+          </div>
+
+          <div id="controls"></div>
+
+        </div></div>
+
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="lib/impact/impact.js"></script>
+        <script type="text/javascript" src="lib/game/main.js?v=1"></script>
+        <script type="text/javascript" src="js/vendor/TweenLite.min.js"></script>
+        <script type="text/javascript" src="js/vendor/easing/EasePack.min.js"></script>
+        <script type="text/javascript" src="js/vendor/plugins/CSSPlugin.min.js"></script>
+
+    </body>
+</html>

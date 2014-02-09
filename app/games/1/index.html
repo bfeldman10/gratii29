@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=620, height=400, user-scalable=no, initial-scale=1.0, maximum-scale=1.0; user-scalable=0;" />
+	<link rel="stylesheet" href="falling.css"/>
+	<!-- <link rel="stylesheet" type="text/css" href="../api/gameOver.css"> -->
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="falling.js?c=307">
+	</script>
+	<title> Falling! </title>
+	<style type="text/css">
+	#gamesAlert{
+		position:absolute;
+		text-align:center;
+		z-index:105;
+		width:85%;
+		margin-left:5%;
+		margin-top:20%;
+		background-color: rgba(0, 0, 0, 0.8);
+		border-radius:5px;
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px;
+		padding:10px;
+	}
+	#gameOver{
+		font-size:22px;
+		font-weight:bold;
+		text-shadow: 0px 0px 7px #FFF;
+	}
+	#replay{
+		font-size:22px;
+		font-weight:bold;
+		text-shadow: 0px 0px 7px #FFF;
+	}
+	#gratiiWon{
+		color:#F7E600;
+		font-size:36px;
+		font-weight:bold;
+		text-shadow: 0px 0px 12px #FFF;
+	}
+	.noDisplay{
+		display:none;
+	}
+
+	#splashScreen{
+		position:absolute;
+		width:320px;
+		height:480px;
+		background-image:url(fallingsplash.jpg);
+		background-size:320px 431px;
+		background-repeat:no-repeat;
+		z-index:100;
+	}
+
+	.title{
+		font-size:46px;
+		color:red;
+	}
+
+	.instructions{
+		position:absolute;
+		margin-top: 130px;
+		width: 100%;
+		font-size:18px;
+		color:white;
+		text-align:center;
+	}
+
+	#startGame{
+		position:absolute;
+		width:130px;
+		height:75px;
+		margin-left:95px;
+		margin-top:290px;
+		margin-top: 335px;
+		border: 0px solid #999;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="splashScreen">
+		<font class="instructions">Guide the ball away from the ceiling. <font style="color:blue;"><b>Tap and hold</b></font> the <font style="color:blue;"><b>left or right</b></font> side. Tap with <font style="color:blue;"><b>only one thumb</b></font> at a time.</font>
+		<a id="startGame"></a>
+	</div>
+	<div id="gamesAlert" class="noDisplay">
+		<font id="gameOver">Game Over</font></br></br>
+		<font id="gratiiWon"></font></br></br>
+		<font id="replay">Play again?</font></br></br>
+		<input type="button" value="Play Again" id="playAgain"/>
+		<input type="button" value="Exit" id="close"/>
+	</div>
+	<canvas id="gameCanvas"></canvas>
+	<script type="text/javascript">
+		//parent.arcade.util.gameHasLoaded();
+		splashScreen();
+	</script>
+</body>
+</html>
+

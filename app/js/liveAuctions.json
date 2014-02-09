@@ -1,0 +1,52 @@
+[
+	{
+		"id": "1", 
+		"title": "$5 Off Starter Kit", 
+		"client": "blu",
+		"image":"bluDroff2.png",
+		"bids":5,
+		"leader":"bfeldman",
+		"currentBid":1845,
+		"secondsRemaining":600
+	},
+	{
+		"id": "2", 
+		"title": "Free T-shirt", 
+		"client": "PLNDR",
+		"image":"plunder.jpg",
+		"bids":23,
+		"leader":"mzumaran",
+		"currentBid":1718,
+		"secondsRemaining":1000
+	},
+	{
+		"id": "3", 
+		"title": "$10 Off any online item!", 
+		"client": "Route 1 Apparel",
+		"image":"route.jpg",
+		"bids":111,
+		"leader":"lkhin",
+		"currentBid":4500,
+		"secondsRemaining":1600
+	},
+	{
+		"id": "4", 
+		"title": "$5 Gift Card", 
+		"client": "Vaperfy",
+		"image":"vaperfy.jpg",
+		"bids":0,
+		"leader":"bfeldman",
+		"currentBid":0,
+		"secondsRemaining":1800
+	},
+	{
+		"id": "5", 
+		"title": "Free t-shirt", 
+		"client": "Gratii",
+		"image":"gratii-tee.jpg",
+		"bids":0,
+		"leader":"bfeldman",
+		"currentBid":0,
+		"secondsRemaining":1800
+	}
+]

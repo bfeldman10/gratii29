@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slots Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="lib/impact/impact.js"></script>
+    <script type="text/javascript" src="lib/game/main.js"></script>
+</head>
+<body>
+    <button onClick="javascript:console.log(ig.game.setupNewOutcome());">New Outcome</button>
+
+    <button onClick="javascript:ig.game.startReels();">Start</button>
+
+    <button onClick="javascript:ig.game.stopReelsQuickly();">Hurry!</button>
+
+    <canvas id="canvas"></canvas>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{ "results" : 
+	{
+		"id": "0", 
+		"userEmail": "demo@gratii.com",
+		"userNickname":"demo",
+		"userBirthMonth":"06",
+		"userBirthDate":"17",
+		"userBirthYear":"2000",
+		"userGender":"f",
+		"userGratii":"0",
+		"PRO":0 
+	}
+}

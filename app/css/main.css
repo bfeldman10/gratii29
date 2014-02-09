@@ -1,0 +1,1724 @@
+@font-face {
+    font-family: 'boostsskregular';
+    src: url('boost/boostssk-regular-webfont.eot');
+    src: url('boost/boostssk-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('boost/boostssk-regular-webfont.woff') format('woff'),
+         url('boost/boostssk-regular-webfont.ttf') format('truetype'),
+         url('boost/boostssk-regular-webfont.svg#boostsskregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html, body{
+	margin:0px;
+	position: relative;
+	overflow: hidden;
+	background-color: white;
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+   /* CSS overrides for mobile here */
+    html, body{
+		min-height: 460px;
+	}
+}
+
+
+
+/*-------start HOME SCREEN------------*/
+.homeScreen{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	z-index: 10;
+	background: rgb(254,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(254,255,255,1) 0%, rgba(210,235,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,255,255,1)), color-stop(100%,rgba(210,235,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=0 ); /* IE6-9 */
+
+}
+
+.homeScreenLogo{
+	position: relative;
+	margin: 0px auto;
+	margin-top: 0px;
+	margin-bottom: 25px;
+	width: 100%;
+	background-image: url('../images/gratiiColorShadowHomeLogo.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	max-width: 800px;
+	max-height: 400px;
+	z-index: 10;
+}
+
+.homeScreenButtonWrapper{
+	position: absolute;
+	width: 100%;
+	margin: 0px auto;
+	bottom: 50px;
+}
+
+.homeScreen .button{
+	position: relative;
+	width: 60%;
+	height: 40px;
+	line-height: 40px;
+	margin: 0px auto;
+	margin-bottom: 10px;
+	border: 0px solid blue;
+	font-family: 'boostsskregular';
+	color: blue;
+	font-size: 20px;
+	text-align: center;
+	border-radius: 4px;
+}
+
+.homeScreen .button:active{
+	background-color: lightgreen;
+}
+
+.homeScreen .button.login{
+	font-size: 28px;
+	margin-bottom: 10px;
+	width: 80%;
+}
+
+.loginContainer{
+	position: absolute;
+	width: 100%;
+	/*bottom: 150px;*/
+}
+
+.loginWrapper{
+	position: relative;
+	display: none;
+	width:90%;
+	margin: 0px auto;
+}
+
+.signupContainer{
+	position: absolute;
+	width: 100%;
+	/*bottom: 150px;*/
+}
+
+.signupWrapper{
+	position: relative;
+	display: none;
+	width:90%;
+	margin: 0px auto;
+}
+
+.homeInput{
+	position: relative;
+	width: 100%;
+	border: 1px solid blue;
+	font-family: "boostsskregular";
+	font-size: 18px;
+	height: 40px;
+	line-height: 40px;
+	color: blue;
+	float: left;
+}
+
+.homeButton{
+	position: relative;
+	width: 100%;
+	background-color: blue;
+	font-family: "boostsskregular";
+	font-size: 22px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 4px;
+	color: white;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	float: left;
+}
+
+.homeButton:active{
+	background-color: lightgreen;
+}
+
+.homeInput.top{
+	border-top-left-radius: 4px; 
+	border-top-right-radius: 4px; 
+	border-bottom-left-radius: 0px; 
+	border-bottom-right-radius: 0px; 
+}
+
+.homeInput.middle{
+	border-top: 0px;
+	border-top-left-radius: 0px; 
+	border-top-right-radius: 0px; 
+	border-bottom-left-radius: 0px; 
+	border-bottom-right-radius: 0px; 
+}
+
+.homeInput.bottom{
+	border-top: 0px;
+	border-top-left-radius: 0px; 
+	border-top-right-radius: 0px; 
+	border-bottom-left-radius: 4px; 
+	border-bottom-right-radius: 4px; 
+	margin-bottom: 5px;
+}
+
+.emailInput{
+	display: none;
+	border: 1px solid red;
+	width:90%;
+	margin: 0px auto;
+}
+
+.backToHomeIcon{
+	width: 35px;
+	height: 35px;
+	background-image: url('../images/backArrow.png');
+	background-size: 35px 35px;
+	background-repeat: no-repeat;
+	margin-bottom: 5px;
+}
+
+.backToHomeText{
+	font-family: "Trebuchet MS";
+	font-size: 18px;
+}
+
+.signupWrapper .sectionInputSelect{
+	position: relative;
+	height: 35px;
+	/*width: 100%;*/
+	box-sizing: border-box; 
+	font-family: "boostsskregular";
+	font-size: 18px;
+	color: blue;
+	line-height: 35px;
+	border: 1px solid blue;
+	margin-top: 5px;
+}
+
+.signupWrapper .monthSelect{
+	width: 32%;
+}
+
+.signupWrapper .dateSelect{
+	width: 25%;
+}
+
+.signupWrapper .yearSelect{
+	width: 32%;
+}
+
+.signupWrapper .genderSelect{
+	margin-bottom: 5px;
+	width: 60%;
+}
+
+.whatFor{
+	font-family: "Trebuchet MS";
+	margin-left: 20px;
+	color: blue;
+}
+
+.forgotPassword{
+	font-family: "Trebuchet MS";
+	float: right;
+	color: blue;
+}
+
+.tos{
+	width: 100%;
+	font-size: 12px;
+	text-align: center;
+	font-family: "Trebuchet MS";
+}
+/*-------end HOME SCREEN------------*/
+
+
+
+
+
+
+
+/*-------start Games iFrame------------*/
+#gameiFrame{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 44;
+	bottom: 50;
+	margin-left: 0px;
+	background-color: black;
+	display: none;
+	overflow: hidden;
+}
+
+#dimmer{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 44;
+	bottom: 50;
+	margin-left: 0px;
+	background-color: black;
+	opacity: .7;
+	z-index: 3;
+	display: none;
+	overflow: hidden;
+}
+/*-------end Games iFrame------------*/
+
+
+
+
+
+
+
+
+
+
+/*-------start STOP SIGN------------*/
+.stopSignWrapper{
+	position: absolute;
+	display: none;
+	height: 300px;
+	width: 100%;
+	left: 0%;
+	margin: 0px auto;
+	bottom: -300px;
+	border-top: 5px solid red;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	background-color: rgba(255, 255, 255, .9);
+	z-index: 4;
+}
+
+.stopSignTitle{
+	width:100%;
+	text-align: center;
+	font-size: 28px;
+	color: black;
+	font-family: "boostsskregular";
+	margin-top: 5px;
+}
+
+.stopSignSubTitle{
+	width:100%;
+	text-align: center;
+	font-size: 14px;
+	color: black;
+	font-family: "Trebuchet MS";
+}
+
+.stopSignErrorMessage{
+	width:100%;
+	text-align: center;
+	font-size: 16px;
+	color: black;
+	font-family: "Trebuchet MS";
+}
+
+.formWrapper{
+	position: relative;
+	width: 90%;
+	margin: 10px auto;
+}
+
+.top{
+	border: 1px solid blue;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.middle{
+	border: 1px solid blue;
+	border-top: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.bottom{
+	border: 1px solid blue;
+	border-top: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.formDiv{
+	position: relative;
+	width: 90%;
+	margin: 0px auto;
+	text-align: center;
+	font-size: 26px;
+	height: 40px;
+	line-height: 40px;
+	color: blue;
+	font-family: "Trebuchet MS";
+}
+
+.formInputText{
+	-webkit-appearance: none;
+	position: relative;
+	width: 90%;
+	margin: 0px auto;
+	display: block;
+	text-align: left;
+	height: 40px;
+	font-family: "Trebuchet MS";
+	font-size: 22px;
+	color: blue;
+	padding-left: 5px;
+}
+
+.formButton{
+	position: relative;
+	width: 90%;
+	margin: 10px auto;
+	text-align: center;
+	height: 40px;
+	background-color: blue;
+	line-height: 40px;
+	font-family: "boostsskregular";
+	font-size: 24px;
+	color: white;
+	border-radius: 4px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.formButton:active{
+	background-color: lightgreen;
+}
+
+.challengeSelect{
+	position: relative;
+	display: block;
+	width: 90%;
+	height: 35px;
+	margin: 5px auto;
+	font-family: "boostsskregular";
+	font-size: 18px;
+	color: black;
+}
+/*-------end STOP SIGN------------*/
+
+
+
+
+/*-------START Header------------*/
+.header{
+	position: absolute;
+	width: 100%;
+	height: 44px;
+	display: inline;
+	top: 0;
+	z-index: 5;
+	border-bottom: 1px solid lightgrey;
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+.gratiiLogo{
+	position: relative;
+	width: 99px;
+	height: 30px;
+	background-image:url('../images/gratiiColorShadow.png');
+	background-size: 99px 30px;
+	background-repeat: no-repeat;
+	margin-left: 5%;
+	margin-top: 7px;
+	border-radius: 4px;
+	padding: 3px;
+	display: inline-block;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.gratiiLogo:active{
+	background-color: lightgreen;
+}
+
+.gratiiScore{
+	position: relative;
+	width: 78px;
+	height: 30px;
+	font-family: 'boostsskregular';
+	font-size: 24px;
+	margin-top: 10px;
+	margin-right: 10px;
+	color: #212121;
+	text-shadow: 1px 1px 0px lightgrey;
+	text-align: right;
+	float: right;
+	display: inline-block;
+}
+
+.gratiiCoin{
+	position: relative;
+	width: 25px;
+	height: 25px;
+	background-image:url('../images/gratiiCoinIconGolden2.png');
+	border-radius: 4px;
+	background-size: 25px 25px;
+	margin-top: 11px;
+	margin-right: 5%;
+	float: right;
+	display: inline-block;
+}
+/*-------END Header------------*/
+
+
+
+
+
+/*-------START GLOBAL---------*/
+.mainApp{
+	position: absolute;
+	width: 400%;
+	top: 44;
+	bottom: 50;
+	margin-left: 0px;
+	overflow: hidden;
+}
+
+.page{
+	position: relative;
+	background-color: white;
+	width: 25%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+.pageListWrapper{
+/*	position: relative;
+	width: 100%;
+	float: left;*/
+	position:absolute; z-index:1;
+/*	-webkit-touch-callout:none;*/
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	width:100%;
+	padding:0;
+}
+
+.pageUL{
+	list-style:none;
+	padding:0px;
+	margin:0;
+	text-align: left;
+}
+
+.noDataWrapper{
+	width: 100%;
+	margin-top: 50px;
+	font-family: 'Trebuchet MS';
+	font-size: 20px;
+	color: grey;
+	text-align: center
+}
+
+#scroller{
+	width: 200%;
+}
+
+.mainLI{
+	max-height: 400px;
+}
+
+#iScrollVerticalWrapper0{
+	position:absolute; z-index:1;
+	top:0px; bottom:0px; left:0;
+	width:100%;
+	background:white;
+	overflow:auto;
+}
+
+#iScrollVerticalWrapper1{
+	position:absolute; z-index:1;
+	top:40px; bottom:0px; left:0;
+	width:100%;
+	background:white;
+	overflow:auto;
+
+}
+
+#iScrollVerticalWrapper2{
+	position:absolute; z-index:1;
+	top:40px; bottom:0px; left:0;
+	width:100%;
+	background:white;
+	overflow:auto;
+}
+
+#iScrollVerticalWrapper3{
+	position:absolute; z-index:1;
+	top:40px; bottom:0px; left:0;
+	width:100%;
+	background:white;
+	overflow:auto;
+}
+
+textarea:focus, input:focus, select:focus{
+    outline: 0;
+}
+
+input{
+	-webkit-appearance: none;
+	border: none;
+}
+
+a{
+	text-decoration: none;
+}
+/*-------END GLOBAL---------*/
+
+
+
+
+
+/*--------START Arcade--------------*/
+.arcadeFrame{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	float: left;
+	background-color: black;
+}
+
+.arcadeContent{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 800px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	margin:0px auto;
+	background-color: black;
+}
+
+.challengeable_0{
+	/*position: relative;
+	width:35px;
+	height: 35px;
+	float: right;
+	margin-right: 25px;
+	margin-top: 25px;
+	border: 1px solid red;*/
+}
+
+.challengeButton{
+	position: relative;
+	width:40px;
+	height: 40px;
+	margin-left: 5px;
+	top: 5px;
+	background-image: url('../images/boxingButton.png');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	opacity: 1;
+}
+
+.myScores{
+	font-family: 'boostsskregular';
+	color:white;
+	font-size: 12px;
+	background-color: black;
+}
+
+.myHighScore{
+	position: relative;
+	margin-left: 5px;
+	margin-top: 5px;
+	float: left;
+}
+
+.myTotalGratii{
+	position: relative;
+	margin-top: 5px;
+	margin-right: 5px;
+	float: right;
+}
+
+.top10{
+	height: 80%;
+	width: 100%;
+	font-size: 12px;
+	font-family: 'boostsskregular';
+	max-width: 800px;
+}
+
+td{
+	border: 1px solid grey;
+	background-color: white;
+}
+/*--------END Arcade--------------*/
+
+
+
+
+/*---------START Auctions-----------*/
+	/*--START Auction Nav--*/
+.scopeWrapper{
+	position: relative;
+	width: 100%;
+	height: 40px;
+	background-color: #efefef;
+	z-index: 3;
+	box-shadow: 0 4px 6px -4px black;
+	opacity: .97;
+}
+
+.scopeButtonWrapper{
+	position: relative;
+	width: 90%;
+	height: 25px;
+	margin:0 auto;
+	top: 7px;
+}
+
+.scopeButton{
+	position: relative;
+	height: 25px;
+	float: left;
+	line-height: 25px;
+	font-family: 'boostsskregular';
+	text-align: center;
+	color: blue;
+	box-sizing: border-box; 
+	margin: 0;
+}
+
+.scopeButton.active{
+	position: relative;
+	height: 25px;
+	float: left;
+	line-height: 25px;
+	font-family: 'boostsskregular';
+	text-align: center;
+	box-sizing: border-box; 
+	margin: 0;
+	background-color: blue;
+	color: white;
+}
+
+#auctions .scopeButton{
+	width: 33%;
+}
+
+.scopeButton#left{
+	position: relative;
+	border-top: 1px solid blue;
+	border-bottom: 1px solid blue;
+	border-left: 1px solid blue;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.scopeButton#center{
+	position: relative;
+	border:1px solid blue;
+}
+.scopeButton#right{
+	position: relative;
+	border-top: 1px solid blue;
+	border-bottom: 1px solid blue;
+	border-right: 1px solid blue;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+	/*--END Auction Nav--*/
+
+
+	/*--Start Auction--*/
+/*#auctions .pageListWrapper{
+	margin-top:40px;
+}*/	
+
+.auctionFrame{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	float: left;
+	background-color: black;
+}
+
+.auctionFrame#a .auctionContent{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 800px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	margin:0px auto;
+	background-color: black;
+}
+
+.auctionFrame#b .auctionContent{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 800px;
+	margin:0px auto;
+	background-color: #efefef;
+	text-align: center;
+	font-family: 'boostsskregular';
+	font-size: 16px;
+}
+
+.auctionTimerContainer{
+	position: relative;
+	margin: 0px auto;
+	width: 100%;
+	height: 10px;
+	background-color: black;
+}
+
+.auctionTimerWrapper{
+	position: relative;
+	margin: 0px auto;
+	width: 100%;
+	max-width: 800px;
+	height: 10px;
+	background-color: #1c1c1c;
+}
+
+.auctionTimerImage{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image: url('../images/timerGradient.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-color: black;
+}
+
+.auctionTimerBlackout{
+	position: absolute;
+	height: 100%;
+	background-color: #1c1c1c;
+	top: 0;
+	right: 0;
+	color: white;
+	line-height: 10px;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	text-align: left;
+}
+
+.auctionTitleContainer{
+	position: relative;
+	width: 100%;	
+	height:30px;
+	background-color: black;
+}
+
+.auctionTitleWrapper{
+	position: relative;
+	margin: 0px auto;
+	width: 100%;
+	max-width: 800px;
+	height:30px;
+	background-color: black;
+}
+
+.auctionClientDiv{
+	position: absolute;
+	top:0px;
+	width: 100%;
+	text-align: left;
+	color: white;
+	font-size: 18px;
+	font-family: 'Trebuchet MS';
+	font-weight: bold;
+	line-height: 30px;
+	text-align: left;
+	float: left;
+	left: 3px;
+}
+
+.auctionTitleDiv{
+	position: absolute;
+	top:0px;
+	width: 100%;
+	text-align: right;
+	color: white;
+	font-size: 14px;
+	font-family: 'Trebuchet MS';
+	line-height: 30px;
+	right: 3px;
+}
+
+.auctionStatsWrapper{
+	position: relative;
+	width: 100%;
+	height:40px;
+	background-color: #efefef;
+	color: white;
+	border-bottom: 1px solid white;
+	box-shadow: 0 4px 4px -3px black;
+	margin-bottom: 10px;
+}
+
+.auctionStatsContent{
+	position: relative;
+	margin: 0px auto;
+	max-width: 800px;
+	height: 100%;
+}
+
+.leaderInfoWrapper{
+	position: relative;
+	height: calc(100% - 3px);
+	float:left;
+	padding: 3px;
+}
+
+.bidCount{
+	position: relative;
+	color: black;
+	font-family: 'Trebuchet MS';
+	font-size: 12px;
+	margin-bottom: 2px;
+}
+
+.leader{
+	position: relative;
+	color: black;
+	font-family: 'Trebuchet MS';
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.bidInfoWrapper{
+	position: relative;
+	height: calc(100% - 3px);
+	float:right;
+	padding: 5px;
+	line-height: 40px;
+}
+
+.currentBid{
+	position: relative;
+	color: black;
+	font-family: 'boostsskregular';
+	font-size: 20px;
+	bottom: 2px;
+	float: right;
+	margin-right: 5px;
+}
+
+.newBidInput{
+	position: relative;
+	float: right;
+	margin-right: 5px;
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	font-family: "boostsskregular";
+	font-size: 18px;
+	color: black;
+	text-align: right;
+	bottom: 2px;
+	border: 1px solid blue;
+	border-radius: 4px;
+}
+
+.newBidButton{
+	position: relative;
+	float: right;
+	margin-right: 0px;
+	width: 90px;
+	height: 33px;
+	line-height: 35px;
+	font-family: "boostsskregular";
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	bottom: 2px;
+	background-color: blue;
+	border-radius: 4px;
+}
+
+.newBidButton:active{
+	background-color: lightgreen;
+}
+
+.auctionCoin{
+	position: relative;
+	width: 25px;
+	height: 25px;
+	background-image:url('../images/gratiiCoinIconGolden2.png');
+	border-radius: 4px;
+	background-size: 25px 25px;
+	margin-top: 5px;
+	float: right;
+	display: inline-block;
+}
+
+.upnextTimer{
+	line-height: 10px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: 'Trebuchet MS';
+	color: white;
+}
+
+.bonusMessage{
+	width: 80%;
+	margin: 0px auto;
+	text-align: left;
+	line-height: 20px;
+	font-size: 14px;
+	font-family: 'boostsskregular';
+	color: black;
+}
+
+.bonusTitle{
+	width: 90%;
+	margin: 0px auto;
+	text-align: center;
+	font-size: 20px;
+	font-family: 'Trebuchet MS';]
+	color: black;
+}
+
+.clickthroughWrapper{
+	position: relative;
+	margin: 5px auto;
+	width: 80%;
+	height: 26px;
+	line-height: 26px;
+	font-family: 'boostsskregular';
+	font-size: 16px;
+	text-decoration: none;
+	color: blue;
+	border: 1px solid blue;
+	border-radius: 4px;
+}
+
+.clickthroughWrapper:active{
+	background-color: lightgreen;
+}
+
+.fbWrapper{
+	position: relative;
+	width: 50%;
+	height: 70px;
+	float: left;
+}
+
+.twitterWrapper{
+	position: relative;
+	width: 50%;
+	height: 70px;
+	float: left;
+}
+
+/*---------END Auctions-----------*/
+
+
+/*---------START Inbox-----------*/
+#inbox .scopeButton{
+	width: 50%;
+}
+
+#inbox .messages{
+	background-color: white;
+	width: 100%;
+}
+
+
+.messageLI{
+	position: relative;
+	width:100%;
+	margin-bottom:8px; 
+}
+
+.messageContentContainer{
+	position: relative;
+	width: 100%;
+	margin: 0px auto;
+	max-height: 450px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.messageContentWrapper{
+	position: relative;
+	width: 100%;
+	margin: 0px auto;
+	max-width: 800px;
+	height: 100%;
+}
+
+.newMessage{
+	position: absolute;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	background-image: url('../images/newMessage_GreenWithShadow.png');
+	background-size: 100% 100%;
+	background-color: lightgreen;
+}
+
+.openedMessage{
+	position: absolute;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	background-color: #f4fbff;
+	box-shadow: 0 4px 6px -4px black;
+}
+
+.messageHeader{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background-color: #efefef;
+	box-shadow: 0 2px 2px -2px black;
+}
+
+.messageTimestamp{
+	position: relative;
+	width: 100%;
+	height: 15px;
+	font-size: 10px;
+	color:black;
+	text-align: right;
+	line-height: 15px;
+	font-family: 'Trebuchet MS';
+}
+
+.senderWrapper{
+	position: relative;
+	width: 45%;
+	height: 35px;
+	float: left;
+}
+
+.senderName{
+	position: relative;
+	height: 100%;
+	line-height: 35px;
+	margin-left: 3px;
+	font-family: 'Trebuchet MS';
+	font-size: 18px;
+}
+
+.messageGiftWrapper{
+	position: relative;
+	width: 45%;
+	height: 35px;
+	float: right;
+}
+
+.messageGiftAmount{
+	position: relative;
+	float: right;
+	line-height: 35px;
+	font-family: 'boostsskregular';
+	font-size: 20px;
+	margin-right:3px;
+}
+
+.messageGiftCoin{
+	position: relative;
+	width: 21px;
+	height: 21px;
+	background-image:url('../images/gratiiCoinIconGolden2.png');
+	border-radius: 4px;
+	background-size: 21px 21px;
+	margin-top: 6px;
+	margin-right: 7px;
+	float: right;
+}
+
+.messageBodyWrapper{
+	position: relative;
+	width: 100%;
+	height: calc(100% - 50px);
+	margin-top: 0px;
+}
+
+.messageBodyText{
+	position: relative;
+	width: 95%;
+	margin: 0px auto;
+	font-family: 'Trebuchet MS';
+	font-size: 17px;
+	margin-bottom: 10px;
+}
+
+.messageFooter{
+	position: absolute;
+	width: 100%;
+	bottom: 10px;
+}
+
+.messageOption{
+	position: relative;
+	width: 80%;
+	margin: 0px auto;
+	margin-top: 5px;
+	height: 25px;
+	font-family: 'Trebuchet MS';
+	font-size: 18px;
+	color: white;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 4px;
+	background-color: blue;
+	opacity: 1;
+}
+
+.messageOption:active{
+	background-color: lightgreen;
+}
+
+.messageOptionDisabled{
+	position: relative;
+	width: 80%;
+	margin: 0px auto;
+	margin-top: 5px;
+	height: 25px;
+	font-family: 'Trebuchet MS';
+	font-size: 18px;
+	color: white;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 4px;
+	background-color: blue;
+	opacity: .4;
+}
+
+.messageOptionSelected{
+	position: relative;
+	width: 80%;
+	margin: 0px auto;
+	margin-top: 5px;
+	height: 25px;
+	font-family: 'Trebuchet MS';
+	font-size: 18px;
+	color: white;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 4px;
+	background-color: lightgreen;
+	opacity: .4;
+}
+
+.claimGiftButton{
+	position: relative;
+	width: 80%;
+	margin: 0px auto;
+	height: 25px;
+	font-family: 'Trebuchet MS';
+	font-size: 18px;
+	color: white;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 4px;
+	background-color: blue;
+	opacity: 1;
+}
+
+.claimGiftButton:active{
+	background-color: lightgreen;
+}
+
+.claimGiftButtonDisabled{
+	position: relative;
+	width: 80%;
+	margin: 0px auto;
+	height: 25px;
+	font-family: 'Trebuchet MS';
+	font-size: 20px;
+	color: white;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 4px;
+	background-color: grey;
+	opacity: .5;
+}
+
+
+#inbox .send{
+	background-color: white;
+	width: 100%;
+	display: none;
+}
+
+#inbox .formWrapper{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	margin: 0px auto;
+}
+
+#inbox .formSection{
+	position: relative;
+	width: 90%;
+	margin: 0px auto;
+	padding: 5px;
+	background-color: white;
+	border: 1px solid grey;
+}
+
+#inbox .toWrapper{
+	position: relative;
+	height: 30px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom: 0px;
+}
+
+#inbox .giftWrapper{
+	position: relative;
+	height: 30px;
+}
+
+#inbox .messageWrapper{
+	position: relative;
+	height: 200px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top: 0px;
+}
+
+#inbox .formPreText{
+	position: relative;
+	text-align: left;
+	color:blue;
+	font-family: 'boostsskregular';
+	float: left;
+	font-size: 22px;
+	line-height: 30px;
+}
+
+#inbox .formInputText{
+	position: relative;
+	font-family: "Trebuchet MS";
+	font-size: 18px;
+	line-height: 30px;
+	height: 30px;
+	float: left;
+}
+
+#inbox .formInputText#username{
+	width:80%;
+	margin-left: 5px;
+	float: left;
+	border: none;
+}
+
+#inbox .formInputText#gift{
+	width:70%;
+	margin-left: 5px;
+	float: left;
+	border: none;
+}
+
+#inbox .formInputText#textMessage{
+	width:95%;
+	height: 95%;
+	border: none;
+	margin: 0px auto;
+}
+
+#inbox .sendbutton{
+	height: 30px;
+	background-color: blue;
+	border-radius: 4px;
+	text-align: center;
+	font-family: 'boostsskregular';
+	font-size: 24px;
+	color: white;
+	margin-top: 5px;
+}
+
+#inbox .sendbutton:active{
+	background-color: lightgreen;
+}
+
+
+
+/*---------END Inbox-----------*/
+
+
+
+/*---------START Profile-----------*/
+#profile .scopeButton{
+	width: 50%;
+}
+
+/*#profile .pageListWrapper{
+	margin-top:40px;
+}*/
+
+.settings{
+	width: 100%;
+}
+
+#profile .settings .section{
+	position: relative;
+	margin: 0px auto;
+	width: 90%;
+	border: 1px solid #efefef;
+	border-radius: 4px;
+	top: 10px;
+	font-family: "Trebuchet MS";
+	color: blue;
+	font-size: 16px;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+#profile .settings .sectionText{
+	margin-top: 5px;
+	text-align: center;
+}
+
+#profile .settings .sectionHeader{
+	position: relative;
+	height: 25px;
+	width: 100%;
+	background-color: #efefef;
+	box-sizing: border-box; 
+	font-family: 'boostsskregular';
+	font-size: 18px;
+	text-align: center;
+	color: black;
+	line-height: 25px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+#profile .settings .sectionButton{
+	position: relative;
+	height: 35px;
+	box-sizing: border-box; 
+	font-family: 'boostsskregular';
+	font-size: 18px;
+	text-align: center;
+	color: white;
+	background-color: blue;
+	line-height: 35px;
+	border-radius: 4px;
+	margin-top: 5px;
+}
+
+#profile .settings .sectionButton:active{
+	background-color: lightgreen;
+}
+
+.sectionInputText{
+	position: relative;
+	height: 35px;
+	width: 100%;
+	box-sizing: border-box; 
+	font-family: "Trebuchet MS";
+	font-size: 18px;
+	color: blue;
+	line-height: 35px;
+	border: 1px solid blue;
+	border-radius: 0px;
+}
+
+.sectionInputText.top {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	margin-top: 5px;
+}
+.sectionInputText.bottom {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top: none;
+}
+
+#profile .settings .sectionInputSelect{
+	position: relative;
+	height: 35px;
+	/*width: 100%;*/
+	box-sizing: border-box; 
+	font-family: "boostsskregular";
+	font-size: 18px;
+	color: blue;
+	line-height: 35px;
+	border: 1px solid blue;
+	margin-top: 5px;
+}
+
+#profile .monthSelect{
+	width: 32%;
+}
+
+#profile .dateSelect{
+	width: 25%;
+}
+
+#profile .yearSelect{
+	width: 32%;
+}
+
+#profile .settings .avatar{
+	width: 60px;
+	height: 60px;
+	background-size: 60px 60px;
+	background-repeat: no-repeat;
+	border: 2px solid blue;
+	border-radius: 8px;
+	float: left;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+#profile .settings .avatar:active{
+	background-color: lightgreen;
+}
+
+.social-login-button-wrapper{
+	position: relative;
+	width: 300px;
+	margin: 0px auto;
+}
+
+#twitterConnect{
+	position: relative;
+	width: 160px;
+	height: 30px;
+	margin: 0px auto;
+	background-image:url('../images/signInWithTwitter.png');
+	background-size: 158px 28px;
+	background-repeat: no-repeat;
+}
+
+.transactions{
+	width: 100%;
+	display: none;
+}
+
+.transactionLI{
+	padding: 4px;
+	overflow: hidden;
+}
+
+.transactionLI div{
+	line-height: 35px;
+}
+
+.transactionID{
+	position: absolute;
+	font-family: 'Trebuchet MS';
+	font-size: 12px;
+	margin-top:-12px;
+}
+
+.transactionTimestamp{
+	position: absolute;
+	font-family: 'Trebuchet MS';
+	font-size: 12px;
+	margin-top:-12px;
+	right: 5px;
+}
+
+.transactionDescription{
+	float: left;
+	font-family: 'boostsskregular';
+	font-size: 14px;
+	margin-top:10px;
+	max-width: 45%;
+	word-wrap: break-word;
+}
+
+.transactionDelta{
+	float: right;
+	font-family: 'boostsskregular';
+	font-size: 14px;
+	margin-left: 5px;
+	margin-top:10px;
+}
+
+.transactionBalance{
+	float: right;
+	font-family: 'boostsskregular';
+	font-size: 22px;
+	margin-top:10px;
+}
+
+.transactionCoin{
+	width: 25px;
+	height: 25px;
+	background-image:url('../images/gratiiCoinIconGolden2.png');
+	border-radius: 4px;
+	background-size: 25px 25px;
+	margin-top: 15px;
+	margin-left: 5px;
+	float: right;
+}
+/*---------END Profile-----------*/
+
+
+
+
+/*-----------START Footer------------*/
+.footer{
+	background-color: red;
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	bottom: 0;
+	z-index: 5;
+	border-top: 1px solid lightgrey;
+	background: rgb(229,229,229); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(229,229,229,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,229,229,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+.navItem{
+	position: relative;
+	width: 80px;
+	float: left;
+	height: 100%;
+	margin-right: calc(((100% - 320px) / 4)/2);
+	margin-left: calc(((100% - 320px) / 4)/2);
+	opacity: .5;
+	color: blue;
+}
+
+.navItem.active{
+	opacity: 1;
+	color: red;
+}
+
+.navIcon{
+	position: relative;
+	height: 30px;
+	margin: 0px auto;
+	margin-top: 3px;
+}
+
+.navIcon#arcade{
+	width: 35px;
+	background-image: url('../images/Flaticon/joystick2.png');
+	background-size: 35px 30px;
+	background-repeat: no-repeat;
+}
+
+.navIcon#auctions{
+	width: 40px;
+	background-image: url('../images/Flaticon/dollar22.png');
+	background-size: 40px 30px;
+	background-repeat: no-repeat;
+}
+
+.navIcon#inbox{
+	width: 42px;
+	background-image: url('../images/Flaticon/dollar48.png');
+	background-size: 42px 30px;
+	background-repeat: no-repeat;
+}
+
+.newMessageIndicator{
+	position: relative;
+	width: 18px;
+	height: 18px;
+	background-color: red;
+	border-radius: 50%;
+	float: right;
+	display: none;
+	font-family: "Trebuchet MS";
+	font-size: 13px;
+	color: white;
+	text-align: center;
+	line-height: 18px;
+}
+
+.navIcon#profile{
+	width: 30px;
+	background-image: url('../images/Flaticon/user62.png');
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+.navText{
+	position: relative;
+	font-family: 'boostsskregular', arial;
+	height:12px;
+	font-size: 12px;
+	text-align: center;
+	margin-top: 0px;
+}
+/*------------END Footer--------------*/
+
+
+
+
+
+
+
+
+/*---------START iScroll Indicator-------------*/
+#indicator, #indicator > li {
+	display:block; float:left;
+	list-style:none;
+}
+
+#indicator {
+	position: relative;
+	margin-top: -17px;
+}
+
+#indicator > li {
+	width:10px; height:10px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	-o-border-radius:6px;
+	border-radius:6px;
+	background:white;
+	overflow:hidden;
+	margin-right:6px;
+}
+
+#indicator > li.active {
+	width:9px; height:9px;
+	background:#888;
+	border: 1px solid white;
+}
+
+#indicator > li:last-child {
+	margin:0;
+}
+
+/*------------END iScroll Indicator-------------*/
+
+
+

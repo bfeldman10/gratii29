@@ -1,0 +1,92 @@
+[
+	{
+		"id": "1", 
+		"title": "$5 off Starter Kit", 
+		"client": "blu",
+		"image":"bluDroff2.png",
+		"secondsLasted": 2944,
+		"bids":52,
+		"leader":"mzumaran",
+		"currentBid":1718
+	},
+	{
+		"id": "2", 
+		"title": "Free T-shirt", 
+		"client": "PLNDR",
+		"image":"plunder.jpg",
+		"secondsLasted": 54352,
+		"bids":23,
+		"leader":"bfeldman",
+		"currentBid":4509
+	},
+	{
+		"id": "3", 
+		"title": "$10 Off any order!", 
+		"client": "Route 1 Apparel",
+		"image":"route.jpg",
+		"secondsLasted": 5433,
+		"bids":14,
+		"leader":"lkhin",
+		"currentBid":147
+	},
+	{
+		"id": "4", 
+		"title": "$5 Gift Card", 
+		"client": "Vaperfy",
+		"image":"vaperfy.jpg",
+		"secondsLasted": 2544,
+		"bids":71,
+		"leader":"alisports",
+		"currentBid":568
+	},
+	{
+		"id": "5", 
+		"title": "Free t-shirt", 
+		"client": "Gratii",
+		"image":"gratii-tee.jpg",
+		"secondsLasted": 607,
+		"bids":11,
+		"leader":"tweedo668",
+		"currentBid":776
+	},
+	{
+		"id": "6", 
+		"title": "Free T-shirt", 
+		"client": "PLNDR",
+		"image":"plunder.jpg",
+		"secondsLasted": 2346,
+		"bids":6,
+		"leader":"mzumaran",
+		"currentBid":1718
+	},
+	{
+		"id": "7", 
+		"title": "$10 Off any order!", 
+		"client": "Route 1 Apparel",
+		"image":"route.jpg",
+		"secondsLasted": 8456,
+		"bids":23,
+		"leader":"mzumaran",
+		"currentBid":1718
+	},
+	{
+		"id": "8", 
+		"title": "$5 Gift Card", 
+		"client": "Vaperfy",
+		"image":"vaperfy.jpg",
+		"secondsLasted": 6400,
+		"bids":25,
+		"leader":"mzumaran",
+		"currentBid":1718
+	},
+	{
+		"id": "9", 
+		"title": "Free t-shirt", 
+		"client": "Gratii",
+		"image":"gratii-tee.jpg",
+		"secondsLasted": 6346,
+		"bids":23,
+		"leader":"mzumaran",
+		"currentBid":1718
+	}
+]

@@ -1,0 +1,522 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+/* line 17, main.scss */
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+/* line 21, main.scss */
+body {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+/* line 32, main.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 37, main.scss */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+/* line 46, main.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+/* line 59, main.scss */
+img {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 67, main.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 77, main.scss */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* line 90, main.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* line 100, main.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "lucida grande";
+}
+
+/* line 106, main.scss */
+#game-area {
+  min-width: 640px;
+  min-height: 960px;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0 42px 36px 7px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: inset 0 42px 36px 7px rgba(0, 0, 0, 0.22);
+  box-shadow: inset 0 42px 36px 7px rgba(0, 0, 0, 0.22);
+  background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(255, 0, 0, 0.5)), color-stop(66.99%, rgba(0, 255, 0, 0.5)), color-stop(84.01%, rgba(255, 255, 0, 0.5)), color-stop(100%, rgba(255, 0, 0, 0.5)));
+  background-image: -webkit-radial-gradient(center center, 100% 100%, rgba(255, 0, 0, 0.5) 0%, rgba(0, 255, 0, 0.5) 66.99%, rgba(255, 255, 0, 0.5) 84.01%, rgba(255, 0, 0, 0.5) 100%);
+  background-image: -moz-radial-gradient(center center, 100% 100%, rgba(255, 0, 0, 0.5) 0%, rgba(0, 255, 0, 0.5) 66.99%, rgba(255, 255, 0, 0.5) 84.01%, rgba(255, 0, 0, 0.5) 100%);
+  background-image: -o-radial-gradient(center center, 100% 100%, rgba(255, 0, 0, 0.5) 0%, rgba(0, 255, 0, 0.5) 66.99%, rgba(255, 255, 0, 0.5) 84.01%, rgba(255, 0, 0, 0.5) 100%);
+  background-image: radial-gradient(center center, 100% 100%, rgba(255, 0, 0, 0.5) 0%, rgba(0, 255, 0, 0.5) 66.99%, rgba(255, 255, 0, 0.5) 84.01%, rgba(255, 0, 0, 0.5) 100%);
+}
+/* line 117, main.scss */
+#game-area #wrapper {
+  width: 100%;
+  min-height: 100%;
+  background-image: url("../gfx/icon-bg.png");
+}
+/* line 124, main.scss */
+#game-area #wrapper #status {
+  color: #FFF;
+  text-transform: uppercase;
+  width: 100%;
+  height: 88px;
+  background-color: #7d91ab;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.46), inset 0 2px 0 rgba(255, 255, 255, 0.45);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.46), inset 0 2px 0 rgba(255, 255, 255, 0.45);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.46), inset 0 2px 0 rgba(255, 255, 255, 0.45);
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(-25%, rgba(1, 0, 0, 0.8)), color-stop(125%, rgba(46, 43, 43, 0.8)));
+  background-image: -webkit-linear-gradient(bottom, rgba(1, 0, 0, 0.8) -25%, rgba(46, 43, 43, 0.8) 125%);
+  background-image: -moz-linear-gradient(bottom, rgba(1, 0, 0, 0.8) -25%, rgba(46, 43, 43, 0.8) 125%);
+  background-image: -o-linear-gradient(bottom, rgba(1, 0, 0, 0.8) -25%, rgba(46, 43, 43, 0.8) 125%);
+  background-image: linear-gradient(bottom, rgba(1, 0, 0, 0.8) -25%, rgba(46, 43, 43, 0.8) 125%);
+}
+/* line 136, main.scss */
+#game-area #wrapper #status .tab {
+  width: 39%;
+  height: 69px;
+  float: left;
+  margin-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.19);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-color: rgba(44, 43, 42, 0.2);
+}
+/* line 156, main.scss */
+#game-area #wrapper #status #cash-out {
+  margin-right: 1%;
+  margin-left: 1%;
+}
+/* line 161, main.scss */
+#game-area #wrapper #status #cash-out .btn {
+  float: left;
+  display: block;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  padding-top: 2px;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  top: 17px;
+  left: 17px;
+  border: 1px solid #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-color: #f9b549;
+}
+/* line 189, main.scss */
+#game-area #wrapper #status #cash-out span {
+  float: left;
+  position: relative;
+  top: 21px;
+  left: 27px;
+  font-size: 21px;
+}
+/* line 198, main.scss */
+#game-area #wrapper #status #gratii-coins {
+  margin-right: 1%;
+  width: 58%;
+}
+/* line 203, main.scss */
+#game-area #wrapper #status #gratii-coins span {
+  float: right;
+  position: relative;
+  top: 10px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(245, 237, 125, 0.62);
+}
+/* line 214, main.scss */
+#game-area #wrapper #status #gratii-coins img {
+  float: right;
+  margin-right: 10px;
+  margin-left: 10px;
+  position: relative;
+  top: 9px;
+}
+/* line 225, main.scss */
+#game-area #wrapper #lights {
+  position: absolute;
+  z-index: 500;
+  width: 640px;
+  height: 118px;
+  background-image: url("../gfx/lights.png");
+  margin-top: -60px;
+  left: 50%;
+  margin-left: -320px;
+}
+/* line 237, main.scss */
+#game-area #wrapper #machine {
+  width: 640px;
+  height: 732px;
+  background-image: url("../gfx/machine.png");
+  margin: 0 auto;
+  margin-top: 58px;
+  position: relative;
+}
+/* line 247, main.scss */
+#game-area #wrapper #machine #canvas {
+  width: 420px;
+  position: absolute;
+  left: 111px;
+  top: 168px;
+}
+/* line 254, main.scss */
+#game-area #wrapper #machine #screen {
+  position: absolute;
+  top: 158px;
+  left: 66px;
+}
+/* line 261, main.scss */
+#game-area #wrapper #machine #legend {
+  color: #FFF;
+  font-weight: bold;
+  position: absolute;
+  top: 490px;
+  left: 102px;
+}
+/* line 271, main.scss */
+#game-area #wrapper #machine #legend img, #game-area #wrapper #machine #legend p {
+  float: left;
+}
+/* line 275, main.scss */
+#game-area #wrapper #machine #legend img {
+  margin-right: 10px;
+  margin-top: 6px;
+}
+/* line 280, main.scss */
+#game-area #wrapper #machine #legend div {
+  width: 150px;
+  float: left;
+}
+/* line 287, main.scss */
+#game-area #wrapper #machine #jackpot {
+  color: #FFF;
+  font-weight: bold;
+  position: absolute;
+  left: 235px;
+  top: 585px;
+  width: 300px;
+}
+/* line 298, main.scss */
+#game-area #wrapper #machine #jackpot img {
+  float: left;
+  margin-right: 10px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=76);
+  opacity: 0.76;
+}
+/* line 304, main.scss */
+#game-area #wrapper #machine #jackpot p {
+  float: left;
+  margin-top: 19px;
+}
+/* line 310, main.scss */
+#game-area #wrapper #machine #spin {
+  display: inline-block;
+  background-image: url("../gfx/spin-btn.png");
+  width: 186px;
+  height: 84px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=72);
+  opacity: 0.72;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 33px;
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  position: absolute;
+  z-index: 100;
+  top: 670px;
+  left: 409px;
+}
+/* line 331, main.scss */
+#game-area #wrapper #machine #bet-box {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  z-index: 100;
+  top: 670px;
+  left: 50px;
+  color: #FFF;
+  text-transform: uppercase;
+}
+/* line 345, main.scss */
+#game-area #wrapper #machine #bet-box span, #game-area #wrapper #machine #bet-box a {
+  display: block;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  text-align: center;
+}
+/* line 352, main.scss */
+#game-area #wrapper #machine #bet-box #bet-lbl {
+  display: block;
+  background-color: #525456;
+  width: 75px;
+  height: 25px;
+  padding-top: 1px;
+}
+/* line 364, main.scss */
+#game-area #wrapper #machine #bet-box #bet {
+  width: 75px;
+  height: 55px;
+  background-color: #c2c7c0;
+  border: 1px solid #535456;
+  color: #535456;
+  font-size: 30px;
+  padding-top: 5px;
+  margin-top: 8px;
+}
+/* line 375, main.scss */
+#game-area #wrapper #machine #bet-box .btn {
+  width: 50px;
+  height: 40px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=46);
+  opacity: 0.46;
+  border: 1px solid rgba(0, 0, 0, 0.71);
+  -webkit-border-radius: 1.25;
+  -moz-border-radius: 1.25;
+  -ms-border-radius: 1.25;
+  -o-border-radius: 1.25;
+  border-radius: 1.25;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, rgba(0, 0, 0, 0.41)), color-stop(100%, rgba(255, 255, 255, 0.41)));
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.41) 0%, rgba(255, 255, 255, 0.41) 100%);
+  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.41) 0%, rgba(255, 255, 255, 0.41) 100%);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.41) 0%, rgba(255, 255, 255, 0.41) 100%);
+  background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.41) 0%, rgba(255, 255, 255, 0.41) 100%);
+  text-decoration: none;
+  color: #FFF;
+  font-size: 20px;
+  padding-top: 4px;
+  position: absolute;
+  top: -1px;
+  left: 85px;
+}
+/* line 395, main.scss */
+#game-area #wrapper #machine #bet-box #decrement-bet {
+  top: 47px;
+}
+/* line 402, main.scss */
+#game-area #wrapper #controls {
+  position: relative;
+  width: 100%;
+  min-height: 124px;
+  position: absolute;
+  top: 795px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=83);
+  opacity: 0.83;
+  background-color: #7d91ab;
+  -webkit-box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.45);
+  -moz-box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.45);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.45);
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(-25%, rgba(0, 0, 0, 0.8)), color-stop(125%, rgba(255, 255, 255, 0.8)));
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8) -25%, rgba(255, 255, 255, 0.8) 125%);
+  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.8) -25%, rgba(255, 255, 255, 0.8) 125%);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.8) -25%, rgba(255, 255, 255, 0.8) 125%);
+  background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.8) -25%, rgba(255, 255, 255, 0.8) 125%);
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Image replacement
+ */
+/* line 440, main.scss */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+/* line 448, main.scss */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+/* line 459, main.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 468, main.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+/* line 485, main.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+/* line 498, main.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 515, main.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 520, main.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+/* line 529, main.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}

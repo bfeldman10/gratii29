@@ -1,0 +1,34 @@
+{"results":
+	[
+		{
+			"id": "1", 
+			"template": "demoTemplate", 
+			"openedAt": "0000-00-00 00:00:00",
+			"gratii":0
+		},
+		{
+			"id": "2", 
+			"template": "demoTemplate", 
+			"openedAt": "0000-00-00 00:00:00",
+			"gratii":0
+		},
+		{
+			"id": "3", 
+			"template": "demoTemplate", 
+			"openedAt": "0000-00-00 00:00:00",
+			"gratii":0
+		},
+		{
+			"id": "4", 
+			"template": "demoTemplate", 
+			"openedAt": "0000-00-00 00:00:00",
+			"gratii":0
+		},
+		{
+			"id": "5", 
+			"template": "demoTemplate", 
+			"openedAt": "0000-00-00 00:00:00",
+			"gratii":0
+		}
+	]
+}

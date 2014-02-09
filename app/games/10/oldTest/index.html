@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=320, height=400, user-scalable=no, initial-scale=1.0, maximum-scale=1.0; user-scalable=0;" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<link rel="apple-touch-startup-image" href="iphonestartup.png" />
+	
+	
+	<title> Test </title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	
+
+
+
+<body>
+	<input type="button" id="exitButton" onclick="exitGame()" value="X" /></br></br>
+	JACKPOT:<input type="text" id="jackpot" disabled="disabled" placeholder="JACKPOT" /></br></br>
+	usersLiveGratii:<input type="text" id="currentGratii" disabled="disabled" placeholder="currentGratii" /></br>
+	Type in your wager: <input type="text" id="gratiiWagered" placeholder="gratiiWagered" /></br>
+	Type in your outcome (lose=lose, 1x=money back, 2x=2x wager, etc.): <input type="text" id="outcome" placeholder="outcome" /></br>
+	<input type="button" id="submitBet" value="submitBet" /></br>
+	Gratii winnings: <input type="text" id="gratiiWon" disabled="disabled" placeholder="gratiiWon" />
+	<script>
+		(function(){
+			
+			var usersLiveGratii;
+
+			
+			
+			
+			//GRATII FUNCTIONS START HERE -----------------------------
+			//Simple check for internet connection. If false, kicks user out to arcade.
+			function checkForInternet(){
+				var online = navigator.onLine;
+				if(online==false){
+					alert("Oh no! You lost internet connection.");
+					window.location = "../../users/html/arcade.html";
+					return;
+				}
+			}
+
+
+			//Let's Gratii server know what game is being played. Invoke once with startGratiiSession("Game Name");
+			function startGratiiSession(gameName){
+				$.post("../api/startGameSession.php", {gameName:gameName}, function(data){
+
+				});
+			}
+
+			//Returns user to arcade. Invoke with on click, touch, etc. of exit button;
+			$("#exitButton").click(function(){
+				window.location="../../users/html/arcade.html";
+				return;	
+			});		
+			
+
+			//Lets developer define WHERE and HOW to display the user's live Gratii. 
+			function displayUsersLiveGratii(usersLiveGratii){
+				//Code for defining WHERE and HOW to display the user's live Gratii goes here..
+				usersLiveGratii = usersLiveGratii;
+				$("#currentGratii").val(usersLiveGratii);
+			}
+
+			//Lets developer define WHERE and HOW to display the JACKPOT. 
+			function displayJackpot(jackpot){
+				//Code for defining WHERE and HOW to display the JACKPOT goes here..
+				jackpot = jackpot;
+				$("#jackpot").val(jackpot);
+			}
+
+			//Include this function. Necessary to retrieve user's live Gratii. Do not edit.
+			//Call it on page load and after every bet. It grabs the users score straight from the server. 
+			function getThenDisplayUsersLiveGratii(){
+
+				displayUsersLiveGratii("wait..");
+				
+				checkForInternet();
+
+				$.ajax( '../../users/php/getUserGratii.php', {
+			        type: 'get',
+			        success: function(result) {
+			        	console.log(result);
+			            displayUsersLiveGratii(result);
+			        },
+			        error: function(xhr,status,error) {
+			           // error code here
+			        },
+			        complete: function(xhr,status) {
+
+			        }
+			    });
+			}
+
+			//Include this function. Necessary to retrieve JACKPOT. Do not edit.
+			//Call it on page load and after every bet. It grabs the JACKPOT straight from the server. 
+			function getThenDisplayJackpot(){
+
+				displayJackpot("wait..");
+				
+				checkForInternet();
+
+				$.ajax('../api/getSlotsJackpot.php', {
+			        type: 'get',
+			        success: function(result) {
+			        	console.log(result);
+			            displayJackpot(result);
+			        },
+			        error: function(xhr,status,error) {
+			           // error code here
+			        },
+			        complete: function(xhr,status) {
+
+			        }
+			    });
+			}
+
+						
+			function postGratiiWager(usersLiveGratiiDisplay, gratiiWagered) {
+			
+				checkForInternet();
+
+				var usersLiveGratiiDisplay = usersLiveGratiiDisplay;
+				var gratiiWagered = gratiiWagered;
+				//var outcome = $("#outcome").val();
+
+				/*if(outcome=="lose"){
+					outcome = gratiiWagered*-1;
+				}else if(outcome=="1x"){
+					outcome = 0;
+				}else if(outcome=="3x"){
+					outcome = gratiiWagered*2;
+				}else if(outcome=="jackpot"){
+					outcome = "jackpot";
+				}*/
+
+				//$("#gratiiWon").val(outcome);
+
+				/*if(usersLiveGratiiDisplay=="wait.."){
+					alert("Please wait for your Gratii to update. Internet connection is slow.");
+					return;
+				}*/
+
+
+				
+				$.post('../api/gameOverSlotsDCP.php', {gratiiWagered:gratiiWagered}, function(data){
+					//SPIN WHEELS HERE
+					getThenDisplayUsersLiveGratii();
+					getThenDisplayJackpot();
+					alert(data.currentJackpot);
+				},"json");
+			}
+			//GRATII FUNCTIONS END HERE ----------------------------------
+
+
+
+
+			//Developer defines WHEN to update the user's live Gratii display
+			startGratiiSession("Test");
+			getThenDisplayUsersLiveGratii();
+			getThenDisplayJackpot();
+
+			$("#submitBet").click(function(){
+				usersLiveGratiiDisplay = $("#currentGratii").val();
+				gratiiWagered = $("#gratiiWagered").val();
+				postGratiiWager(usersLiveGratiiDisplay, gratiiWagered);
+			});
+			
+		
+		}());
+
+		
+	</script>
+</body>
+</html>
+
+
+

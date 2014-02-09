@@ -1,0 +1,119 @@
+html,body {
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    /*font-family: helvetica, arial, sans-serif;*/
+    font-family: 'Play', sans-serif;
+
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+}
+
+#canvas {
+   /* position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;*/
+
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+#result-msg{
+    position: absolute;
+    width: 298px;
+}
+
+
+#stats{
+    background-color: #000;
+    width:100%;
+    height:30px;
+    position: relative;
+}
+
+#stats #live-gratii{
+
+    position: absolute;
+    right:35px;
+    top:4px;
+    /*border:1px solid red;*/
+
+}
+
+#stats img{
+    width:25px;
+    height:25px;
+
+    position: absolute;
+    top:2px;
+    right:5px;
+}
+
+#stats #jackpot{
+    position: absolute;
+    left:5px;
+    top:4px;
+    /*border:1px solid red;*/
+}
+
+#game-buttons{
+    width:298px;
+    margin: 0 auto;
+
+}
+
+
+a{
+    text-decoration: none;
+}
+
+
+#game-buttons a{
+    display:inline-block;
+    width:298px;
+    height:50px;
+    padding-top: 7px;
+    color:#FFF;
+    background-color: green;
+    text-align: center;
+    font-size:35px;
+    border:1px solid #fff;
+
+    position: absolute;
+
+    background: #299a0b; /* Old browsers */
+    background: -moz-linear-gradient(top,  #299a0b 0%, #299a0b 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#299a0b), color-stop(100%,#299a0b)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #299a0b 0%,#299a0b 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #299a0b 0%,#299a0b 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #299a0b 0%,#299a0b 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #299a0b 0%,#299a0b 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#299a0b', endColorstr='#299a0b',GradientType=0 ); /* IE6-9 */
+
+}
+
+#game-buttons #slots-hurry{
+    background-color: red;  
+    background: #cc0000; /* Old browsers */
+    background: -moz-linear-gradient(top,  #cc0000 0%, #cc0000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cc0000), color-stop(100%,#cc0000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #cc0000 0%,#cc0000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #cc0000 0%,#cc0000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #cc0000 0%,#cc0000 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #cc0000 0%,#cc0000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#cc0000',GradientType=0 ); /* IE6-9 */
+
+}
+
+.mw-btn{
+    display:inline-block;
+    width:100px;
+    text-align: center;
+    background-color: #CCC;
+    color:#000;
+}

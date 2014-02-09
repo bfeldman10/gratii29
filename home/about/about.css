@@ -1,0 +1,146 @@
+#content-about-main-wrapper{
+	margin: 100px auto 0;
+	width:960px;
+}
+
+#content-about-main-content{
+	margin: auto 0;
+	width:960px;
+	font-family: Century Gothic, Arial;
+	font-size: 50px;
+	text-align: center;
+	background: rgba(255,255,255, 0.7);
+	box-shadow: 4px 1px 60px #222,  -4px 1px 60px #222; 
+}
+
+#content-about-company-wrapper{
+	margin: 0px auto 0;
+	width:900px;
+}
+
+#content-about-company-title{
+	font-family: Century Gothic, Arial;
+	font-size: 50px;
+	text-align: left;
+	margin-top: 15px;
+}
+
+#content-about-company-text{
+	font-family: Century Gothic, Arial;
+	font-size: 17px;
+	text-align: justify;
+	width: 880px;
+	margin-left: 20px;
+}
+
+#content-about-team-wrapper{
+	margin: 0px auto 0;
+	width:900px;
+}
+
+#content-about-team-title{
+	font-family: Century Gothic, Arial;
+	font-size: 50px;
+	text-align: left;
+	margin-top: 15px;
+}
+
+#content-about-team-member{
+	margin: 0px auto 0;
+	width:100%;
+	height: 200px;
+}
+
+#content-about-team-member-pic{
+	width: 200px;
+	height: 200px;
+	float: left;	
+}
+
+#content-about-team-member-name{
+	height: 40px;
+	margin-top: 10px;
+	float: left;
+	font-family: Century Gothic, Arial;
+	font-size: 22px;
+	text-align: left;
+}
+
+#content-about-team-member-email{
+	width: 35px;
+	height: 35px;
+	margin-left: 10px;
+	margin-top: 5px;
+	background-image: url("images/email.png");
+	background-size: 35px 35px;
+	background-repeat: no-repeat;
+	float: left;
+}
+
+#content-about-team-member-linkedIn{
+	width: 35px;
+	height: 35px;
+	margin-left: 10px;
+	margin-top: 5px;
+	background-image: url("images/linkedIn.png");
+	background-size: 35px 35px;
+	background-repeat: no-repeat;
+	float: left;
+}
+
+
+#content-about-team-member-bio{
+	width: 675px;
+	height: 80px;
+	float: right;
+	font-family: arial;
+	font-size: 16px;
+	text-align: justify;
+}
+
+.bFeldman{
+	background-image: url("images/team/bFeldmanCircle.png");
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+}
+
+.lKhin{
+	background-image: url("images/team/lKhinCircle.png");
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+}
+
+.mZumaran{
+	background-image: url("images/team/mZumaranCircle.png");
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+}
+
+#content-contact-wrapper{
+	margin: 0 auto;
+	width:960px;
+	height: 100px;
+	text-align: center;
+	color: black;
+	font-family: Century Gothic, Arial;
+	font-size: 50px;
+}
+
+#content-contact-content{
+	margin-top: 15px;
+}
+
+#contactLink{
+	text-align: center;
+	color: blue;
+	text-decoration: none;
+}
+
+#contactLink:hover{
+	text-align: center;
+	color: red;
+}
+
+#content-contact-subtext{
+	font-size: 24px;
+}

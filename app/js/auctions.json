@@ -1,0 +1,42 @@
+[
+	{
+		"id": "1", 
+		"title": "Slap Bracelent", 
+		"client": "Gratii",
+		"bids":5,
+		"leader":"bfeldman",
+		"currentBid":105,
+	},
+	{
+		"id": "2", 
+		"title": "T-shirt", 
+		"client": "Nike",
+		"bids":0,
+		"leader":"bfeldman",
+		"currentBid":105
+	},
+	{
+		"id": "3", 
+		"title": "$5 Gift Card", 
+		"client": "Chipotle",
+		"bids":24,
+		"leader":"bfeldman",
+		"currentBid":105
+	},
+	{
+		"id": "4", 
+		"title": "$10 Gift Card", 
+		"client": "Victoria's Secret",
+		"bids":17,
+		"leader":"bfeldman",
+		"currentBid":105
+	},
+	{
+		"id": "5", 
+		"title": "1 Free Refill", 
+		"client": "Vaperfy",
+		"bids":3,
+		"leader":"bfeldman",
+		"currentBid":105
+	}
+]

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=320, height=400, user-scalable=no, initial-scale=1.0, maximum-scale=1.0; user-scalable=0;" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<link rel="apple-touch-startup-image" href="iphonestartup.png" />
+
+
+	<title> BlackJack! </title>
+	<!--<script type="text/javascript" src="../../javascript/jquery.mobile-1.0.1.min.js"></script>-->
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+
+
+<style type="text/css">
+body { background: #000; margin: 0; padding: 0; }
+
+#Game { display: block; width: 320px; height: 430px; margin: 0 auto; background: #000; position: relative; }
+
+#Game canvas { display: block; background: #000 url(images/blackjackBG.png) 0 0 no-repeat; }
+
+
+.noDisplay{
+	display:none;
+}
+#gamesAlert{
+	position:absolute;
+	text-align:center;
+	z-index:105;
+	width:85%;
+	margin-left:5%;
+	margin-top:20%;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius:5px;
+	-webkid-border-radius:5px;
+	-moz-border-radius:5px;
+	padding:10px;
+}
+#gameOver{
+	font-size:22px;
+	font-weight:bold;
+	text-shadow: 0px 0px 7px #FFF;
+}
+#replay{
+	font-size:22px;
+	font-weight:bold;
+	text-shadow: 0px 0px 7px #FFF;
+}
+#gratiiWon{
+	color:#F7E600;
+	font-size:36px;
+	font-weight:bold;
+	text-shadow: 0px 0px 12px #FFF;
+}
+*{
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+</style>
+</head>
+
+<body>
+<div id="gamesAlert" class="noDisplay">
+	<font id="gameOver">Game Over</font></br></br>
+	<font id="gratiiWon"></font></br></br>
+	<font id="replay">Play again?</font></br></br>
+	<input type="button" data-inline="true" data-icon="refresh" value="Play Again" id="playAgain"/>
+	<input type="button" data-inline="true" data-icon="delete" value="Exit" id="close"/>
+</div>
+<div id="Game">
+	<canvas id="Canvas"></canvas>
+</div>
+
+<script type="text/javascript" src="blackjack.js?v=1"></script>
+
+
+
+</body>
+</html>
+
