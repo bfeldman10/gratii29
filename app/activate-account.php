@@ -12,7 +12,7 @@
 	<meta charset="UTF-8">
 	<title>Gratii - Activate Your Account</title>
 
-	<script src="js/vendor/jquery-1.10.1.min.js"></script>
+	<script src="js/jquery.js.min?v=1"></script>
 
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
 
@@ -94,7 +94,7 @@
 <body class="pro">
 
 	<section class="header">
-		<h1><img id="gratii-splash-logo" src="gfx/pro/logo.png" alt="Gratii Inc."></h1>
+		<h1><img id="gratii-splash-logo" src="images/pro/logo.png" alt="Gratii Inc."></h1>
 	</section>
 
 	<section class="success">
