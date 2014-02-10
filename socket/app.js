@@ -3,9 +3,9 @@ var express = require('express')
   , request = require('request');
 
 var app = express();
-var server = http.createServer(app);
+var server = http.createServer(app).listen(8001);
 var io = require('socket.io').listen(server);
-server.listen(8001, '0.0.0.0');
+
 
 //app.use(express.cookieParser());
 app.use(express.bodyParser());
