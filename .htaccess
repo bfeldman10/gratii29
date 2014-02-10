@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^$ /gratii29/home/home [NC,R]

@@ -1043,31 +1043,30 @@ Auction.prototype.styleFB = function(){
 
 	if(userFBLoggedIn === true){
 		var likeBtn = '<fb:like data-href="https://www.'+this.fb+'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" data-ref="gratiiApp"></fb:like>';
-		// FB.Event.subscribe('edge.create',
-		// 	function(response) {
-		// 		// alert('You liked the URL: ' + response);
-		// 		app.Data.trackFacebookLike(auctionID);
-				// $.ajax({
-			 //        url: apiRoot+"like",
-			 //        type: 'POST',
-			 //        dataType: 'json',
-			 //        data: { auctionID: thisAuctionID },
-			 //        async: true,
-			 //        cache: false,
-			 //        timeout: 30000,
-			 //        error: function(data){
-			 //        	console.log(data);
-			 //        	triggerErrorMessage("default");
-			 //            return true;
-			 //        },
-			 //        success: function(data){ 
+		FB.Event.subscribe('edge.create',
+			function(response) {
+				console.log('You liked the URL: ' + response);
+				$.ajax({
+			        url: apiRoot+"like",
+			        type: 'POST',
+			        dataType: 'json',
+			        data: { auctionID: thisAuctionID },
+			        async: true,
+			        cache: false,
+			        timeout: 30000,
+			        error: function(data){
+			        	console.log(data);
+			        	triggerErrorMessage("default");
+			            return true;
+			        },
+			        success: function(data){ 
 			        	
-			 //        	console.log(data);
+			        	console.log(data);
 			        	
-			 //        }
-			 //    });
-		// 	}
-		// );
+			        }
+			    });
+			}
+		);
 	}else{
 			var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small"></fb:login-button>';
 	}
