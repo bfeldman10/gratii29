@@ -2671,7 +2671,7 @@ function sendActivationEmail($inputs){
     $headers .= "Reply-To: info@gratii.com\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    $activationLink = "gratii.com/app/activate-account.php?id=".$inputs['activationCode'];
+    $activationLink = "graticity.com/gratii29/app/activate-account.php?id=".$inputs['activationCode'];
     $message = '<html>
 	<body style="background-color:#f6f6f6;">
 
@@ -2681,7 +2681,7 @@ function sendActivationEmail($inputs){
 				<tr>
 					<td align="center">
 						<br>
-						<img src="http://gratii.com/app/images/gratii-logo-blue.png" alt="Gratii" width="200">
+						<img src="http://graticity.com/gratii29/app/images/gratii-logo-blue.png" alt="Gratii" width="200">
 						<br><br>
 					</td>
 				</tr>
@@ -2734,7 +2734,7 @@ function sendPasswordResetEmail($inputs){
     $headers .= "Reply-To: info@gratii.com\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    $resetLink = "gratii.com/app/password-reset.php?id=".$inputs['passwordCode'];
+    $resetLink = "graticity.com/gratii29/app/password-reset.php?id=".$inputs['passwordCode'];
     //////
     $message = '<html>
 	<body style="background-color:#f6f6f6;">
@@ -2745,7 +2745,7 @@ function sendPasswordResetEmail($inputs){
 				<tr>
 					<td align="center">
 						<br>
-						<img src="http://gratii.com/app/images/gratii-logo-blue.png" alt="Gratii" width="200">
+						<img src="http://graticity.com/gratii29/app/images/gratii-logo-blue.png" alt="Gratii" width="200">
 						<br><br>
 					</td>
 				</tr>
