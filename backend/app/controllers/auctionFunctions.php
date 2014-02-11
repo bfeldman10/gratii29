@@ -1220,13 +1220,13 @@ function sendWinnerEmail_Job($auctionID, $receiver=NULL){
 				<tr bgcolor="blue">
 					<td align="center">
 						<br>
-						<img src="http://gratii.com/app/gfx/pro/logo.png" alt="Gratii" width="200">
+						<img src="http://graticity.com/app/images/pro/logo.png" alt="Gratii" width="200">
 						<br><br>
 					</td>
 				</tr>
 				<tr>
 					<td align="center">
-						<img src="http://gratii.com/app/gfx/resources/'.$auctionData['results'][0]['promoPic'].'" alt="'.$auctionData['results'][0]['promoName'].'" style="border-top:2px solid #FFF;border-bottom:2px solid #FFF;">
+						<img src="http://graticity.com/app/images/auctions/'.$auctionData['results'][0]['promoPic'].'" alt="'.$auctionData['results'][0]['promoName'].'" style="border-top:2px solid #FFF;border-bottom:2px solid #FFF;">
 					</td>
 				</tr>
 				<tr>

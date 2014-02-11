@@ -2681,7 +2681,7 @@ function sendActivationEmail($inputs){
 				<tr>
 					<td align="center">
 						<br>
-						<img src="http://gratii.com/app/gfx/gratii-logo-blue.png" alt="Gratii" width="200">
+						<img src="http://gratii.com/app/images/gratii-logo-blue.png" alt="Gratii" width="200">
 						<br><br>
 					</td>
 				</tr>
@@ -2745,7 +2745,7 @@ function sendPasswordResetEmail($inputs){
 				<tr>
 					<td align="center">
 						<br>
-						<img src="http://gratii.com/app/gfx/gratii-logo-blue.png" alt="Gratii" width="200">
+						<img src="http://gratii.com/app/images/gratii-logo-blue.png" alt="Gratii" width="200">
 						<br><br>
 					</td>
 				</tr>
