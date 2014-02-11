@@ -141,7 +141,7 @@ function hideFunctions(){
 	            return true;
 	        },
 	        success: function(data){ 
-	        	$(".signupWrapper").html('<font style="font-family:Trebuchet MS; font-size:18px"><b>Success!</b></br></br>You should recieve an activation email shortly. You must open it to verify your account before you can log in. If you do not recieve an email within 5 minutes (make sure you check your spam folders!), contact support: </br> info@gratii.com.');
+	        	$(".signupWrapper").html('<font style="font-family:Trebuchet MS; font-size:18px"><b>Success!</b></br></br>You should receive an activation email shortly. You must open it to verify your account before you can log in. If you do not receive an email within 5 minutes (make sure you check your spam folders!), contact support: </br> info@gratii.com.');
 	        }
 	    });
 
@@ -2027,7 +2027,7 @@ Message.prototype.loseChallengeTemplate = function(){
 	this.applyNewMessageWrapper();
 }
 
-Message.prototype.recievedChallengeTemplate = function(){
+Message.prototype.receivedChallengeTemplate = function(){
 
 	this.senderNameDiv.style.fontFamily = "boostsskregular";
 	this.senderNameDiv.style.fontSize = "22px";
@@ -2329,7 +2329,7 @@ Message.prototype.createMessageBody = function(){
 			this.adminSurveyTemplate();
 			break;
 		case "issueChallenge":
-			this.recievedChallengeTemplate();
+			this.receivedChallengeTemplate();
 			break;
 		case "winChallenge":
 			this.winChallengeTemplate();
@@ -2765,7 +2765,7 @@ function getData(dataRequested, extra){
 	        		console.log(data.status);
 	        		noDataWrapper = document.createElement('div');
 	        		noDataWrapper.className = "noDataWrapper";
-	        		noDataWrapper.innerHTML = "Only logged in users can recieve messages.</br>Messages usually contain bonus gratii!";
+	        		noDataWrapper.innerHTML = "Only logged in users can receive messages.</br>Messages usually contain bonus gratii!";
 	        		$("#inbox .pageUL").append(noDataWrapper);
 	        	}
 	            return true;
