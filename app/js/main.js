@@ -75,7 +75,7 @@ function hideFunctions(){
 	});
 
 
-	$(".peakAround").on('click', function(){
+	$(".peekAround").on('click', function(){
 		event.preventDefault();
 		$(".homeScreen").hide();
 	});
@@ -248,6 +248,10 @@ function hideFunctions(){
 	        success: function(data){ 
 	        	$(".send .sendButton").css({color:"lightgreen"});
 	        	$(".send .sendButton").html('Message sent!');
+	        	$(".send #username").val('');
+	        	$(".send #gift").val('0');
+	        	$(".send #textMessage").val('');
+
 
 	        	
 	        	window.setTimeout(function () {
@@ -276,7 +280,7 @@ function hideFunctions(){
 	$(".loginButton").click(function(){
 		
 		$(".loginButton").html('please wait..');
-		var userEmail = $(".loginWrapper .usernameInput").val();
+		var userEmail = $(".loginWrapper .emailInput").val();
 		var userPassword = $(".loginWrapper .passwordInput").val();
 
 		$.ajax({
@@ -334,6 +338,37 @@ function hideFunctions(){
 	        }
 	    });
 
+	});
+
+	$(".forgotPassword").click(function(){
+
+		var userEmail = $(".emailInput").val();
+		
+		if(userEmail==""){
+			alert("Please enter your email so we can send you password reset instructions.");
+			return;
+		}
+
+		$.ajax({
+	        url: apiRoot+"user/password/request",
+	        type: 'PUT',
+	        data: {userEmail: userEmail},
+	        dataType: 'json',
+	        async: true,
+	        cache: false,
+	        timeout: 30000,
+	        error: function(data){
+	        	console.log(data);
+
+	        	alert("Something broke.. please try again.");
+	        	
+	            return true;
+	        },
+	        success: function(data){ 
+	        	console.log(data['msg']);
+	        	alert("An email has been sent");
+	        }
+	    });
 	});
 }
 // END home screen------------------------
@@ -916,6 +951,7 @@ Auction.prototype.placeBidClick = function(event){
 		triggerErrorMessage("notLoggedIn");
 		return;
 	}else{
+		var that = this;
 		var bidAmount = this.BidDiv.value;
 		var auctionID = this.Auction.id;
 		var ButtonDiv = this.ButtonDiv;
@@ -941,6 +977,14 @@ Auction.prototype.placeBidClick = function(event){
 	        success: function(data){ 
 	        	ButtonDiv.style.color = "white";
 	        	ButtonDiv.innerHTML = "Place bid";
+
+	        	that.Auction.leaderInfoDiv.style.display = "";
+				$(that.Auction.newBidInput).remove();
+				$(that.Auction.newBidButton).remove();
+				that.Auction.currentBidDiv.style.display = "";
+				that.Auction.auctionCoin.style.display = "";
+
+				that.Auction.inputVisible = false;
 	        }
 	    });
 		
@@ -988,16 +1032,16 @@ Auction.prototype.showBidInputs = function(){
 	}
 }
 
-Auction.prototype.removeBidInputs = function(){
-
+Auction.prototype.removeBidInputs = function(thisAuction){
+	console.log("Entered removal of BID INPUTS!");
 	that = this.Auction;
-
+	console.log(that);
 	if(that.inputVisible === true){
-
+		console.log("REMOVING BID INPUTS!");
 		that.leaderInfoDiv.style.display = "";
 
-		that.newBidInput.style.display = "none";
-		that.newBidButton.style.display = "none";
+		$(that.newBidInput).remove();
+		$(that.newBidButton).remove();
 		that.currentBidDiv.style.display = "";
 		that.auctionCoin.style.display = "";
 
@@ -2247,7 +2291,12 @@ Message.prototype.adminTextTemplate = function(){
 	this.claimGiftDiv = document.createElement('div');
 	if(this.pendingResponse == true){
 		this.claimGiftDiv.className = "claimGiftButton";
-		this.claimGiftDiv.innerHTML = "Claim my gift";
+		if(this.gratii==0){
+			claimButtonText = "OK";
+		}else{
+			claimButtonText = "Claim my gift";
+		}
+		this.claimGiftDiv.innerHTML = claimButtonText;
 		this.claimGiftDiv.addEventListener('click', {
                                 handleEvent:this.respondToMessage,                  
                                 Message:this,
@@ -2281,7 +2330,12 @@ Message.prototype.userTextTemplate = function(){
 	this.claimGiftDiv = document.createElement('div');
 	if(this.pendingResponse == true){
 		this.claimGiftDiv.className = "claimGiftButton";
-		this.claimGiftDiv.innerHTML = "Claim my gift";
+		if(this.gratii==0){
+			claimButtonText = "OK";
+		}else{
+			claimButtonText = "Claim my gift";
+		}
+		this.claimGiftDiv.innerHTML = claimButtonText;
 		this.claimGiftDiv.addEventListener('click', {
                                  handleEvent:this.respondToMessage,                  
                                  Message:this}, false);

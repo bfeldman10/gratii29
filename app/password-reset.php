@@ -2,7 +2,7 @@
 
 	$reset_id = $_GET['id'];
 	if ($reset_id == "") {
-		header('LOCATION:http://gratii.com/');
+		// header('LOCATION:http://gratii.com/');
 	}
 
 ?>
@@ -12,18 +12,18 @@
 	<meta charset="UTF-8">
 	<title>Gratii - Reset your Password</title>
 
-	<script src="js/vendor/jquery-1.10.1.min.js"></script>
+	<script src="js/jquery.js.min?v=1"></script>
 
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
 
 	<!-- HTML5BP -->
 	<link rel="stylesheet" href="css/normalize.min.css">
-	<link rel="stylesheet" href="css/main.css?c=3">
+	<!-- <link rel="stylesheet" href="css/main.css?v=1"> -->
 
 
-	<link rel="stylesheet" href="css/pro.css?c=7">
+	<link rel="stylesheet" href="css/pro.css?v=1">
 
-	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="js/modernizr-2.6.2.min.js"></script>
 
 
 	<script type="text/javascript">
@@ -53,7 +53,7 @@
 
 			var request = $.ajax({
 				type: "PUT",
-				url: "http://gratii.com/laravel/public/api/v1" + "/user/password",
+				url: "../backend/public/api/v1/" + "user/password",
 				dataType: 'json',
 				data: {'passwordCode': resetID, 'userPassword': pw}
 			});
@@ -84,7 +84,7 @@
 <body class="pro">
 
 	<section class="header">
-		<h1><img id="gratii-splash-logo" src="gfx/pro/logo.png" alt="Gratii Inc."></h1>
+		<h1><img id="gratii-splash-logo" src="images/pro/logo.png" alt="Gratii Inc."></h1>
 	</section>
 
 	<section class="success">

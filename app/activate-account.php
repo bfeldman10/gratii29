@@ -2,7 +2,7 @@
 
 	$activate_id = $_GET['id'];
 	if ($activate_id == "") {
-		header('LOCATION:http://gratii.com/');
+//		header('LOCATION:http://gratiii.com/');
 	}
 
 ?>
@@ -18,12 +18,12 @@
 
 	<!-- HTML5BP -->
 	<link rel="stylesheet" href="css/normalize.min.css">
-	<link rel="stylesheet" href="css/main.css?c=3">
+	<!-- <link rel="stylesheet" href="css/main.css?c=3"> -->
 
 
 	<link rel="stylesheet" href="css/pro.css?c=7">
 
-	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="js/modernizr-2.6.2.min.js"></script>
 
 
 	<script type="text/javascript">
