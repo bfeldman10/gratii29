@@ -175,12 +175,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', end
 	margin-bottom: 5px;
 }
 
-.emailInput{
+/*.emailInput{
 	display: none;
 	border: 1px solid red;
 	width:90%;
 	margin: 0px auto;
-}
+}*/
 
 .backToHomeIcon{
 	width: 35px;

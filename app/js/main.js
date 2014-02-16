@@ -343,7 +343,7 @@ function hideFunctions(){
 	$(".forgotPassword").click(function(){
 
 		var userEmail = $(".emailInput").val();
-		
+
 		if(userEmail==""){
 			alert("Please enter your email so we can send you password reset instructions.");
 			return;
