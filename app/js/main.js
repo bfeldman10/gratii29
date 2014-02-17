@@ -34,7 +34,7 @@ $(document).bind('touchmove', function(e) {
 });
 
 $(window).resize(function() {
-	$(".homeScreenLogo").css({"height":($(window).width()*.5)});
+	$(".homeScreenLogo").css({"height":($(window).width()*.25)});
   	$(".mainLI").css({"height":($(window).width()*.5)});
   	$(".arcadeLI").css({"height":($(window).width()*.5)});
   	$(".messageContentContainer").css({"height":(($(window).width()*.5)+50)});
@@ -42,7 +42,7 @@ $(window).resize(function() {
 
 $(document).ready(function(){
 	document.addEventListener("touchstart", function(){}, true);
-	$(".homeScreenLogo").css({"height":($(window).width()*.5)});
+	$(".homeScreenLogo").css({"height":($(window).width()*.25)});
 	getData("session");
 	getData("arcade");
 	getData("auctions");
@@ -114,6 +114,7 @@ function hideFunctions(){
 		var userEmail = $(".signupWrapper .email").val();
 		var usernameInput = $(".signupWrapper .usernameInput").val();
 		var userPassword = $(".signupWrapper .passwordInput").val();
+		var referralUsername = $(".signupWrapper .referralInput").val();
 		var userGender = $(".signupWrapper .genderSelect").find(":selected").val();
 		var userBirthMonth = $(".signupWrapper .monthSelect").find(":selected").val();
 		var userBirthDate = $(".signupWrapper .dateSelect").find(":selected").val();
@@ -126,6 +127,7 @@ function hideFunctions(){
 	        data: { userEmail: userEmail, 
 	        		userNickname: usernameInput,
 	        		userPassword: userPassword,
+	        		promoterUserNickname: referralUsername,
 	        		userGender: userGender,
 	        		userBirthMonth: userBirthMonth,
 	        		userBirthDate: userBirthDate,

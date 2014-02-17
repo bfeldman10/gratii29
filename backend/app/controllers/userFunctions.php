@@ -1139,7 +1139,7 @@ function activateUserAccount(){
 	$welcomeMsg = createMsg_Job(array("senderID"=>"0", //Send challenge msg
 										"recipientIDs"=>array($results['id']),
 										"senderEntity"=>"admin",
-										"title"=>"Welcome!",
+										"title"=>"Welcome to gratii! Click the blue button for a gift.",
 										"body"=>$body,
 										"template"=>"adminText",
 										"gratiiReward"=>"250",
