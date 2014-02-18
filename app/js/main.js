@@ -811,6 +811,7 @@ var Auction = function(val){ //Game object
 	this.id = val.id;
 	this.title = val.promoName;
 	this.client = val.clientName;
+	this.details = val.promoDetails;
 	this.bids = ""+val.totalBids+"";
 	
 	if(this.bids.slice(-1) == "1" && this.bids.slice(-2) != "11" ){
@@ -1253,8 +1254,17 @@ Auction.prototype.createLiveAuction = function(){
 
 	this.auctionContent = document.createElement('div');
 	this.auctionContent.className = "auctionContent";
-	this.auctionContent.innerHTML = "--The Deets Go Here--";
 	this.auctionFrameDivB.appendChild(this.auctionContent);
+
+	this.detailsTitleDiv = document.createElement('div');
+	this.detailsTitleDiv.className = "auctionDetailsTitle";
+	this.detailsTitleDiv.innerHTML = "Win "+this.title+" from "+this.client+"!";
+	this.auctionContent.appendChild(this.detailsTitleDiv);
+
+	this.detailsTextDiv = document.createElement('div');
+	this.detailsTextDiv.className = "auctionDetailsText";
+	this.detailsTextDiv.innerHTML = this.details;
+	this.auctionContent.appendChild(this.detailsTextDiv);
 
 	this.indicatorUL = document.createElement('ul');
 	this.indicatorUL.id = "indicator";
@@ -1484,10 +1494,19 @@ Auction.prototype.createPastAuction = function(){
 	this.auctionFrameDivB.id = "b";
 	this.scrollerDiv.appendChild(this.auctionFrameDivB);
 
-	this.auctionContentB = document.createElement('div');
-	this.auctionContentB.className = "auctionContent";
-	this.auctionContentB.innerHTML = "--The Deets Go Here--";
-	this.auctionFrameDivB.appendChild(this.auctionContentB);
+	this.auctionContent = document.createElement('div');
+	this.auctionContent.className = "auctionContent";
+	this.auctionFrameDivB.appendChild(this.auctionContent);
+
+	this.detailsTitleDiv = document.createElement('div');
+	this.detailsTitleDiv.className = "auctionDetailsTitle";
+	this.detailsTitleDiv.innerHTML = "Win "+this.title+" from "+this.client+"!";
+	this.auctionContent.appendChild(this.detailsTitleDiv);
+
+	this.detailsTextDiv = document.createElement('div');
+	this.detailsTextDiv.className = "auctionDetailsText";
+	this.detailsTextDiv.innerHTML = this.details;
+	this.auctionContent.appendChild(this.detailsTextDiv);
 
 	this.indicatorUL = document.createElement('ul');
 	this.indicatorUL.id = "indicator";

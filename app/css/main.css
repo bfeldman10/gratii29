@@ -782,10 +782,23 @@ td{
 	height: 100%;
 	max-width: 800px;
 	margin:0px auto;
-	background-color: #efefef;
+	background-color: #f4fbff;
 	text-align: center;
 	font-family: 'boostsskregular';
 	font-size: 16px;
+}
+
+.auctionDetailsTitle{
+
+}
+
+.auctionDetailsText{
+	width: 90%;
+	margin: 0px auto;
+	margin-top: 10px;
+	font-family: 'Trebuchet MS';
+	text-align: left;
+	
 }
 
 .auctionTimerContainer{

@@ -118,6 +118,8 @@ Route::get('api/v1/cron/economy/snapshot', 'CRON@createEconomyStatsSnapshot');
 Route::post('api/v1/cron/taxes', 'CRON@takeTaxes');
 Route::post('api/v1/cron/like/buckets', 'CRON@payoutLikeBuckets');
 Route::post('api/v1/cron/follow/buckets', 'CRON@payoutFollowBuckets');
+//DOWNLOAD
+Route::put('api/v1/download/claim', 'DOWNLOAD@claimDownload');
 
 // Route group for API versioning
 Route::group(array('prefix' => 'api/v1'), function(){
