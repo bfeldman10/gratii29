@@ -34,11 +34,11 @@ class DOWNLOAD extends BaseController {
 				        		'msg' => $results['msg']), header("HTTP/1.0 400 Bad Request"));
 			die; 
 	    }else{ //Success
-	    	echo json_encode(array('error' => false,
-						        	'msg' => "Success",
-						        	'requested'=>"Report user",
-						        	'results' => $results['results']), header("HTTP/1.0 200 OK"));
-	    	return;
+	    	// echo json_encode(array('error' => false,
+						//         	'msg' => "Success",
+						//         	'requested'=>"Report user",
+						//         	'results' => $results['results']), header("HTTP/1.0 200 OK"));
+	    	// return;
     	}
 	}
 

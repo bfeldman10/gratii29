@@ -1,0 +1,142 @@
+
+
+<div class="row-fluid dashboard-row">
+		<h5>Compose Message</h5>
+
+		<table class="table table-striped table-bordered live-table">
+		<tr>
+			<td>senderEntity:</td>
+			<td>
+				<select name="senderEntity" id="senderEntity">
+					<option value="admin">Admin</option>
+					<option value="client">Client</option>
+				</select>
+			</td>
+
+			<td>senderID</td>
+			<td>
+				<input type="text" name="senderID" id="senderID">
+			</td>
+		</tr>
+
+		<tr>
+			<td>Template:</td>
+			<td>
+				<select name="template" id="template">
+					<option value="adminText">adminText</option>
+					<option value="adminGift">adminGift</option>
+					<option value="adminSurvey">adminSurvey</option>
+					<option value="adminQuestion">adminQuestion</option>
+					<option value="adminClickthru">adminClickthru</option>
+					<option value="clientText">clientText</option>
+					<option value=" clientGift"> clientGift</option>
+					<option value="clientSurvey">clientSurvey</option>
+					<option value="clientQuestion">clientQuestion</option>
+					<option value=" clientClickthru"> clientClickthru</option>
+				</select>
+			</td>
+
+			<td>GratiiReward:</td>
+			<td>
+				<input type="text" name="gratiiReward" id="gratiiReward">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				ReceipientType:
+			</td>
+			<td colspan="3">
+				<select name="recipientType" id="recipientType">
+					<option value="recipientIDs">recipientIDs</option>
+					<option value="recipientNicknames">recipientNicknames</option>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="4">
+				<span>Recipient List</span>
+				<textarea name="recipientList" id="recipientList" cols="30" rows="3" style="width:98%;"></textarea>
+			</td>
+		</tr>
+
+		<tr>
+			<td>title</td>
+			<td colspan="3">
+				<input type="text" name="msgTitle" id="msgTitle">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<span>body</span>
+				<textarea name="body" id="body" cols="30" rows="3" style="width:98%;"></textarea>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="4">
+
+				<table style="width:100%;">
+					<tr>
+						<td>optA</td>
+						<td>
+							<input type="text" name="optA" id="optA">
+						</td>
+						<td>optB</td>
+						<td>
+							<input type="text" name="optB" id="optB">
+						</td>
+						<td>optC</td>
+						<td>
+							<input type="text" name="optC" id="optC">
+						</td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>footer</td>
+			<td>
+				<input type="text" name="footer" id="footer">
+			</td>
+			<td>link</td>
+			<td>
+				<input type="text" name="link" id="link">
+			</td>
+		</tr>
+
+		<tr>
+			<td>msgBackgroundPic</td>
+			<td>
+				<input type="text" name="msgBackgroundPic" id="msgBackgroundPic">
+			</td>
+			<td>msgBackgroundColor</td>
+			<td>
+				<input type="text" name="msgBackgroundColor" id="msgBackgroundColor">
+			</td>
+		</tr>
+
+		<tr>
+			<td>msgFontColor</td>
+			<td colspan="3">
+				<input type="text" name="msgFontColor" id="msgFontColor">
+			</td>
+
+		</tr>
+
+		<tr>
+			<td colspan="4" align="right">
+				<a href="#" id="msg-send-btn" class="btn">Send</a>
+			</td>
+		</tr>
+
+
+		</table>
+
+		<!-- <table class="table table-striped table-bordered snapshot-table">
+
+		</table> -->
+</div>

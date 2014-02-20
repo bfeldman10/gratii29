@@ -1,0 +1,77 @@
+
+<form id="create-schedule-form" class="form">
+
+  <div class="well">
+
+    <div class="row-fluid">
+
+        <!--
+        <div class="span4">
+           <div class="control-group">
+             <div class="controls">
+               <input type="text" id="auctions-per-day" class="span12" name="auctionsPerDay" placeholder="Auctions per day">
+             </div>
+           </div>
+        </div>
+        -->
+
+        <div class="span4">
+           <div class="control-group">
+             <div class="controls">
+               <input type="text" id="mysql-start-day" class="span12 dp" name="startDate" placeholder="Start Date">
+               <input type="hidden" name="timestamp" id="unix-timestamp">
+             </div>
+           </div>
+        </div>
+
+        <!--
+        <div class="span4">
+           <div class="control-group">
+             <div class="controls">
+               <input type="text" id="mysql-end-day" class="span12 dp" name="mysqlEndDay" placeholder="End Date">
+             </div>
+           </div>
+        </div>
+        -->
+
+    </div>
+
+
+    <!-- START row -->
+    <!--
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="control-group">
+                <label class="control-label" for="mysql-start-time">Daily Start Time</label>
+                <div class="controls">
+                    <div class="input-append bootstrap-timepicker">
+                       <input type="text" id="mysql-start-time" class="span12 tp" name="mysqlStartTime">
+                       <span class="add-on"><i class="icon-time"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="control-group">
+                <label class="control-label" for="client-name"> Daily End Time </label>
+                <div class="controls">
+                    <div class="input-append bootstrap-timepicker">
+                       <input type="text" id="mysql-end-time" class="span12 tp" name="mysqlEndTime">
+                       <span class="add-on"><i class="icon-time"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    -->
+    <!-- END row -->
+
+</div><!-- END well -->
+
+<div class="well">
+      <button id="done" type="submit" class="btn btn-primary btn-inverse" data-loading-text="Loading...">Create Auctions Schedule</button>
+</div>
+
+
+</form>

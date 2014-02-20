@@ -1,0 +1,48 @@
+
+<ul id="crud-nav" class="nav nav-tabs">
+	<li class="active"><a href="#promo/list">Promo List</a></li>
+	<li><a href="#promo/new">Add New Promo</a></li>
+</ul>
+
+
+
+<div id="app-section-content">
+
+	<div id="list-filters" class="">
+		<form class="form">
+
+			<select name="searchFilter" id="search-filter" class="span2">
+				<option value="promoName">Promo Name</option>
+				<option value="id">Promo ID</option>
+				<option value="clientName">Client Name</option>
+				<option value="clientID">Client ID</option>
+			</select>
+
+			<div class="input-append">
+				<input id="letters" class="span12" type="text">
+				<button id="list-search" class="btn" type="button">search</button>
+			</div>
+
+		</form>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+
+		       $('#list-search').bind( "click" , function(e){
+		       	e.preventDefault();
+		       	// adminApp.UIState.dataListStart = 0; // reset to page 1 on search
+		       	// adminApp.UI.renderList( $('#search-filter option:selected').val(), $('#letters').val() );
+		       	window.location = "#promo/listquery/" + $('#search-filter option:selected').val() + "/" + $('#letters').val();
+		       } );
+		   });
+	</script>
+
+	<!-- ID, permissions -->
+	<table class="table table-striped table-bordered">
+	</table>
+
+	<div class="pagination">
+	</div>
+
+</div>

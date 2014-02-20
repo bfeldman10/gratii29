@@ -1,0 +1,39 @@
+
+<div class="row-fluid overview-row">
+
+	<div class="well">
+		<form action="#">
+			<select name="view" id="view-select">
+				<option value="all">All</option>
+				<option value="mean">Mean</option>
+				<option value="minOutlier">Min Outlier</option>
+				<option value="maxOutlier">Max Outlier</option>
+				<option value="q1">q1</option>
+				<option value="q2">q2</option>
+				<option value="q3">q3</option>
+			</select>
+			<input id="query-days" type="text" value="30">
+			<a href="#" id="refresh-btn" class="btn btn-small">Refresh</a>
+		</form>
+	</div>
+
+	<div class="well">
+		<!-- <div id="legend-container"></div> -->
+		<div id="economy-overview-graph">
+		</div>
+	</div>
+
+	<div class="well">
+		<h5>Total Users</h5>
+		<div id="user-overview-graph">
+		</div>
+	</div>
+
+	<div class="well">
+		<h5>Total Gratii</h5>
+		<div id="gratii-overview-graph">
+		</div>
+	</div>
+
+
+</div>

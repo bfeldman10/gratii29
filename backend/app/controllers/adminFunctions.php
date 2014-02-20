@@ -457,7 +457,7 @@ function loginAdmin_Job(){
 		die();
 	}
 
-	if(!password_verify($adminPassword, $adminData['results']['adminPassword'])) { //Password encryption check	    
+	if(md5($adminPassword) != $adminData['results']['adminPassword']) { //Password encryption check	    
  		return array('error' => true,
 					'msg' => "401");
 		die();
@@ -932,7 +932,9 @@ function overwriteAdminProfileInputs($adminProfile, $inputs){
 }
 
 function encryptAdminPassword($input){
-	$encryptedPassword = password_hash($input, PASSWORD_BCRYPT, array("cost" => 12)); //BCrypy function
+	//$encryptedPassword = password_hash($input, PASSWORD_BCRYPT, array("cost" => 12)); //BCrypy function
+	
+	$encryptedPassword = md5($input);
 	return $encryptedPassword; //Return encrypter password alone
 }
 

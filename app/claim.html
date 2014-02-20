@@ -99,11 +99,14 @@
 	<div class="body">
 		<div class="formWrapper">
 			<div class="formContainer">
-				<input type="text" placeholder="Claim code" class="claimCodeInput" />
-				<div class="submitButton" onclick="claimMyPrize()">Claim my prize
-				</div>
-				<div class="reminderText"></br>*Codes can only be used one time*
-				</div>
+				<form id="form" method="post" onsubmit="return claimMyPrize();" action="../backend/app/controllers/downloadFunctions.php">
+					<input type="text" placeholder="Claim code" class="claimCodeInput" name="claimCode"/>
+			<!-- 		<div class="submitButton" onclick="claimMyPrize()">Claim my prize
+					</div> -->
+					<input type="submit" class="submitButton" value="Claim my prize">
+					<div class="reminderText"></br>*Codes can only be used one time*
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -117,48 +120,84 @@
 	}
 
 	function claimMyPrize(){
+		var returnResult = false;
 		var claimCode = $(".claimCodeInput").val();
-		$(".submitButton").html('Please wait..');
+		$(".submitButton").val('Please wait..');
 		if(claimCode == ""){
 			alert("Please enter your claim code. It should be in the email you received.");
-			$(".submitButton").html('Claim my prize');
-			return;
+			$(".submitButton").val('Claim my prize');
+			return false;
 		}
-
+		
 		$.ajax({
-	        url: "../backend/public/api/v1/download/claim",
-	        type: 'PUT',
+	        url: "../backend/app/controllers/downloadFunctions.php",
+	        type: 'POST',
 	        dataType: 'json',
-	        data: { claimCode: claimCode },
-	        async: true,
+	        data: { claimCode: claimCode,
+	        		downloadRequest: "no" },
+	        async: false,
 	        cache: false,
 	        timeout: 30000,
 	        error: function(data){
-	        	var jsonResponse = data.responseJSON;
+	        	console.log(3);
 	        	console.log(data);
-	        	if(jsonResponse['msg']=="404"){
-	        		alert("This code is not valid. Please make sure there are no typos and try again.");
-	        	}else if(jsonResponse['msg']=="used"){
-	        		alert("This code has already been used.");
-	        	}else{
-	        		alert("An error occured. Please check your code and try again.");
-	        	}
-	 
-	        	$(".submitButton").html('Try again');
-	            return true;
+	        	$(".submitButton").val('Try again');
+	        	//alert("1An error occured. Please check yours code and try again.");
+	        	returnResult = false;
+	         	return false;
 	        },
 	        success: function(data){ 
-	        	$(".submitButton").css({color:"lightgreen"});
-	        	$(".submitButton").html('Success!');
+
 	        	console.log(data);
-	        	
-	        	window.setTimeout(function () {
-			    	$(".submitButton").html('Claim my prize');
-			    	$(".submitButton").css({color:"white"});
-				}, 3000);
-	        	
+
+	        	if(data.error == true){
+	        		if(data.msg == "404"){
+	        			$(".submitButton").val('Try again');
+	        			alert("This code is invalid. Please check it and try again.");
+	        			return false;
+		        	}else if(data.msg == "used"){
+		        		$(".submitButton").val('Try again');
+		        		alert("This code has already been used.");
+		        		return false;
+		        	}else if(data.msg == "!exist"){
+		        		$(".submitButton").val('Try again');
+		        		alert("The file could not be found. Please contact a Gratii admin.");
+		        		return false;
+		        	}else{
+		        		$(".submitButton").val('Try again');
+		        		alert("2An error occured. Please check your code and try again.");
+		        		return false;
+		        	}
+	        	}else if(data.msg == "success"){
+	        		console.log(2);
+					$(".submitButton").css({color:"lightgreen"});
+	        		$(".submitButton").val('Success!');
+
+	        		window.setTimeout(function () {
+				    	$(".submitButton").val('Claim my prize');
+				    	$(".submitButton").css({color:"white"});
+					}, 3000);
+	        		returnResult = true;
+					return;
+	        	}else{
+	        		console.log(1);
+	        		$(".submitButton").val('Try again');
+	        		alert("3An error occured. Please check your code and try again.");
+	        		returnResult = true;
+	        		return true;
+	        	}
+
+	       	        	
 	        }
 	    });
+
+		
+		console.log(returnResult);
+		if(returnResult==false){
+			event.preventDefault();
+		}
+		return returnResult;
+
 	}
 </script>
 </html>

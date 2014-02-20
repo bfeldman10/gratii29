@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Gratii Frontend Admin Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <!-- SASS BOOTSTRAP -->
+        <link rel="stylesheet" href="css/styles.css">
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        
+        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container-fluid">
+              <!-- <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button> -->
+              <a class="brand" href="#">gratii admin</a>
+              
+                <p class="navbar-text pull-right">
+                  Logged in as <a href="#" class="navbar-link">Dan</a>
+                </p>
+                <!-- <ul class="nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul> -->
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+            
+            <div class="row-fluid">
+                <div class="span2">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#">Clients</a></li>
+                        <li><a href="#">Auctions</a></li>
+                        <li><a href="#">Products</a></li>
+                    </ul>
+                </div>
+                <div class="span10">
+                     <!-- <p>Gratii Front End Admin Template</p>
+                     <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
+                     
+
+                     <ul class="nav nav-tabs">
+                       <li class="active">
+                         <a href="#">Add New Client</a>
+                       </li>
+                       <li><a href="#">Browse Existing Clients</a></li>
+                      <!--  <li><a href="#">...</a></li> -->
+                     </ul>
+
+                     
+                        
+                        
+
+                   
+                <form class="form">
+                <div class="well">
+
+                        <div class="row-fluid">
+                        <div class="span6">
+                           <div class="control-group">
+                             <label class="control-label" for="client-name">Client Name</label>
+                             <div class="controls">
+                               <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                             </div>
+                           </div>
+                        </div>
+                        
+                        <div class="span6">
+                           <div class="control-group">
+                             <label class="control-label" for="client-details">Photo</label>
+                             <div class="controls">
+                               <!-- <textarea rows="3" id="client-details" name="clientDetails"></textarea> -->
+                               <input type="text" id="client-website" class="span12" name="clientWebsite" placeholder="">
+                             </div>
+                           </div>
+                        </div>
+
+                        </div>
+
+                        <!-- START row -->
+                        <div class="row-fluid">
+                        
+                            <div class="span12">
+                               <div class="control-group">
+                                 <label class="control-label" for="client-details">Details</label>
+                                 <div class="controls">
+                                   <textarea rows="3" id="client-details" class="span12" name="clientDetails"></textarea>
+                                 </div>
+                               </div>
+                            </div>
+
+                        </div>
+                        <!-- END row -->
+
+                        <!-- START row -->
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Address</label>
+                                    <div class="controls">
+                                        <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name"> &nbsp; </label>
+                                    <div class="controls">
+                                        <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END row -->
+
+                        <!-- START row -->
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">City</label>
+                                    <div class="controls">
+                                        <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">State</label>
+                                    <div class="controls">
+                                        <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Zip</label>
+                                    <div class="controls">
+                                        <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END row -->
+
+                        <!-- START row -->
+                        <div class="row-fluid">
+                        
+                            <div class="span4">
+                               <div class="control-group">
+                                 <label class="control-label" for="client-details">Website</label>
+                                 <div class="controls">
+                                   <div class="input-prepend">
+                                       <span class="add-on">http://</span>
+                                       <input type="text" id="client-facebook" class="span10" name="clientFacebook" placeholder="">
+                                   </div>
+                                 </div>
+                               </div>
+                            </div>
+
+                            <div class="span4">
+                               <div class="control-group">
+                                 <label class="control-label" for="client-details">Facebook</label>
+                                 <div class="controls">
+                                   <div class="input-prepend">
+                                       <span class="add-on">http://</span>
+                                       <input type="text" id="client-facebook" class="span10" name="clientFacebook" placeholder="">
+                                   </div>
+                                 </div>
+                               </div>
+                            </div>
+
+                            <div class="span4">
+                               <div class="control-group">
+                                 <label class="control-label" for="client-details">Twitter</label>
+                                 <div class="controls">
+                                   <div class="input-prepend">
+                                       <span class="add-on">@</span>
+                                       <input type="text" id="client-facebook" class="span10" name="clientFacebook" placeholder="">
+                                   </div>
+                                 </div>
+                               </div>
+                            </div>
+
+                        </div>
+                        <!-- END row -->
+                    
+                    </div><!-- END well -->
+                    <div class="well">
+
+                        <!-- START row -->
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">First Name</label>
+                                    <div class="controls">
+                                        <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Last Name</label>
+                                    <div class="controls">
+                                        <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END row -->
+
+                        <!-- START row -->
+                        <div class="row-fluid">
+                            <div class="span4">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Phone</label>
+                                    <div class="controls">
+                                        <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Email</label>
+                                    <div class="controls">
+                                        <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Password</label>
+                                    <div class="controls">
+                                        <input type="text" id="client-name" class="span12" name="clientName" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END row -->
+
+                        </div><!-- END well -->
+                        <div class="well">
+
+                        <!-- START row -->
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Acct. Active</label>
+                                    <div class="controls">
+                                        <select name="accountActive" id="account-active" class="span12">
+                                            <option value="1" selected="selected">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Deactivates</label>
+                                    <div class="controls">
+                                        <input type="text" id="account-deactivates-at" class="span12" name="accountDeactivatesAt" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Data Active</label>
+                                    <select name="dataActive" id="data-active" class="span12">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Deactivates</label>
+                                    <div class="controls">
+                                        <input type="text" id="data-deactivates-at" class="span12" name="dataDeactivatesAt" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END row -->
+
+                        <!-- START row -->
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Facebook Active</label>
+                                    <div class="controls">
+                                        <select name="accountActive" id="account-active" class="span12">
+                                            <option value="1">Yes</option>
+                                            <option value="0" selected="selected">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Deactivates</label>
+                                    <div class="controls">
+                                        <input type="text" id="facebook-deactivates-at" class="span12" name="facebookDeactivatesAt" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Twitter Active</label>
+                                    <select name="dataActive" id="data-active" class="span12">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Deactivates</label>
+                                    <div class="controls">
+                                        <input type="text" id="twitter-deactivates-at" class="span12" name="twitterDeactivatesAt" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END row -->
+
+                        <!-- START row -->
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Minimum Daily Auctions</label>
+                                    <div class="controls">
+                                        <input type="text" id="min-daily" class="span12" name="minDaily" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="client-name">Maximum Daily Auctions</label>
+                                    <input type="text" id="max-daily" class="span12" name="maxDaily" placeholder="9999">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END row -->
+
+
+                        </div><!-- END well -->
+                        <div class="well">
+                        <!-- <div class="form-actions" style="padding-left:0px;"> -->
+                          <button type="submit" class="btn btn-primary btn-inverse" data-loading-text="Loading...">Save changes</button>
+                          <button type="button" class="btn">Cancel</button>
+                        <!-- </div> -->
+                        </div><!-- END well -->
+
+                    </form>
+                    
+                    
+
+                </div>
+            </div>
+          
+            <hr>
+            <footer>
+            <p>&copy; Gratii Inc. 2013</p>
+            </footer>
+        </div>
+       
+
+        <!-- TODO: Merge JS in to require.js load system - remove all un-needed js -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        
+        <script src="js/vendor/underscore.js"></script>
+        <script src="js/vendor/backbone.js"></script>
+        
+        <script src="js/vendor/bootstrap/bootstrap-tab.js"></script>
+        <script src="js/vendor/bootstrap/bootstrap-button.js"></script>
+        <script src="js/vendor/bootstrap/bootstrap-datepicker.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <script>
+            $('#account-deactivates-at').datepicker({format:"yyyy-mm-dd"});
+            $('#data-deactivates-at').datepicker({format:"yyyy-mm-dd"});
+            $('#twitter-deactivates-at').datepicker({format:"yyyy-mm-dd"});
+            $('#facebook-deactivates-at').datepicker({format:"yyyy-mm-dd"});
+        </script>
+
+    </body>
+</html>
