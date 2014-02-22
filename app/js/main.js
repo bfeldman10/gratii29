@@ -69,10 +69,10 @@ function hideFunctions(){
 		});
 	}
 
-	$(".stopSignWrapper").click(function(){
-		event.stopPropagation();
-		hideStopSign();
-	});
+	// $(".stopSignWrapper").click(function(){
+	// 	event.stopPropagation();
+	// 	hideStopSign();
+	// });
 
 	$(".gratiiLogo#header").click(function(){
 		if(user.gameInProgress.length == 0){
