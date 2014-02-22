@@ -69,6 +69,17 @@ function hideFunctions(){
 		});
 	}
 
+	$(".stopSignWrapper").click(function(){
+		event.stopPropagation();
+		hideStopSign();
+	});
+
+	$(".gratiiLogo#header").click(function(){
+		if(user.gameInProgress.length == 0){
+			location.reload();
+		}
+	});
+
 	$('#twitterConnect').click(function(){
     	console.log("click!");
     	window.location = '../backend/app/controllers/twitterSDK/redirect.php';		
@@ -511,7 +522,7 @@ User.prototype.deliverChallengeResponse = function(score){
         	
         	console.log(data);
         	user.challengeIDInProgress = 0;
-        	user.challengeIssueInProgress = false;
+        	user.challengeResponseInProgress = false;
 
         	setTimeout(function(){
         		closeGameiFrame();
@@ -697,6 +708,9 @@ function closeGameiFrame(){
 	$(".mainApp").show();
 	$(".footer").show();
 	$(".gratiiLogo#header").css({backgroundImage:"url(images/gratiiColorShadow.png)", width:"99px", height:"30px", backgroundSize:"99px 30px"});
+	$(".gratiiLogo#header").click(function(){
+		location.reload();
+	});
 	
 }
 
