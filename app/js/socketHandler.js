@@ -51,8 +51,9 @@ socket.on('auctionUpdate', function (data) {
 socket.on('incomingMessage', function (data) {
 	console.log("INCOMING MESSAGE");
 	user.newMessages++;
-	inboxUpdateRequested = true;
-	user.updateNewMessageIndicator();
+	//inboxUpdateRequested = true;
+	//user.updateNewMessageIndicator();
+	getData("inbox");
 });
 
 socket.on('auctionRefresh', function (data) {

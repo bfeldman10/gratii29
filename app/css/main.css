@@ -532,7 +532,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .noDataWrapper{
-	width: 100%;
+	width: 90%;
+	margin: 0px auto;
 	margin-top: 50px;
 	font-family: 'Trebuchet MS';
 	font-size: 20px;

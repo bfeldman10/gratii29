@@ -18,6 +18,7 @@ var currentPage = 0,
 	userFBLoggedIn = false,
 	inboxUpdateRequested = false,
 	auctionUpdateRequested = false,
+	triggerMessageInProgress = false,
 	sessionID = 0,
 	newMessages = 0,
 	apiRoot = "../backend/public/api/v1/";
@@ -59,8 +60,19 @@ $(document).ready(function(){
 function hideFunctions(){
 
 	if($(window).width() == 320){
-		$("input, select, textarea").focus( function(){
-			$("input, select, textarea").not(this).prop('disabled', true);
+		$(".homeScreen input, .homeScreen select, .homeScreen textarea").focus( function(){
+			$("#inbox input, #inbox select, #inbox textarea").prop('disabled', true);
+			$("#profile input, #profile select, #profile textarea").prop('disabled', true);
+		});
+
+		$("#inbox input, #inbox select, #inbox textarea").focus( function(){
+			$(".homeScreen input, .homeScreen select, .homeScreen textarea").prop('disabled', true);
+			$("#profile input, #profile select, #profile textarea").prop('disabled', true);
+		});
+
+		$("#profile input, #profile select, #profile textarea").focus( function(){
+			$(".homeScreen input, .homeScreen select, .homeScreen textarea").prop('disabled', true);
+			$("#inbox input, #inbox select, #inbox textarea").prop('disabled', true);
 		});
 
 		$("input, select, textarea").blur( function(){
@@ -69,10 +81,16 @@ function hideFunctions(){
 		});
 	}
 
-	// $(".stopSignWrapper").click(function(){
-	// 	event.stopPropagation();
-	// 	hideStopSign();
-	// });
+	$('.stopSignWrapper').on('click', function(e) { 	
+
+  		event.stopPropagation();
+  		
+  		if(e.target.tagName != "DIV"){
+  			return;
+  		}else{
+  			hideStopSign();
+  		}
+	});
 
 	$(".gratiiLogo#header").click(function(){
 		if(user.gameInProgress.length == 0){
@@ -649,29 +667,16 @@ Game.prototype.challengeClick = function(event){
 }
 
 Game.prototype.playGame = function(event){
-	
+
+	event.stopPropagation();
+	event.preventDefault();
 	if(stopSignVisible===false){
-		console.log(loggedIn+" :: "+this.Game.demoable);
 		if(loggedIn===false && this.Game.demoable == 0){
 			triggerErrorMessage("notLoggedIn");
 			return;
 		}
 
 		openGameiFrame(this.Game.id, this.Game.equations);
-
-		// $(".mainApp").hide();
-		// $(".footer").hide();
-		// $("#gameiFrame").attr('src','games/'+this.Game.id+'/index.html?v=4');
-		// $("#gameiFrame").show();
-		// $(".gratiiLogo#header").css({backgroundImage:"url(images/backArrow.png)", width:"35px", height:"35px", backgroundSize:"35px 35px"});
-		// $(".gratiiLogo#header").click(function(){
-		// 	if(user.challengeIssueInProgress===false && user.challengeResponseInProgress===false){
-		// 		closeGameiFrame();
-		// 	}else{
-		// 		alert("You can't bail in the middle of a challenge!");
-		// 		return;
-		// 	}
-		// });
 		
 		user.gameInProgress = { "gameID" : this.Game.id,
 								"equations" : this.Game.equations }; 
@@ -1992,7 +1997,7 @@ Message.prototype.loseAuctionTemplate = function(){
 	this.claimGiftDiv = document.createElement('div');
 	if(this.pendingResponse == true){
 		this.claimGiftDiv.className = "claimGiftButton";
-		this.claimGiftDiv.innerHTML = "Reclaim my bid";
+		this.claimGiftDiv.innerHTML = "Reclaim my gratii";
 		this.claimGiftDiv.addEventListener('click', {
                                 handleEvent:this.respondToMessage,                  
                                 Message:this,
@@ -2587,6 +2592,7 @@ function createDomElementsFromObjects(dataRequested){
 		for(var i=0;i<auctionObjects.length;i++){
 			auctionObjects[i].createDomElements();
 		}
+		$("#auctions .auctions").append('</br></br></br>');
 		initializeVerticaliScroll(1, ".vSnapToHere");
 		if(currentAuctionScope===1){
 			FB.XFBML.parse(document.getElementById('auction'));
@@ -2811,9 +2817,11 @@ function getData(dataRequested, extra){
 	        			noDataWrapper.innerHTML = "No upcoming auctions at this time. </br>Please check back later.";
 	        		}else if(currentAuctionScope==2){
 	        			noDataWrapper.innerHTML = "No past auctions yet.";
-	        		}
-	        		
+	        		}	
 	        		$("#auctions .pageUL").append(noDataWrapper);
+	        		window.setTimeout(function(){
+        				$(".noDataWrapper").css({"background-color":"white"});
+        			},100);
 	        	}
 	        	console.log("Error getting data: "+dataRequested+"#");
 	            return true;
@@ -3211,12 +3219,15 @@ function triggerUserInteractionPanel(userID, username){
 function triggerErrorMessage(type, text){
 	var errorType = type;
 	
-	if(stopSignVisible===true){
-		$(".stopSignWrapper").html('');
+	if(triggerMessageInProgress == true){
+		return;
 	}
 
-	if(errorType == "default"){
+	triggerMessageInProgress = true;
 
+	$(".stopSignWrapper").html('');
+
+	if(errorType == "default"){
 		var stopSignTitle = document.createElement('div');
 		stopSignTitle.className = "stopSignTitle";
 		stopSignTitle.innerHTML = "Error</br></br>";
@@ -3251,7 +3262,8 @@ function triggerErrorMessage(type, text){
 		});
 		$(".stopSignWrapper").append(backToHomeButton);
 	}
-		
+	
+	triggerMessageInProgress = false;
 	showStopSign();	
 	
 }
