@@ -2592,7 +2592,7 @@ function createDomElementsFromObjects(dataRequested){
 		for(var i=0;i<auctionObjects.length;i++){
 			auctionObjects[i].createDomElements();
 		}
-		$("#auctions .auctions").append('</br></br></br>');
+		$("#auctions .auctions").append('</br></br></br></br>');
 		initializeVerticaliScroll(1, ".vSnapToHere");
 		if(currentAuctionScope===1){
 			FB.XFBML.parse(document.getElementById('auction'));
