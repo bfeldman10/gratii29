@@ -1449,6 +1449,16 @@ td{
 	background-color: lightgreen;
 }
 
+#profile #facebookShare{
+	color: white;
+	background-color: #3B5998;
+}
+
+#profile #twitterShare{
+	color: white;
+	background-color: #4099FF;
+}
+
 .sectionInputText{
 	position: relative;
 	height: 35px;
