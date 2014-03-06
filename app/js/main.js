@@ -21,7 +21,16 @@ var currentPage = 0,
 	triggerMessageInProgress = false,
 	sessionID = 0,
 	newMessages = 0,
-	apiRoot = "../backend/public/api/v1/";
+	apiRoot = "../backend/public/api/v1/",
+	inApp = false;
+
+if (window.navigator.standalone) {
+  //$(".downloadScreen").show();
+  	inApp = true;
+} else {
+	$(".homeScreen").hide();
+	$(".downloadScreen").show();
+}
 
 
 function is_touch_device() {
@@ -44,15 +53,19 @@ $(window).resize(function() {
 $(document).ready(function(){
 	document.addEventListener("touchstart", function(){}, true);
 	$(".homeScreenLogo").css({"height":($(window).width()*.25)});
-	getData("session");
-	getData("arcade");
-	getData("auctions");
-	getData("inbox");
-	getData("transactions");
-	hideFunctions();
-	FastClick.attach(document.body);
+	$(".downloadScreenLogo").css({"height":($(window).width()*.25)});
 
-	initializeVerticaliScroll(3, false);
+	if(inApp === true){
+		getData("session");
+		getData("arcade");
+		getData("auctions");
+		getData("inbox");
+		getData("transactions");
+		hideFunctions();
+		initializeVerticaliScroll(3, false);
+	}
+	
+	FastClick.attach(document.body);
 
 });
 
@@ -136,6 +149,14 @@ function hideFunctions(){
 		event.preventDefault();
 		$(".homeScreenButtonWrapper").hide();
 		$(".signupWrapper").show();
+	});
+
+	$("#profile #upgrade").click(function(){
+		if(loggedIn == true){
+			window.open("upgradeaccount.html?id="+user.id+"&username="+user.username);
+		}else{
+			triggerErrorMessage("notLoggedIn");
+		}
 	});
 
 	$(".signupButton").click(function(){
@@ -269,9 +290,14 @@ function hideFunctions(){
 	        cache: false,
 	        timeout: 30000,
 	        error: function(data){
-	        	var jsonResponse = data.responseJSON;
+	        	var jsonResponse = data.responseJSON; //come back to this
 	        	console.log(jsonResponse['msg']);
-	        	triggerErrorMessage("default", jsonResponse['msg']);
+	        	if(jsonResponse['msg'].substring(0, 5) == "PRO##"){
+	        		var errorMessage = jsonResponse['msg'].replace("PRO##", "");
+	        	}else{
+					var errorMessage = jsonResponse['msg'];
+	        	}
+	        	triggerErrorMessage("default", errorMessage);
 	        	$(".send .sendButton").css({color:"red"});
 	        	$(".send .sendButton").html('Try again');
 	            return true;
@@ -675,6 +701,9 @@ Game.prototype.playGame = function(event){
 		if(loggedIn===false && this.Game.demoable == 0){
 			triggerErrorMessage("notLoggedIn");
 			return;
+		}else if(this.Game.locked.locked == "1"){
+			triggerErrorMessage("default", this.Game.locked.reasonForLock);
+			return;
 		}
 
 		openGameiFrame(this.Game.id, this.Game.equations);
@@ -748,6 +777,18 @@ Game.prototype.createDomElements = function(){ //Game draw method
 		this.challengeButton.addEventListener('click', {
                                  handleEvent:this.challengeClick,                  
                                  Game:this}, false);
+	}
+
+	if(this.locked.locked == "1"){
+		$(this.challengeButton).remove();
+
+		this.lockContainer = document.createElement('div');
+		this.lockContainer.className = "lockContainer";
+		this.arcadeContent.appendChild(this.lockContainer);
+
+		this.lockImage = document.createElement('div');
+		this.lockImage.className = "lockImage";
+		this.lockContainer.appendChild(this.lockImage);
 	}
 	
 	this.arcadeFrameA.addEventListener('click', {
@@ -994,7 +1035,12 @@ Auction.prototype.placeBidClick = function(event){
 	        	var jsonResponse = data.responseJSON;
 	        	ButtonDiv.style.color = "red";
 	        	ButtonDiv.innerHTML = "Try again";
-	        	triggerErrorMessage("default", jsonResponse['msg']);
+	        	if(jsonResponse['msg'].substring(0, 5) == "PRO##"){
+	        		var errorMessage = jsonResponse['msg'].replace("PRO##", "");
+	        	}else{
+					var errorMessage = jsonResponse['msg'];
+	        	}
+	        	triggerErrorMessage("default", errorMessage);
 	            return true;
 	        },
 	        success: function(data){ 
@@ -2965,6 +3011,7 @@ $(".navItem").on('click', function(){ //Mobile touch on navItem
 	var selectedPage = $(this).index();
 
 	if(stopSignVisible===true){
+		return;
 		hideStopSign();
 	}
 
@@ -3275,6 +3322,8 @@ function triggerChallengePanel(gameID, gameTitle, challengeeUsername){
 	var thisGameTitle = gameTitle;
 	var thisChallengee = challengeeUsername;
 
+	$(".stopSignWrapper").html("");
+
 	if(stopSignVisible===true){
 		setTimeout(function(){triggerChallengePanel(thisGameID, thisGameTitle, thisChallengee);}, 100);
 		return;
@@ -3387,7 +3436,13 @@ function triggerChallengePanel(gameID, gameTitle, challengeeUsername){
 	        error: function(data){
 	        	console.log(data);
 	        	var jsonResponse = data.responseJSON;
-	        	alert(jsonResponse['msg']);
+	        	if(jsonResponse['msg'].substring(0, 5) == "PRO##"){
+	        		var proMessage = "Only PRO accounts can send challenges. You can upgrade to a PRO account from your profile tab.";
+	        		alert(proMessage);
+	        	}else{
+					alert(jsonResponse['msg']);
+	        	}
+	        	
 	        	formButton.innerHTML = "Try again";
 	            return true;
 	        },

@@ -91,5 +91,10 @@
 </body>
 <script>
 	navBarDecorate();
+	var userAgent = window.navigator.userAgent;
+
+	if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
+	   window.location.href= "../../app";
+	} 
 </script>
 </html>
