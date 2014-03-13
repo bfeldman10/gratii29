@@ -93,17 +93,15 @@ function getUser($id,$receiver=NULL){
 		$getUser -> execute(array($id)); 
 		if($results = $getUser -> fetchAll(PDO::FETCH_ASSOC)){ //Success
 			if($receiver=="user" && $_SESSION['userID']==$id){
-				if($results[0]['userAvatar']!="0"){
-					if($results[0]['PRO']<$GLOBALS['NOW']){
-						$resetUserAvatar = resetUserAvatar();
-						if($resetUserAvatar['error']){
-							return array("error"=>true,
-										"msg"=>$resetUserAvatar['msg'],
-										"requested"=>"Reset user avatar");
-						}
-						$results[0]['userAvatar']="0";
-					}
-				}
+				$getUserRank = $GLOBALS['db'] -> prepare('SELECT users1.id, users1.userGratii, COUNT(*)+1 AS rank, users3.totalUsers
+														FROM users users1
+														INNER JOIN users users2 ON users1.userGratii < users2.userGratii
+														INNER JOIN (SELECT COUNT(*) AS totalUsers FROM users users3) users3
+														WHERE users1.id = ?');
+				$getUserRank -> execute(array($id)); 
+				$rankResults = $getUserRank -> fetchAll(PDO::FETCH_ASSOC);
+				$results[0]['userRank']=$rankResults[0]['rank'];
+				$results[0]['totalUsers']=$rankResults[0]['totalUsers'];
 			}
 			return array("error"=>false,
 						"msg"=>"200",
@@ -121,6 +119,13 @@ function getUser($id,$receiver=NULL){
 					"msg"=>"Mysql error: ".$error);
 	}
 	
+}
+
+function getUserRank($inputs,$receiver=NULL){
+	if(!isset($inputs['userID']) || $inputs['userID']==""){
+		return array("error"=>true,
+					"msg"=>"No user ID");
+	}
 }
 
 function getOldUser($inputs,$receiver=NULL){

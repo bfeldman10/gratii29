@@ -1,6 +1,8 @@
 { "results" : 
 	{
 		"id": "0", 
+		"userRank": "0",
+		"totalUsers": "0",
 		"userEmail": "demo@gratii.com",
 		"userNickname":"demo",
 		"userBirthMonth":"06",

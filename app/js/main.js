@@ -22,15 +22,24 @@ var currentPage = 0,
 	sessionID = 0,
 	newMessages = 0,
 	apiRoot = "../backend/public/api/v1/",
-	inApp = false;
+	inApp = true;
 
-if (window.navigator.standalone) {
-  //$(".downloadScreen").show();
-  	inApp = true;
-} else {
-	$(".homeScreen").hide();
-	$(".downloadScreen").show();
-}
+// if (window.navigator.standalone) {
+//   	inApp = true;
+// } else {
+// 	$(".homeScreen").hide();
+// 	$(".downloadScreen").show();
+	
+
+// 	$(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on iPhone at this time.");
+// 	$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
+// 	window.setTimeout(function(){
+// 		$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
+// 		window.setTimeout(function(){
+// 			window.location = "../home/home";
+// 		}, 3000);
+// 	}, 4000);	
+// }
 
 
 function is_touch_device() {
@@ -38,6 +47,14 @@ function is_touch_device() {
   return 'ontouchstart' in window // works on most browsers 
       || 'onmsgesturechange' in window; // works on ie10
 };
+
+window.setInterval(function(){
+	var online = navigator.onLine;
+	if(!online){
+		alert("Uh oh, you lost your internet connection! You must have internet to use Gratii.");
+		$(".homeScreen").show();
+	}
+},30000);
 
 $(document).bind('touchmove', function(e) {
 	e.preventDefault();
@@ -262,13 +279,20 @@ function hideFunctions(){
 
 		if(recipientNickname == ""){
 			triggerErrorMessage("default", "Please enter a username you want to send this message to.");
+			$(".send .sendButton").html('Send');
 			return;
 		}else if(textMessage == ""){
 			triggerErrorMessage("default", "Whoops, you forgot to write a messge.");
+			$(".send .sendButton").html('Send');
 			return;
 		}else if(textMessage.length > 150){
 			var overload = textMessage.length-150;
 			triggerErrorMessage("default", "Your message is too long. Please remove "+overload+" characters.");
+			$(".send .sendButton").html('Send');
+			return;
+		}else if(recipientNickname == user.username){
+			triggerErrorMessage("default", "You can't send a message to yourself silly.");
+			$(".send .sendButton").html('Send');
 			return;
 		}
 		
@@ -494,6 +518,23 @@ var User = function(val){ //Game object
 	this.gender = val.userGender;
 	this.PRO = val.PRO;
 	this.gratii = val.userGratii;
+	this.rank = val.userRank;
+	this.totalUsers = val.totalUsers;
+	
+	if(this.gratii == "0"){
+		this.rank = this.totalUsers;
+	}
+
+	if(this.rank.slice(-1) == "1" && this.rank.slice(-2) != "11" ){
+		this.rankGrammarText = "st";
+	}else if(this.rank.slice(-1) == "2"){
+		this.rankGrammarText = "nd";
+	}else if(this.rank.slice(-1) == "3"){
+		this.rankGrammarText = "rd";
+	}else{
+		this.rankGrammarText = "th";
+	}
+
 	this.newMessages = 0;
 	this.gameInProgress = [];
 	this.challengeIssueInProgress = false;
@@ -511,6 +552,10 @@ User.prototype.completeProfile = function(){
 	$("#profile #gender").val(this.gender);
 	$(".header .gratiiScore").html(this.gratii);
 	$("#profile #twitterShare").attr("href", "https://twitter.com/intent/tweet?button_hashtag=BonusGratii&text=When%20you%20signup%20for%20the%20new%20Gratii%20app%2C%20type%20my%20username%20%22"+this.username+"%22%20in%20as%20the%20referral%20please!");
+	if(loggedIn===true){
+		$("#profile .rank").html("My Gratii Rank: <b>"+this.rank+this.rankGrammarText+"</b> out of "+this.totalUsers+" players");
+	}
+	
 }
 
 User.prototype.deliverChallenge = function(score){
@@ -2664,9 +2709,9 @@ function createDomElementsFromObjects(dataRequested){
 	console.log("DOM elements appended: "+dataRequested+"#");
 }
 
-$(".gratiiLogo").click(function(){
-	FB.XFBML.parse(document.getElementById('auction'));
-});
+// $(".gratiiLogo").click(function(){
+// 	FB.XFBML.parse(document.getElementById('auction'));
+// });
 
 function createObjects(dataRequested, data){
 
@@ -3408,18 +3453,27 @@ function triggerChallengePanel(gameID, gameTitle, challengeeUsername){
 
 		if(thisGameID == ""){
 			alert("Select a game");
+			formButton.innerHTML = "Send";
 			return;
 		}else if(challengeeUsername == ""){
 			alert("Enter a username to challenge");
+			formButton.innerHTML = "Send";
 			return;
 		}else if(wager == "0" || wager == ""){
 			alert("Please enter a wager");
+			formButton.innerHTML = "Send";
 			return;
 		}else if(wager <= 0){
 			alert("Please enter a valid wager amount");
+			formButton.innerHTML = "Send";
 			return;
 		}else if(Math.floor(wager) > Math.floor(user.gratii)){
 			alert("You do not have "+wager+" gratii to wager");
+			formButton.innerHTML = "Send";
+			return;
+		}else if(challengeeUsername == user.username){
+			alert("You can't send a message to yourself silly.");
+			formButton.innerHTML = "Send";
 			return;
 		}
 

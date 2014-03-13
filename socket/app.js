@@ -90,3 +90,17 @@ setInterval(function () {
   });
 }, 60000);
 
+
+// Set a time of day to run a function every 24 hours ***************************
+var now = new Date();
+var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 04, 0, 0, 0) - now;
+if (millisTill10 < 0) {
+     millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
+}
+console.log(millisTill10);
+setTimeout(function(){
+  setInterval(function(){
+    console.log("Taxes running");
+  }, 86400000);
+}, millisTill10);
+// End daily function ***************************
