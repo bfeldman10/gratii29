@@ -5,7 +5,7 @@ var express = require('express')
 var app = express();
 var server = http.createServer(app).listen(8001);
 var io = require('socket.io').listen(server);
-
+var rootURL = "http://localhost:8888/gratii29";
 
 //app.use(express.cookieParser());
 app.use(express.bodyParser());
@@ -68,7 +68,7 @@ setInterval(  function(){
 
   console.log('Requesting Auction Winners');
 
-  request('http://localhost:8888/gratii29/backend/public/api/v1/auction/winners', function (error, response, body) {
+  request(rootURL+'/backend/public/api/v1/auction/winners', function (error, response, body) {
     console.log('Requested Auction Winners');
   });
 
@@ -76,7 +76,7 @@ setInterval(  function(){
 
 setInterval(function () {
   console.log('Refreshing auctions');
-  request('http://localhost:8888/gratii29/backend/public/api/v1/auction/refresh', function (error, response, body) {
+  request(rootURL+'/backend/public/api/v1/auction/refresh', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       //console.log(body) // Print the google web page.
       var data =  JSON.parse(body);
