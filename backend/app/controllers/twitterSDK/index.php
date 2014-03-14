@@ -14,7 +14,7 @@ session_start();
 require_once('twitteroauth/twitteroauth.php');
 require_once('config.php');
 $gratiiUserID = $_SESSION['userID'];
-$rootURL = "http://graticity.com/gratii29";
+// $rootURL = "http://graticity.com/gratii29";
 
 /* If access tokens are not available redirect to connect page. */
 if (empty($_SESSION['access_token']) || empty($_SESSION['access_token']['oauth_token']) || empty($_SESSION['access_token']['oauth_token_secret'])) {
