@@ -959,7 +959,7 @@ function updateTwitterTokens(){
 						'requested'=>"Get user by twitter ID");	
 			die();
 		}
-	}else if($userData['results']['id']!=$inputs['userID']){
+	}else if($userData['results']['id']!=$inputs['gratiiUserID']){
 		return array('error' => true,
 						'msg' => "This twitter account has already been linked to different Gratii account");	
 		die();

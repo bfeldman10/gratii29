@@ -14,6 +14,7 @@ session_start();
 require_once('twitteroauth/twitteroauth.php');
 require_once('config.php');
 $gratiiUserID = $_SESSION['userID'];
+$rootURL = "http://graticity.com/gratii29";
 
 /* If access tokens are not available redirect to connect page. */
 if (empty($_SESSION['access_token']) || empty($_SESSION['access_token']['oauth_token']) || empty($_SESSION['access_token']['oauth_token_secret'])) {
@@ -27,7 +28,6 @@ $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oau
 
 /* If method is set change API call made. Test is called by default. */
 $content = $connection->get('account/verify_credentials');
-
 /* Some example calls */
 //$connection->get('users/show', array('screen_name' => 'abraham'));
 //$connection->post('statuses/update', array('status' => date(DATE_RFC822)));
@@ -43,39 +43,68 @@ $content = $connection->get('account/verify_credentials');
 // $t = file_get_contents("http://gratii.com/laravel/public/api/v1/user/session");
 // echo $t;
 
-$ch = curl_init(); //Init curl
+//$ch = curl_init(); //Init curl
 
+// $curlConfig = array( //Curl config
+//     CURLOPT_URL            => $rootURL."/backend/public/api/v1/user/twitterTokens", //API endpoint
+//     // CURLOPT_CUSTOMREQUEST  => "PUT",
+//     CURLOPT_POST           => true,
+//     CURLOPT_RETURNTRANSFER => true, //Return results
+//     CURLOPT_POSTFIELDS     => array("twitterOAuthToken"=> $access_token['oauth_token'], //JSON data to put
+//     								"twitterOAuthTokenSecret"=> $access_token['oauth_token_secret'],
+//     								"twitterUserID"=> $content->id,
+//     								"gratiiUserID"=> $_SESSION['userID'])
+// );
+$userID = $_SESSION['userID'];
+$ch = curl_init(); //Init curl
 $curlConfig = array( //Curl config
-    CURLOPT_URL            => "http://localhost/gratii12/backend/public/api/v1/user/twitterTokens", //API endpoint
-    // CURLOPT_CUSTOMREQUEST  => "PUT",
-    CURLOPT_POST           => true,
+    CURLOPT_URL            => $rootURL."/backend/public/api/v1/user/twitterTokens", //API endpoint
+    CURLOPT_POST           => true, //POST
     CURLOPT_RETURNTRANSFER => true, //Return results
     CURLOPT_POSTFIELDS     => array("twitterOAuthToken"=> $access_token['oauth_token'], //JSON data to put
     								"twitterOAuthTokenSecret"=> $access_token['oauth_token_secret'],
     								"twitterUserID"=> $content->id,
     								"gratiiUserID"=> $_SESSION['userID'])
 );
-echo $connection;
-// curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-curl_setopt($ch, CURLOPT_COOKIE, 'laravel_session='.$_COOKIE['laravel_session'].';');
-
-
 curl_setopt_array($ch, $curlConfig); //Finish config
-$result = curl_exec($ch); //Results returned from endpoint
+$result = curl_exec($ch); //Results returned from API
+// if($result!="success"){ //Not success
+// 	curl_close($ch); //Close curl
+// 	echo "</br>";
+// 	echo "ERROR";
+// 	echo $result;
+// 	return array("error"=>true, //Return error
+// 				"msg"=>"CURL Error: ".$result,
+// 				"requested"=>"Twitter login error");
+// 	die();
+// }
+curl_close($ch); //Close curl. Success
+
+
+
+//echo $connection;
+// curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+//curl_setopt($ch, CURLOPT_COOKIE, 'laravel_session='.$_COOKIE['laravel_session'].';');
+
+
+//curl_setopt_array($ch, $curlConfig); //Finish config
+//$result = curl_exec($ch); //Results returned from endpoint
 
 $res = json_decode($result, true);
 
 if($res['error']){ //Error
+	echo "7";
 	curl_close($ch); //Close curl
 	$errorMsg = $res['msg']; //Error msg
 	//Handle error here...
 	echo $errorMsg;
 
 }else{
+	echo "8";
 	curl_close($ch); //Close curl
 	// $results = $res['results']; //Success data
 	// echo $results;
-	Header('Location:http://localhost/gratii12/app');
+	Header('Location:'.$rootURL.'/app');
 	echo $content->id;
 }
 
