@@ -91,16 +91,44 @@ setInterval(function () {
 }, 60000);
 
 
-// Set a time of day to run a function every 24 hours ***************************
+// Set a time of day to run a functions every 24 hours ***************************
 var now = new Date();
-var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 04, 0, 0, 0) - now;
-if (millisTill10 < 0) {
-     millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
+var millisTill4 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 04, 0, 0, 0) - now;
+if (millisTill4 < 0) {
+     millisTill4 += 86400000; // it's after 10am, try 10am tomorrow.
 }
-console.log(millisTill10);
+
 setTimeout(function(){
   setInterval(function(){
-    console.log("Taxes running");
+    request(rootURL+'/backend/public/api/v1/cron/like/buckets', function (error, response, body) {
+      console.log('Requested Like Payout Buckets');
+    });
   }, 86400000);
-}, millisTill10);
-// End daily function ***************************
+}, millisTill4);
+
+var millisTill415 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 04, 15, 0, 0) - now;
+if (millisTill415 < 0) {
+     millisTill415 += 86400000; // it's after 10am, try 10am tomorrow.
+}
+
+setTimeout(function(){
+  setInterval(function(){
+    request(rootURL+'/backend/public/api/v1/cron/follow/buckets', function (error, response, body) {
+      console.log('Requested Like Payout Buckets');
+    });
+  }, 86400000);
+}, millisTill415);
+
+var millisTill430 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 04, 30, 0, 0) - now;
+if (millisTill430 < 0) {
+     millisTill430 += 86400000; // it's after 10am, try 10am tomorrow.
+}
+
+setTimeout(function(){
+  setInterval(function(){
+    request(rootURL+'/backend/public/api/v1/cron/like/buckets', function (error, response, body) {
+      console.log('Requested Like Payout Buckets');
+    });
+  }, 86400000);
+}, millisTill430);
+// End daily functions ***************************

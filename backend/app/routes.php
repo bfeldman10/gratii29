@@ -115,9 +115,9 @@ Route::get('api/v1/game/trivia/random', 'TRIVIA@random');
 Route::post('api/v1/game/trivia/response', 'TRIVIA@response');
 //CRON
 Route::get('api/v1/cron/economy/snapshot', 'CRON@createEconomyStatsSnapshot');
-Route::post('api/v1/cron/taxes', 'CRON@takeTaxes');
-Route::post('api/v1/cron/like/buckets', 'CRON@payoutLikeBuckets');
-Route::post('api/v1/cron/follow/buckets', 'CRON@payoutFollowBuckets');
+Route::get('api/v1/cron/taxes', 'CRON@takeTaxes');
+Route::get('api/v1/cron/like/buckets', 'CRON@payoutLikeBuckets');
+Route::get('api/v1/cron/follow/buckets', 'CRON@payoutFollowBuckets');
 //DOWNLOAD
 Route::put('api/v1/download/claim', 'DOWNLOAD@claimDownload');
 

@@ -2547,6 +2547,9 @@ Message.prototype.createMessageBody = function(){
 		case "adminSurvey":
 			this.adminSurveyTemplate();
 			break;
+		case "clientSurvey":
+			this.adminSurveyTemplate();
+			break;
 		case "issueChallenge":
 			this.receivedChallengeTemplate();
 			break;
