@@ -973,8 +973,8 @@ function getTwitterId($handle) {
  	require_once('twitterSDK/config.php');
 
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, 
- 										"768658309-tkFjeUSD3Qdx56zFdMploSraNeGsIBadrhlT4dBH", 
- 										"dj9pgNvBV6ZWLy3W7jfdkvQU0KyTw3IJplBYBolvWc");
+ 										"512186364-KjLqgmN4dpQsPMPsOB0PxBV2EOXJo451YcMnYcOY", 
+ 										"eMcqCla5eb7ZaI8qwpJK1FVAmUQB4htjt9Zom1pGImV9v");
 
  	$twitterUser = $connection->get('https://api.twitter.com/1.1/users/show.json', array('screen_name'=>$handle));
  	
