@@ -578,7 +578,7 @@ User.prototype.completeProfile = function(){
 		$("#profile #twitterConnect").css("width", "200px");
 	}
 
-	if(this.isPRO === false){
+	if(this.isPRO === true){
 		$("#profile .accountStatusText").html("You crush it! You got a <font style='color:lightgreen;font-weight:bold;font-family:boostsskregular;font-size:20px;text-align:center;'>Gratii PRO</font> account.</br>Expires: "+this.PRO);
 		$("#profile #upgrade").html("Add more time");
 	}
