@@ -48,6 +48,18 @@ function is_touch_device() {
       || 'onmsgesturechange' in window; // works on ie10
 };
 
+/*************Convert JS Date to MySql Format***************/
+function twoDigits(d) {
+    if(0 <= d && d < 10) return "0" + d.toString();
+    if(-10 < d && d < 0) return "-0" + (-1*d).toString();
+    return d.toString();
+}
+
+Date.prototype.toMysqlFormat = function() {
+    return this.getUTCFullYear() + "-" + twoDigits(1 + this.getUTCMonth()) + "-" + twoDigits(this.getUTCDate()) + " " + twoDigits(this.getUTCHours()) + ":" + twoDigits(this.getUTCMinutes()) + ":" + twoDigits(this.getUTCSeconds());
+};
+/*************Convert JS Date to MySql Format***************/
+
 window.setInterval(function(){
 	var online = navigator.onLine;
 	if(!online){
@@ -520,9 +532,10 @@ var User = function(val){ //Game object
 	this.year = val.userBirthYear;
 	this.gender = val.userGender;
 	this.PRO = val.PRO;
+	this.isPRO = this.PRO > new Date().toMysqlFormat() ? true : false;
 	this.gratii = val.userGratii;
 	this.rank = val.userRank;
-	this.rank = val.userRank;
+	this.totalUsers = val.totalUsers;
 	this.twitterOAuthToken = val.twitterOAuthToken;
 	
 	if(this.gratii == "0"){
@@ -563,6 +576,11 @@ User.prototype.completeProfile = function(){
 		$("#profile #twitterConnect").css("background-image", "none");
 		$("#profile #twitterConnect").html("Twitter account connected");
 		$("#profile #twitterConnect").css("width", "200px");
+	}
+
+	if(this.isPRO === false){
+		$("#profile .accountStatusText").html("You crush it! You got a <font style='color:lightgreen;font-weight:bold;font-family:boostsskregular;font-size:20px;text-align:center;'>Gratii PRO</font> account.</br>Expires: "+this.PRO);
+		$("#profile #upgrade").html("Add more time");
 	}
 	
 }
