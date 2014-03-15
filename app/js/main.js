@@ -130,7 +130,10 @@ function hideFunctions(){
 
 	$('#twitterConnect').click(function(){
     	console.log("click!");
-    	window.location = '../backend/app/controllers/twitterSDK/redirect.php';		
+    	if(user.twitterOAuthToken=="---"){
+    		window.location = '../backend/app/controllers/twitterSDK/redirect.php';	
+    	}
+    		
 	});
 
 
@@ -519,7 +522,8 @@ var User = function(val){ //Game object
 	this.PRO = val.PRO;
 	this.gratii = val.userGratii;
 	this.rank = val.userRank;
-	this.totalUsers = val.totalUsers;
+	this.rank = val.userRank;
+	this.twitterOAuthToken = val.twitterOAuthToken;
 	
 	if(this.gratii == "0"){
 		this.rank = this.totalUsers;
@@ -554,6 +558,11 @@ User.prototype.completeProfile = function(){
 	$("#profile #twitterShare").attr("href", "https://twitter.com/intent/tweet?button_hashtag=BonusGratii&text=When%20you%20signup%20for%20the%20new%20Gratii%20app%2C%20type%20my%20username%20%22"+this.username+"%22%20in%20as%20the%20referral%20please!");
 	if(loggedIn===true){
 		$("#profile .rank").html("My Gratii Rank: <b>"+this.rank+this.rankGrammarText+"</b> out of "+this.totalUsers+" players");
+	}
+	if(this.twitterOAuthToken!="---"){
+		$("#profile #twitterConnect").css("background-image", "none");
+		$("#profile #twitterConnect").html("Twitter account connected");
+		$("#profile #twitterConnect").css("width", "200px");
 	}
 	
 }
@@ -1214,7 +1223,7 @@ Auction.prototype.styleFB = function(){
 			        timeout: 30000,
 			        error: function(data){
 			        	console.log(data);
-			        	triggerErrorMessage("default");
+			        	triggerErrorMessage("default", data.responseJSON['msg']);
 			            return true;
 			        },
 			        success: function(data){ 
@@ -1233,6 +1242,8 @@ Auction.prototype.styleFB = function(){
 }
 
 Auction.prototype.styleTwitter = function(){
+	
+	var thisAuctionID = this.id;
 
 	var followBtn = twttr.widgets.createFollowButton(this.twitter, 
 														this.twitterButtonDiv, 
@@ -1241,11 +1252,33 @@ Auction.prototype.styleTwitter = function(){
 														},
 														{ size: 'medium', count: 'none' }
 													);
-	// twttr.events.bind('follow', function (event) {
-	// 		var followed_user_id = event.data.user_id;
-	// 		var followed_screen_name = event.data.screen_name;
-	// 		app.Data.trackTwitterFollow(auctionID);
-	// 	});
+	twttr.events.bind('follow', function (event) {
+		var followed_user_id = event.data.user_id;
+		var followed_screen_name = event.data.screen_name;
+		console.log('You followed the twitter handle: ' + followed_screen_name);
+		$.ajax({
+	        url: apiRoot+"follow",
+	        type: 'POST',
+	        dataType: 'json',
+	        data: { auctionID: thisAuctionID },
+	        async: true,
+	        cache: false,
+	        timeout: 30000,
+	        error: function(data){
+	        	console.log(data);
+
+	        	triggerErrorMessage("default", data.responseJSON['msg']);
+	            return true;
+	        },
+	        success: function(data){ 
+	        	
+	        	console.log(data);
+	        	
+	        }
+	    });
+
+	});
+
 	return followBtn;
 }
 

@@ -335,9 +335,11 @@ function payoutFollowBuckets_Job(){
 	foreach ($usersWithTwitter['results'] as $user) {
 		$twitterFollows = getTwitterFollows_Job($user['id'], "admin");
 		if($twitterFollows['error']){
-			return array("error"=>true,
-						"msg"=>$facebookLikes['msg'],
-						"requested"=>"Get user twitter follows");
+			// Should add an admin notification system in here. Something went wrong with verifying a twitter account and/or getting their friends ("follows") list
+			continue;
+			// return array("error"=>true,
+			// 			"msg"=>$twitterFollows['msg'],
+			// 			"requested"=>"Get user twitter follows");
 		}
 
 		$userPayoutCount = 0;

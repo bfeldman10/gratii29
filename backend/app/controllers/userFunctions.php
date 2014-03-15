@@ -2270,9 +2270,8 @@ function getTwitterFollows_Job($userID, $receiver=NULL){
 					"msg"=>$userData['msg']);
 	}
 
-	require_once('twitterSDK//config.php');
+	require_once('twitterSDK/config.php');
 	require_once('twitterSDK/twitteroauth/twitteroauth.php');
-
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, 
 										$userData['results']['twitterOAuthToken'], 
 										$userData['results']['twitterOAuthTokenSecret']);
@@ -2280,8 +2279,18 @@ function getTwitterFollows_Job($userID, $receiver=NULL){
 	// $content = $connection1->get('account/verify_credentials');
 	$twitterFollows = $connection->get('friends/ids');
 
-	return array("error"=>false,
-				"results"=>$twitterFollows);
+	$jsonResponse = get_object_vars($twitterFollows);
+	if(isset($jsonResponse['errors'])){
+		return array("error"=>true,
+				"msg"=>$jsonResponse['errors']);
+		
+	}else{
+		return array("error"=>false,
+			"results"=>$twitterFollows);
+		
+	}
+
+
 }
 
 function getCurrentNodeConnections_Job($receiver=NULL){

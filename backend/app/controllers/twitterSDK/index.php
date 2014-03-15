@@ -93,14 +93,12 @@ curl_close($ch); //Close curl. Success
 $res = json_decode($result, true);
 
 if($res['error']){ //Error
-	echo "7";
 	curl_close($ch); //Close curl
 	$errorMsg = $res['msg']; //Error msg
 	//Handle error here...
 	echo $errorMsg;
 
 }else{
-	echo "8";
 	curl_close($ch); //Close curl
 	// $results = $res['results']; //Success data
 	// echo $results;
