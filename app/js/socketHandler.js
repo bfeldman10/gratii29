@@ -1,4 +1,5 @@
-var socket = io.connect("//localhost:8001");
+var socket = io.connect("//gratii.com:8001");
+// var socket = io.connect("//localhost:8001");
 
 socket.on('news', function (data) {
 	//console.log(data);
