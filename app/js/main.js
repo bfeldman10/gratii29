@@ -1263,7 +1263,7 @@ Auction.prototype.styleFB = function(){
 			}
 		);
 	}else{
-			var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small"></fb:login-button>';
+		var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small"></fb:login-button>';
 	}
 
 	return likeBtn;
