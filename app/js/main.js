@@ -1269,43 +1269,58 @@ Auction.prototype.styleFB = function(){
 
 Auction.prototype.styleTwitter = function(){
 	
-	var thisAuctionID = this.id;
+	if(user.twitterOAuthToken!="---"){
+		var thisAuctionID = this.id;
 
-	var followBtn = twttr.widgets.createFollowButton(this.twitter, 
-														this.twitterButtonDiv, 
-														function (el) {
-															console.log("Follow button created."); //callback function
-														},
-														{ size: 'medium', count: 'none' }
-													);
-	twttr.events.bind('follow', function (event) {
-		var followed_user_id = event.data.user_id;
-		var followed_screen_name = event.data.screen_name;
-		console.log('You followed the twitter handle: ' + followed_screen_name);
-		$.ajax({
-	        url: apiRoot+"follow",
-	        type: 'POST',
-	        dataType: 'json',
-	        data: { auctionID: thisAuctionID },
-	        async: true,
-	        cache: false,
-	        timeout: 30000,
-	        error: function(data){
-	        	console.log(data);
+		var followBtn = twttr.widgets.createFollowButton(this.twitter, 
+															this.twitterButtonDiv, 
+															function (el) {
+																console.log("Follow button created."); //callback function
+															},
+															{ size: 'medium', count: 'none' }
+														);
+		twttr.events.bind('follow', function (event) {
+			var followed_user_id = event.data.user_id;
+			var followed_screen_name = event.data.screen_name;
+			console.log('You followed the twitter handle: ' + followed_screen_name);
+			$.ajax({
+		        url: apiRoot+"follow",
+		        type: 'POST',
+		        dataType: 'json',
+		        data: { auctionID: thisAuctionID },
+		        async: true,
+		        cache: false,
+		        timeout: 30000,
+		        error: function(data){
+		        	console.log(data);
 
-	        	triggerErrorMessage("default", data.responseJSON['msg']);
-	            return true;
-	        },
-	        success: function(data){ 
-	        	
-	        	console.log(data);
-	        	
-	        }
-	    });
+		        	triggerErrorMessage("default", data.responseJSON['msg']);
+		            return true;
+		        },
+		        success: function(data){ 
+		        	
+		        	console.log(data);
+		        	
+		        }
+		    });
 
-	});
+		});
 
-	return followBtn;
+		return followBtn;
+	}else{
+
+		var followBtn = this.twitterButtonDiv;
+
+		followBtn.id = "twitterConnect";
+
+		$(followBtn).click(function(){
+			window.location = '../backend/app/controllers/twitterSDK/redirect.php';	
+		});
+
+		return followBtn;
+	}
+
+	
 }
 
 Auction.prototype.styleLiveTimerDynamicProperties = function(){
