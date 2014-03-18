@@ -1201,8 +1201,10 @@ Auction.prototype.removeBidInputs = function(thisAuction){
 }
 
 Auction.prototype.styleClickthrough = function(){
+	
 	var clickthroughHTML = "<a onclick='testClick("+this.clickthrough+")'>Check them out online.</a>";
-	return clickthroughHTML;
+	return clickthroughHTML;	
+
 }
 
 Auction.prototype.postClickthrough = function(){
@@ -1537,7 +1539,12 @@ $("#auctions .auctions").append(this.li);
 	this.auctionContent.className = "auctionContent";
 	this.auctionFrameDivB.appendChild(this.auctionContent);
 
-	if(this.clickthrough == "---" && this.fb == "---" && this.twitter == "---"){
+	if(sessionID == "0"){
+		this.bonusTitleDiv = document.createElement('div');
+		this.bonusTitleDiv.className = "bonusTitle";
+		this.bonusTitleDiv.innerHTML = "You must login to view the bonus gratii options here";
+		this.auctionContent.appendChild(this.bonusTitleDiv);
+	}else if(this.clickthrough == "---" && this.fb == "---" && this.twitter == "---"){
 		this.bonusTitleDiv = document.createElement('div');
 		this.bonusTitleDiv.className = "bonusTitle";
 		this.bonusTitleDiv.innerHTML = "Sorry, no bonus gratii available here. Check other auctions.";
@@ -1549,6 +1556,7 @@ $("#auctions .auctions").append(this.li);
 		this.auctionContent.appendChild(this.bonusTitleDiv);
 
 		if(this.clickthrough != "---"){
+
 			this.clickthroughATag = document.createElement('a');
 			this.clickthroughATag.href = this.clickthrough;
 			this.clickthroughATag.target = "_blank";
