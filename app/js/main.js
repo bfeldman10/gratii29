@@ -183,13 +183,21 @@ function hideFunctions(){
 		$(".signupWrapper").show();
 	});
 
-	$("#profile #upgrade").click(function(){
-		if(loggedIn == true){
-			window.open("upgradeaccount.html?id="+user.id+"&username="+user.username);
+
+	document.getElementById("upgrade").addEventListener("click", function(evt) {
+	   	if(loggedIn == true){
+		    var a = document.createElement('a');
+		    a.setAttribute("href", "upgradeaccount.html?id="+user.id+"&username="+user.username);
+		    a.setAttribute("target", "_blank");
+
+		    var dispatch = document.createEvent("HTMLEvents");
+		    dispatch.initEvent("click", true, true);
+		    a.dispatchEvent(dispatch);
 		}else{
 			triggerErrorMessage("notLoggedIn");
 		}
-	});
+	}, false);
+
 
 	$(".signupButton").click(function(){
 		$(".signupButton").html('please wait..');
@@ -360,7 +368,7 @@ function hideFunctions(){
 	});
 
 	$(".whatFor").on('click', function(){
-		alert("Knowing the demographics of our fans helps us get better prizes for you. Also, certain prizes offered on Gratii have age restrictions. We will never share your personally identified information with any third party. Period.");
+		alert("Knowing the demographics of our fans helps us get better prizes for you. Also, certain prizes offered on Gratii have age restrictions. We will never share your personally identifiable information with any third party. Period.");
 	});
 
 	$(".scopeButton").on('click', function(){

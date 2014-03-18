@@ -10,6 +10,7 @@
 		"userBirthYear":"2000",
 		"userGender":"f",
 		"userGratii":"0",
-		"PRO":0 
+		"PRO":0,
+		"twitterOAuthToken":"---"
 	}
 }
