@@ -495,6 +495,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+.refreshGame{
+	position: absolute;
+	text-align: center;
+	font-family: 'Trebuchet MS';
+	font-size: 14px;
+	margin-left: 80px;
+	margin-top: -25px;
+	color: blue;
+	text-decoration: underline;
+	display: none;
+}
+
 .gratiiLogo:active{
 	background-color: lightgreen;
 }
