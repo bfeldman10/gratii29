@@ -1172,7 +1172,7 @@ $(function(){
 
             items += '<tr id="item-'+c+'" data-id="'+c+'" class="survey-item">';
 
-            items += '<td rowspan="2"><h5>'+surveyObject.body+'</h5></td><td class="op-td">'+surveyObject.optionA+'</td><td class="op-td">'+surveyObject.optionB+'</td><td class="op-td">'+surveyObject.optionB+'</td>';
+            items += '<td rowspan="2"><h5>'+surveyObject.body+'</h5></td><td class="op-td">'+surveyObject.optionA+'</td><td class="op-td">'+surveyObject.optionB+'</td><td class="op-td">'+surveyObject.optionC+'</td>';
 
             items += '<td>'+surveyObject.gratiiReward+'</td>';
             items += '</tr>';
@@ -1959,7 +1959,7 @@ $(function(){
             adminApp.initCrudNav();
         });
 
-        adminApp.gratiiPromos.changeURL(adminApp.Settings.baseURL + 'promo/');
+        adminApp.gratiiPromos.changeURL(adminApp.Settings.baseURL + 'promo');
         adminApp.gratiiPromos.fetch({success: function(){
 
             console.log( 'success' );
