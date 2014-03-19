@@ -1127,11 +1127,14 @@ function activateUserAccount(){
 
 	$results = $getUser -> fetch(PDO::FETCH_ASSOC);
 	$userID = $results['id'];
+	$currentData = strtotime($GLOBALS['NOW']);
+	$oneWeekLater = strtotime("+7 day", $currentData);
+	$oneWeekLaterTimestamp = date('Y-m-d H:i:s', $date);
 
-	$activateUserAccount = $GLOBALS['db'] -> prepare('UPDATE users SET activationCode=?, 
-															activatedAt=?, updatedAt=? 
+	$activateUserAccount = $GLOBALS['db'] -> prepare('UPDATE users SET activationCode=?,
+															activatedAt=?, PRO=?, updatedAt=? 
 														WHERE activationCode=?'); 
-	$activateUserAccount -> execute(array("---", $GLOBALS['NOW'], $GLOBALS['NOW'], $inputs['activationCode']));
+	$activateUserAccount -> execute(array("---", $GLOBALS['NOW'], $oneWeekLaterTimestamp, $GLOBALS['NOW'], $inputs['activationCode']));
 	$numRows = $activateUserAccount -> rowCount();
 	if($numRows==0){
 		return array('error' => true,
@@ -1140,23 +1143,36 @@ function activateUserAccount(){
 	}
 
 	include_once("msgFunctions.php");
-	$body = "Welcome to Gratii!";
+	$body = "Welcome to Gratii! Click the blue button for a gift.";
 	$welcomeMsg = createMsg_Job(array("senderID"=>"0", //Send challenge msg
 										"recipientIDs"=>array($results['id']),
 										"senderEntity"=>"admin",
-										"title"=>"Welcome to gratii! Click the blue button for a gift.",
+										"title"=>"Welcome to Gratii!",
 										"body"=>$body,
 										"template"=>"adminText",
 										"gratiiReward"=>"250",
-										"groupID"=>"WELCOME_1.0",
-										// "msgBackgroundPic"=>$messageData['msgBackgroundPic'],
-										// "msgBackgroundColor"=>$messageData['msgBackgroundColor'],
-										// "msgFontColor"=>$messageData['msgFontColor'],
+										"groupID"=>"WELCOME_1.0"
 										));
 	if($welcomeMsg['error']){
 		return array("error"=>true,
 					"msg"=>$welcomeMsg['msg'],
-					"requested"=>"Send PRO msg");
+					"requested"=>"Send welcome msg");
+	}
+
+	$body = "We've hooked you up with a 1 week free trial of Gratii PRO. PRO users can challenge friends, send gifts, and win more prizes. See all the benefits and add more time in your profile.";
+	$welcomeMsg2 = createMsg_Job(array("senderID"=>"0", //Send challenge msg
+										"recipientIDs"=>array($results['id']),
+										"senderEntity"=>"admin",
+										"title"=>"---",
+										"body"=>$body,
+										"template"=>"adminText",
+										"gratiiReward"=>"250",
+										"groupID"=>"FREETRIAL_1.0"
+										));
+	if($welcomeMsg2['error']){
+		return array("error"=>true,
+					"msg"=>$welcomeMsg2['msg'],
+					"requested"=>"Send trial msg");
 	}
 	
 	return array('error' => false,
