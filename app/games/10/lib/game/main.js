@@ -64,7 +64,9 @@ window.eventHandler = {
         });
         request.fail(function(response, textStatus, jqXHR){
 
-            var errorMsg = response.responseJSON.msg;
+            // var errorMsg = response.responseJSON.msg;
+            var responseText = jQuery.parseJSON(response.responseText);
+            var errorMsg = responseText['msg'];
             var proError = errorMsg.indexOf("PRO##");
 
             if ( proError >= 0 ) {
@@ -72,14 +74,14 @@ window.eventHandler = {
                 errorMsg = errorMsg.substring(5);
 
                 console.log( 'This is a PRO error' );
-
-                app.Animation.showMessagePanel("generic", errorMsg);
+                alert(errorMsg);
+                //app.Animation.showMessagePanel("generic", errorMsg);
 
                 return;
             }
 
 
-            alert(response.responseJSON.msg);
+            alert(errorMsg);
             arcade.eventStorage.clearAllArcadeEvents('ArcadeEvents');
             // wipe everything
             localStorage.clear();

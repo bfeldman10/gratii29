@@ -35,12 +35,12 @@
 		        	console.log(data);
 		        	
 		        	var jsonResponse = data.responseJSON;
-		        	triggerErrorMessage("default", jsonResponse['msg']);
+		        	var responseText = jQuery.parseJSON(data.responseText);
+            		var errorMsg = responseText['msg'];
+            		var proError = errorMsg.indexOf("PRO##");
 		        	
-		        	console.log(jsonResponse['msg']);
-
-					var errorMsg = data.responseJSON.msg;
-					var proError = errorMsg.indexOf("PRO##");
+		        	
+		        	//console.log(jsonResponse['msg']);
 
 					if ( proError >= 0 ) {
 
@@ -54,7 +54,7 @@
 					}
 
 
-					alert(errorMsg);
+					parent.triggerErrorMessage("default", errorMsg);
 					parent.user.arcadeEvents = [];
 		        },
 		        success: function(data){ 
@@ -359,6 +359,7 @@
 			myGratii += amt;
 			betTotal = 0;
 			previousBet = 0;
+			parent.user.arcadeEvents = [];
 		}
 	}
 	function nextBet() {

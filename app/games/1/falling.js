@@ -67,7 +67,7 @@ function fallingGame(){
 
 	var BASE_BAR_SPEED = 6;
 	var BAR_SPEED_INCREASE_RATE = 1/(24*20);
-	var MAX_BAR_SPEED = 13;
+	var MAX_BAR_SPEED = 20;
 
 	var BAR_WIDTH = canvas.width;
 	var BAR_HEIGHT = 20;
