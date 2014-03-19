@@ -1129,7 +1129,7 @@ function activateUserAccount(){
 	$userID = $results['id'];
 	$currentData = strtotime($GLOBALS['NOW']);
 	$oneWeekLater = strtotime("+7 day", $currentData);
-	$oneWeekLaterTimestamp = date('Y-m-d H:i:s', $date);
+	$oneWeekLaterTimestamp = date('Y-m-d H:i:s', $oneWeekLater);
 
 	$activateUserAccount = $GLOBALS['db'] -> prepare('UPDATE users SET activationCode=?,
 															activatedAt=?, PRO=?, updatedAt=? 
