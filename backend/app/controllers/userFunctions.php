@@ -1166,7 +1166,7 @@ function activateUserAccount(){
 										"title"=>"---",
 										"body"=>$body,
 										"template"=>"adminText",
-										"gratiiReward"=>"250",
+										"gratiiReward"=>"0",
 										"groupID"=>"FREETRIAL_1.0"
 										));
 	if($welcomeMsg2['error']){
