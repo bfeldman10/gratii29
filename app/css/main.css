@@ -1231,7 +1231,7 @@ td{
 .messageBodyWrapper{
 	position: relative;
 	width: 100%;
-	height: calc(100% - 50px);
+	/*height: calc(100% - 50px);*/
 	margin-top: 0px;
 }
 

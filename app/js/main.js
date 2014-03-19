@@ -2135,6 +2135,7 @@ Message.prototype.winAuctionTemplate = function(){
 	this.messageBodyWrapper.style.width = "100%";
 	this.messageBodyWrapper.style.height = "100%";
 	this.messageBodyWrapper.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+	this.messageBodyWrapper.style.height = $(this.messageContentContainer).height()-"50";
 	this.messageBodyWrapperBackground.appendChild(this.messageBodyWrapper);
 
 	this.messageBodyText = document.createElement('div');
@@ -2185,6 +2186,7 @@ Message.prototype.loseAuctionTemplate = function(){
 	this.messageBodyWrapper.style.width = "100%";
 	this.messageBodyWrapper.style.height = "100%";
 	this.messageBodyWrapper.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+	this.messageBodyWrapper.style.height = $(this.messageContentContainer).height()-"50";
 	this.messageBodyWrapperBackground.appendChild(this.messageBodyWrapper);
 
 	this.messageBodyText = document.createElement('div');
@@ -2235,6 +2237,7 @@ Message.prototype.winChallengeTemplate = function(){
 	this.messageBodyWrapper.style.width = "100%";
 	this.messageBodyWrapper.style.height = "100%";
 	this.messageBodyWrapper.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+	this.messageBodyWrapper.style.height = $(this.messageContentContainer).height()-"50";
 	this.messageBodyWrapperBackground.appendChild(this.messageBodyWrapper);
 
 	this.messageBodyText = document.createElement('div');
@@ -2285,6 +2288,7 @@ Message.prototype.loseChallengeTemplate = function(){
 	this.messageBodyWrapper.style.width = "100%";
 	this.messageBodyWrapper.style.height = "100%";
 	this.messageBodyWrapper.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+	this.messageBodyWrapper.style.height = $(this.messageContentContainer).height()-"50";
 	this.messageBodyWrapperBackground.appendChild(this.messageBodyWrapper);
 
 	this.messageBodyText = document.createElement('div');
@@ -2335,6 +2339,7 @@ Message.prototype.receivedChallengeTemplate = function(){
 	this.messageBodyWrapper.style.width = "100%";
 	this.messageBodyWrapper.style.height = "100%";
 	this.messageBodyWrapper.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+	this.messageBodyWrapper.style.height = $(this.messageContentContainer).height()-"50";
 	this.messageBodyWrapperBackground.appendChild(this.messageBodyWrapper);
 
 	this.messageBodyText = document.createElement('div');
@@ -2399,6 +2404,7 @@ Message.prototype.adminSurveyTemplate = function(){
 
 	this.messageBodyWrapper = document.createElement('div');
 	this.messageBodyWrapper.className = "messageBodyWrapper";
+	this.messageBodyWrapper.style.height = $(this.messageContentContainer).height()-"50";
 	this.openedMessageDiv.appendChild(this.messageBodyWrapper);
 
 	this.messageBodyText = document.createElement('div');
@@ -2480,6 +2486,7 @@ Message.prototype.forfeitChallengeTemplate = function(){
 	this.messageBodyWrapper.style.width = "100%";
 	this.messageBodyWrapper.style.height = "100%";
 	this.messageBodyWrapper.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+	this.messageBodyWrapper.style.height = $(this.messageContentContainer).height()-"50";
 	this.messageBodyWrapperBackground.appendChild(this.messageBodyWrapper);
 
 	this.messageBodyText = document.createElement('div');
@@ -2522,6 +2529,7 @@ Message.prototype.adminTextTemplate = function(){
 
 	this.messageBodyWrapper = document.createElement('div');
 	this.messageBodyWrapper.className = "messageBodyWrapper";
+	this.messageBodyWrapper.style.height = $(this.messageContentContainer).height()-"50";
 	this.openedMessageDiv.appendChild(this.messageBodyWrapper);
 
 	this.messageBodyText = document.createElement('div');
@@ -2561,6 +2569,7 @@ Message.prototype.userTextTemplate = function(){
 
 	this.messageBodyWrapper = document.createElement('div');
 	this.messageBodyWrapper.className = "messageBodyWrapper";
+	this.messageBodyWrapper.style.height = $(this.messageContentContainer).height()-"50";
 	this.openedMessageDiv.appendChild(this.messageBodyWrapper);
 
 	this.messageBodyText = document.createElement('div');
