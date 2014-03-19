@@ -1,12 +1,15 @@
 function navBarDecorate(){
-	var currenturl = window.location;
-	if(currenturl == "http://gratii.com/home/"){
+
+	var currenturl = window.location.pathname;
+	var pathRoot = "/gratii29/home";
+
+	if(currenturl == pathRoot+"/home/"){
 		$(".home").css("text-decoration","underline");
-	}else if(currenturl == "http://gratii.com/brands/"){
+	}else if(currenturl == pathRoot+"/brands/"){
 		$(".brands").css("text-decoration","underline");
-	}else if(currenturl == "http://gratii.com/download/"){
+	}else if(currenturl == pathRoot+"/download/"){
 		$(".download").css("text-decoration","underline");
-	}	else if(currenturl == "http://gratii.com/about/"){
+	}	else if(currenturl == pathRoot+"/about/"){
 		$(".about").css("text-decoration","underline");
 	}
 
