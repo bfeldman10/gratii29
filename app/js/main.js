@@ -2802,6 +2802,7 @@ function createDomElementsFromObjects(dataRequested){
 		for(var i=0;i<inboxObjects.length;i++){
 			inboxObjects[i].createDomElements();
 		}
+		$("#inbox .messages").append('</br></br>');
 		initializeVerticaliScroll(2, ".vSnapToHere");
 
 	}else if(dataRequested==="transactions"){
