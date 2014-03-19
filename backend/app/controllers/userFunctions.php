@@ -2011,7 +2011,7 @@ function completePurchase_Job($receiver=NULL){
 		}
 	}
 
-	$body = "Now that you're a PRO user you can win more prizes, challenge friends, change your avatar, send gifts, and bet more. Take advantage while it lasts!";
+	$body = "Now that you're a PRO user you can win more prizes, challenge friends, send gifts, and bet more. Take advantage while it lasts!";
 	$PROMsg = createMsg_Job(array("senderID"=>"0", //Send challenge msg
 										"recipientIDs"=>array($decodedJWT->request->userID),
 										"senderEntity"=>"admin",
