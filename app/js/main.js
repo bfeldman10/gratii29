@@ -598,7 +598,8 @@ User.prototype.completeProfile = function(){
 	$("#profile #year").val(this.year);
 	$("#profile #gender").val(this.gender);
 	$(".header .gratiiScore").html(this.gratii);
-	$("#profile #twitterShare").attr("href", "https://twitter.com/intent/tweet?button_hashtag=BonusGratii&text=When%20you%20signup%20for%20the%20new%20Gratii%20app%2C%20type%20my%20username%20%22"+this.username+"%22%20in%20as%20the%20referral%20please!");
+	$("#profile #twitterShare").attr("href", "https://twitter.com/intent/tweet?button_hashtag=BonusGratii&text=When%20you%20signup%20for%20the%20new%20Gratii%20app%2C%20type%20%22"+this.username+"%22%20in%20as%20the%20referral%20please!%20Thanks%20http%3A//gratii.com");
+
 	if(loggedIn===true){
 		$("#profile .rank").html("My Gratii Rank: <b>"+this.rank+this.rankGrammarText+"</b> out of "+this.totalUsers+" players");
 	}
