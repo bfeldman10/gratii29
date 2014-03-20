@@ -5,7 +5,7 @@ var express = require('express')
 var app = express();
 var server = http.createServer(app).listen(8001);
 var io = require('socket.io').listen(server);
-var rootURL = "http://gratii.com:8888/gratii29";
+var rootURL = "http://gratii.com/gratii29";
 // var rootURL = "http://localhost:8888/gratii29";
 
 //app.use(express.cookieParser());
