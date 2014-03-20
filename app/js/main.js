@@ -565,6 +565,7 @@ var User = function(val){ //Game object
 	this.isPRO = this.PRO > new Date().toMysqlFormat() ? true : false;
 	this.gratii = val.userGratii;
 	this.rank = val.userRank;
+	this.secondsAddedToAuction = val.secondsAddedToAuction;
 	this.totalUsers = val.totalUsers;
 	this.twitterOAuthToken = val.twitterOAuthToken;
 	
@@ -1063,7 +1064,7 @@ function updateLiveAuctionAfterBidFromNode(auctionID, leader, bid){
 	}
 	auctionObjects[i].currentBid = bid;
 	auctionObjects[i].leader = leader;
-	auctionObjects[i].secondsRemaining = secondsPerAuction;
+	auctionObjects[i].secondsRemaining = user.secondsAddedToAuction;
 	auctionObjects[i].leaderDiv.innerHTML = leader;
 	auctionObjects[i].styleLiveAuctionStats(true);
 }

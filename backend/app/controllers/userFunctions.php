@@ -76,7 +76,7 @@ function getUser($id,$receiver=NULL){
 			$getUser = $GLOBALS['db'] -> prepare('SELECT * FROM users WHERE id = ?');
 		}else if($receiver=="user" && $_SESSION['userID']==$id){ //User is self
 			$getUser = $GLOBALS['db'] -> prepare('SELECT userNickname, userGratii, userAgeMin, userAgeMax,
-														userGender, userAvatar, userEmail, PRO, twitterOAuthToken, 
+														userGender, userAvatar, userEmail, PRO, twitterOAuthToken, secondsAddedToAuction,
 														userBirthYear, userBirthMonth, userBirthDate
 													FROM users WHERE id = ?');
 		}else if($receiver=="user" && $_SESSION['userID']!=$id){ //User is stranger
