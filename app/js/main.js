@@ -24,44 +24,44 @@ var currentPage = 0,
 	apiRoot = "../backend/public/api/v1/",
 	inApp = true;
 
-if (window.navigator.standalone) {
-  	inApp = true;
-} else {
+// if (window.navigator.standalone) {
+//   	inApp = true;
+// } else {
 	
-	$(".homeScreen").hide();
+// 	$(".homeScreen").hide();
 
-	if($(window).width() == "320"){
+// 	if($(window).width() == "320"){
 
-		if(navigator.userAgent.match('CriOS')) {
-		   //Mobile chrome
-		    $(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on mobile Safari at this time. Please reopen this link in Safari.");
-			$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
-			$(".downloadScreen").show();
-			window.setTimeout(function(){
-				$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
-				window.setTimeout(function(){
-					window.location = "../home/home";
-				}, 3000);
-			}, 4000);	
-		} else {
-			//Not mobile chrome
-			$(".downloadScreen").show();
-		}
+// 		if(navigator.userAgent.match('CriOS')) {
+// 		   //Mobile chrome
+// 		    $(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on mobile Safari at this time. Please reopen this link in Safari.");
+// 			$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
+// 			$(".downloadScreen").show();
+// 			window.setTimeout(function(){
+// 				$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
+// 				window.setTimeout(function(){
+// 					window.location = "../home/home";
+// 				}, 3000);
+// 			}, 4000);	
+// 		} else {
+// 			//Not mobile chrome
+// 			$(".downloadScreen").show();
+// 		}
 
-	}else{
+// 	}else{
 		
-		$(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on iPhone at this time.");
-		$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
-		$(".downloadScreen").show();
-		window.setTimeout(function(){
-			$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
-			window.setTimeout(function(){
-				window.location = "../home/home";
-			}, 3000);
-		}, 4000);	
-	}
+// 		$(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on iPhone at this time.");
+// 		$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
+// 		$(".downloadScreen").show();
+// 		window.setTimeout(function(){
+// 			$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
+// 			window.setTimeout(function(){
+// 				window.location = "../home/home";
+// 			}, 3000);
+// 		}, 4000);	
+// 	}
 
-}
+// }
 
 
 function is_touch_device() {
@@ -935,19 +935,28 @@ Game.prototype.createDomElements = function(){ //Game draw method
 	this.arcadeContent.appendChild(this.top10Table);
 
 	if(this.topTen!=null){
-		for(var i=0;i<this.topTen.length;i++){
-		
-			this.row = document.createElement('tr');
-			this.top10Table.appendChild(this.row);
-			this.td = document.createElement('td');
-			this.td.id = this.topTen[i].userNickname;
-			this.td.innerHTML = this.topTen[i].userNickname+': '+this.topTen[i].finalScore;
-			this.row.appendChild(this.td);
-			this.td.addEventListener('click', function(event){
-				triggerUserInteractionPanel(this.id, this.id);
-			});
+		for(var i=0;i<5;i++){
+			if(this.topTen[i]){
+				this.row = document.createElement('tr');
+				this.top10Table.appendChild(this.row);
+				this.td = document.createElement('td');
+				this.td.className = 'username';
+				this.td.id = this.topTen[i].userNickname;
+				this.td.innerHTML = this.topTen[i].userNickname+': '+this.topTen[i].finalScore;
+				this.row.appendChild(this.td);
+				this.td.addEventListener('click', function(event){
+					triggerUserInteractionPanel(this.id, this.id);
+				});
+			}else{
+				this.row = document.createElement('tr');
+				this.top10Table.appendChild(this.row);
+				this.td = document.createElement('td');
+				this.td.className = 'username';
+				this.td.innerHTML = 'NULL: ---';
+				this.row.appendChild(this.td);
+			}
 
-			if(this.topTen.length>=this.topTen[i+5]){
+			if(this.topTen[i+5]){
 				this.td = document.createElement('td');
 				this.td.className = 'username';
 				this.td.id = this.topTen[i+5].userNickname;
@@ -956,6 +965,11 @@ Game.prototype.createDomElements = function(){ //Game draw method
 				this.td.addEventListener('click', function(event){
 					triggerUserInteractionPanel(this.id, this.id);
 				});
+			}else{
+				this.td = document.createElement('td');
+				this.td.className = 'username';
+				this.td.innerHTML = 'NULL: ---';
+				this.row.appendChild(this.td);
 			}
 
 		}
