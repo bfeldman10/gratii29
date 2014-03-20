@@ -798,8 +798,8 @@ function checkUserPermissions($messageData){
 						"msg"=>"You can only send 1 message at a time.");
 			die();
 		}
-		if(((count($messageData['recipientIDs'])*$messageData['gratiiReward'])+$giftedToday['results'])>1000){ //Over 1000 gratii sent today. 
-			$giftsRemaining = 1000-$giftedToday['results'];
+		if(((count($messageData['recipientIDs'])*$messageData['gratiiReward'])+$giftedToday['results'])>500){ //Over 500 gratii sent today. 
+			$giftsRemaining = 500-$giftedToday['results'];
 			return array("error"=>true,
 						"msg"=>"You can only send ".$giftsRemaining." more gratii today");
 			die();
@@ -820,8 +820,8 @@ function checkUserPermissions($messageData){
 						"msg"=>"PRO##Only PRO accounts can send mass messages");
 			die();
 		}
-		if(($messageData['gratiiReward']+$giftedToday['results'])>100){ //Over 100 gratii sent today 
-			$giftsRemaining = 100-$giftedToday['results'];
+		if(($messageData['gratiiReward']+$giftedToday['results'])>25){ //Over 25 gratii sent today 
+			$giftsRemaining = 25-$giftedToday['results'];
 			return array("error"=>true,
 						"msg"=>"PRO##You can only send ".$giftsRemaining." more gratii today. PRO accounts can send more.");
 			die();
