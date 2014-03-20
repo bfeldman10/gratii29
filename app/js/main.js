@@ -1083,7 +1083,7 @@ Auction.prototype.styleLiveAuctionStats = function(viaNode){
 	this.bidsDiv = document.createElement('div');
 	this.bidsDiv.className = "bidCount";
 	if(this.bids > 0){
-		this.bidsDiv.innerHTML = this.bids+this.bidCountGrammarText+" bid:";
+		this.bidsDiv.innerHTML = this.bids+this.bidCountGrammarText+" bid:&nbsp&nbspclick the coin to bid --->";
 	}else{
 		this.bidsDiv.innerHTML = "No bids yet. Be the first!";
 	}
