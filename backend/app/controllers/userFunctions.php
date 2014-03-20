@@ -96,9 +96,9 @@ function getUser($id,$receiver=NULL){
 				$getUserRank = $GLOBALS['db'] -> prepare('SELECT users1.id, users1.userGratii, COUNT(*)+1 AS rank, users3.totalUsers
 														FROM users users1
 														INNER JOIN users users2 ON users1.userGratii < users2.userGratii
-														INNER JOIN (SELECT COUNT(*) AS totalUsers FROM users users3) users3
+														INNER JOIN (SELECT COUNT(*) AS totalUsers FROM users users3 WHERE activatedAt!=?) users3
 														WHERE users1.id = ?');
-				$getUserRank -> execute(array($id)); 
+				$getUserRank -> execute(array("0000-00-00 00:00:00", $id)); 
 				$rankResults = $getUserRank -> fetchAll(PDO::FETCH_ASSOC);
 				$results[0]['userRank']=$rankResults[0]['rank'];
 				$results[0]['totalUsers']=$rankResults[0]['totalUsers'];
