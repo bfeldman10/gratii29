@@ -143,5 +143,5 @@ setInterval(function(){
   request(rootURL+'/backend/public/api/v1/cron/economy/snapshot', function (error, response, body) {
     console.log('Requested Economy Snapshot');
   });
-}, 60000);
+}, 432000);
 // End daily functions ***************************
