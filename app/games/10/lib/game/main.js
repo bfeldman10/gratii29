@@ -12,6 +12,7 @@ window.eventHandler = {
 
     gameToken: "X0X0X0X",
     lastSpinGratiiResult: 0,
+    prevResponse: null,
 
     init: function(){
 
@@ -113,7 +114,8 @@ window.eventHandler = {
             window.eventHandler.lastSpinGratiiResult = response.results.gratiiResult;
 
             //UPDATE jackpot and previous jackpot
-            window.ig.game.gratiiStart(response);
+            //window.ig.game.gratiiStart(response);
+            window.eventHandler.prevResponse = response;
 
             window.ig.game.start(response.results);
 
@@ -378,6 +380,8 @@ MyGame = ig.Game.extend({
         $('#hurry').hide(0);
 
         $('#jackpot span').text(this.currentJackpot);
+
+        window.ig.game.gratiiStart(window.eventHandler.prevResponse);
 
         if (ig.game.winType !== 'd'){
             // ig.game.win( $('#'+ig.game.winType), ig.game.winAmount);

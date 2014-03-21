@@ -152,7 +152,7 @@ function getJackpot_Job(){
 
 	include_once("userFunctions.php");
 	if($jackpotData['results']['previousWinnerID']){
-		echo ">".$jackpotData['results']['previousWinnerID'];
+		
 		$userData = getUser($jackpotData['results']['previousWinnerID']);
 		if($userData['error']){
 			return array("error"=>true,
