@@ -138,11 +138,10 @@ setTimeout(function(){
 //      millisTill5 += 86400000; // it's after 10am, try 10am tomorrow.
 // }
 
-setTimeout(function(){
-  setInterval(function(){
-    request(rootURL+'/backend/public/api/v1/cron/economy/snapshot', function (error, response, body) {
-      console.log('Requested Economy Snapshot');
-    });
-  }, 60000);
-}, millisTill5);
+
+setInterval(function(){
+  request(rootURL+'/backend/public/api/v1/cron/economy/snapshot', function (error, response, body) {
+    console.log('Requested Economy Snapshot');
+  });
+}
 // End daily functions ***************************
