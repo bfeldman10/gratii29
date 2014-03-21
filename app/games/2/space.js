@@ -1069,7 +1069,7 @@
 		this.drawBottomUI = function() {
 			//draw.text('Health: ' + health, 5, 420, 12, '#CCCCCC');
 			this.heartStartX = 246;
-			this.heartStartY = 406;
+			this.heartStartY = 395;
 			this.heartWidth = 24;
 			if (health == 1) {
 				ctx.drawImage(this.heartImage, this.heartStartX, this.heartStartY); //top UI image

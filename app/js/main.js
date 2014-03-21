@@ -1093,7 +1093,6 @@ Auction.prototype.styleLiveAuctionStats = function(viaNode){
 	this.leaderDiv.className = "leader";
 	this.leaderDiv.id = this.leader;
 	if(this.bids > 0){
-		this.leaderDiv.style.color = "black";
 		this.leaderDiv.innerHTML = this.leader;
 		this.leaderDiv.addEventListener('click', function(event){
 
@@ -1102,7 +1101,6 @@ Auction.prototype.styleLiveAuctionStats = function(viaNode){
 			triggerUserInteractionPanel(this.id, this.innerHTML);
 		});
 	}else{
-		this.leaderDiv.style.color = "grey";
 		this.leaderDiv.innerHTML = "Tap the coin to bid -->";
 	}
 	this.leaderInfoDiv.appendChild(this.leaderDiv);
@@ -1702,7 +1700,7 @@ $("#auctions .auctions").append(this.li);
 
 	this.bonusMessageDiv = document.createElement('div');
 	this.bonusMessageDiv.className = "bonusMessage";
-	this.bonusMessageDiv.innerHTML = "Psst.. check above for free bonus gratii from "+this.client+"!";
+	this.bonusMessageDiv.innerHTML = "Psst.. swipe left above for free bonus gratii from "+this.client+"!";
 	this.auctionStatsContent.appendChild(this.bonusMessageDiv);
 
 
@@ -1812,7 +1810,6 @@ Auction.prototype.createPastAuction = function(){
 	this.leaderDiv = document.createElement('div');
 	this.leaderDiv.className = "leader";
 	this.leaderDiv.id = this.leader;
-	this.leaderDiv.style.color = "black";
 	this.leaderDiv.innerHTML = this.leader;
 	this.leaderDiv.addEventListener('click', function(event){
 
