@@ -101,8 +101,8 @@ if (millisTill4 < 0) {
 
 setTimeout(function(){
   setInterval(function(){
-    request(rootURL+'/backend/public/api/v1/cron/like/buckets', function (error, response, body) {
-      console.log('Requested Like Payout Buckets');
+    request(rootURL+'/backend/public/api/v1/cron/taxes', function (error, response, body) {
+      console.log('Requested taxes');
     });
   }, 86400000);
 }, millisTill4);
@@ -132,4 +132,17 @@ setTimeout(function(){
     });
   }, 86400000);
 }, millisTill430);
+
+// var millisTill5 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 05, 0, 0, 0) - now;
+// if (millisTill5 < 0) {
+//      millisTill5 += 86400000; // it's after 10am, try 10am tomorrow.
+// }
+
+setTimeout(function(){
+  setInterval(function(){
+    request(rootURL+'/backend/public/api/v1/cron/economy/snapshot', function (error, response, body) {
+      console.log('Requested Economy Snapshot');
+    });
+  }, 60000);
+}, millisTill5);
 // End daily functions ***************************
