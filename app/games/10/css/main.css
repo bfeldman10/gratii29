@@ -1,1 +1,505 @@
-html,button,input,select,textarea{color:#222}body{font-size:1em;line-height:1.4;}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}img{vertical-align:middle}fieldset{border:0;margin:0;padding:0}textarea{resize:vertical}*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}html,body{width:100%;height:100%;font-family:"lucida grande";-webkit-font-smoothing:antialiased}body{-webkit-touch-callout:none;-webkit-text-size-adjust:none;-webkit-user-select:none;-webkit-highlight:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}#game-area{-webkit-box-shadow:inset 0 42px 36px 7px rgba(0,0,0,0.22);-moz-box-shadow:inset 0 42px 36px 7px rgba(0,0,0,0.22);box-shadow:inset 0 42px 36px 7px rgba(0,0,0,0.22);background-image:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(255,0,0,0.5)), color-stop(66.99%, rgba(0,255,0,0.5)), color-stop(84.01%, rgba(255,255,0,0.5)), color-stop(100%, rgba(255,0,0,0.5)));background-image:-webkit-radial-gradient(center center, 100% 100%, rgba(255,0,0,0.5) 0%,rgba(0,255,0,0.5) 66.99%,rgba(255,255,0,0.5) 84.01%,rgba(255,0,0,0.5) 100%);background-image:-moz-radial-gradient(center center, 100% 100%, rgba(255,0,0,0.5) 0%,rgba(0,255,0,0.5) 66.99%,rgba(255,255,0,0.5) 84.01%,rgba(255,0,0,0.5) 100%);background-image:-o-radial-gradient(center center, 100% 100%, rgba(255,0,0,0.5) 0%,rgba(0,255,0,0.5) 66.99%,rgba(255,255,0,0.5) 84.01%,rgba(255,0,0,0.5) 100%);background-image:radial-gradient(center center, 100% 100%, rgba(255,0,0,0.5) 0%,rgba(0,255,0,0.5) 66.99%,rgba(255,255,0,0.5) 84.01%,rgba(255,0,0,0.5) 100%)}#game-area #wrapper{min-height:100%;background-image:url("../gfx/icon-bg.png")}#game-area #wrapper #status{color:#FFF;width:100%;height:88px;height:48px;font-size:1.3em;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=83);opacity:0.83;background-color:#7d91ab;-webkit-box-shadow:inset 0 2px 0 rgba(255,255,255,0.45);-moz-box-shadow:inset 0 2px 0 rgba(255,255,255,0.45);box-shadow:inset 0 2px 0 rgba(255,255,255,0.45);background-image:-webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(-25%, rgba(0,0,0,0.3)), color-stop(125%, rgba(255,255,255,0.8)));background-image:-webkit-linear-gradient(bottom, rgba(0,0,0,0.3) -25%,rgba(255,255,255,0.8) 125%);background-image:-moz-linear-gradient(bottom, rgba(0,0,0,0.3) -25%,rgba(255,255,255,0.8) 125%);background-image:-o-linear-gradient(bottom, rgba(0,0,0,0.3) -25%,rgba(255,255,255,0.8) 125%);background-image:linear-gradient(bottom, rgba(0,0,0,0.3) -25%,rgba(255,255,255,0.8) 125%);color:#000}#game-area #wrapper #status .title{font-weight:bold}#game-area #wrapper #status .prev-jackpot{position:absolute;left:20px;top:10px}#game-area #wrapper #status .cur-jackpot{position:absolute;right:20px;top:10px}#game-area #wrapper #status .icon{background-size:cover;width:25px;height:25px;background-image:url("http://10.1.1.100:8888/gfx/user-avatar-1.png");position:absolute;left:0px;top:30px;display:none}#game-area #wrapper #status .user{position:absolute;left:30px;top:33px;display:none}#game-area #wrapper #status .tab{width:39%;height:69px;float:left;margin-top:10px;border:1px solid rgba(255,255,255,0.19);-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;border-radius:6px;-webkit-background-clip:padding;-moz-background-clip:padding;background-clip:padding-box;background-color:rgba(44,43,42,0.2)}#game-area #wrapper #status #cash-out{margin-right:1%;margin-left:1%;cursor:pointer}#game-area #wrapper #status #cash-out .btn{float:left;display:block;width:35px;height:35px;text-align:center;padding-top:2px;color:#fff;font-size:20px;position:relative;top:17px;left:17px;border:1px solid #fff;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;-webkit-background-clip:padding;-moz-background-clip:padding;background-clip:padding-box;background-color:#f9b549}#game-area #wrapper #status #cash-out span{float:left;position:relative;top:21px;left:27px;font-size:21px}#game-area #wrapper #status #gratii-coins{margin-right:1%;width:58%}#game-area #wrapper #status #gratii-coins span{float:right;position:relative;top:10px;color:#fff;font-size:35px;font-weight:bold;text-shadow:0 0 10px rgba(245,237,125,0.62)}#game-area #wrapper #status #gratii-coins img{float:right;margin-right:10px;margin-left:10px;position:relative;top:9px}#game-area #wrapper #lights{position:absolute;z-index:500;width:640px;height:118px;background-image:url("../gfx/lights.png");margin-top:-60px;left:50%;margin-left:-320px}#game-area #wrapper #machine{width:640px;height:732px;background-image:url("../gfx/machine-b.png");margin:0 auto;margin-top:58px;margin-top:0px;position:relative}#game-area #wrapper #machine #canvas{width:420px;position:absolute;left:111px;top:168px}#game-area #wrapper #machine #hurry{display:block;width:100%;height:100%;position:absolute;display:none}#game-area #wrapper #machine #screen{position:absolute;top:158px;left:66px}#game-area #wrapper #machine #legend{color:#FFF;font-weight:bold;position:absolute;top:490px;left:102px}#game-area #wrapper #machine #legend img,#game-area #wrapper #machine #legend p{float:left}#game-area #wrapper #machine #legend p{font-size:1.1em;font-weight:bold}#game-area #wrapper #machine #legend img{margin-right:10px;margin-top:6px}#game-area #wrapper #machine #legend #a img{margin-top:3px}#game-area #wrapper #machine #legend div{width:150px;float:left}#game-area #wrapper #machine #legend .win{-webkit-transform:translate3d(0px, 0px, 0px);-webkit-transform:scale(0.5, 0.5);-moz-transform:scale(0.5, 0.5);-ms-transform:scale(0.5, 0.5);-o-transform:scale(0.5, 0.5);transform:scale(0.5, 0.5);filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);opacity:0;position:absolute;top:-60px;left:-50px;background-image:url("../gfx/points.png");width:179px;height:177px;font-size:30px;padding-top:70px;text-align:center}#game-area #wrapper #machine #legend #b .win{left:110px}#game-area #wrapper #machine #legend #c .win{left:280px}#game-area #wrapper #machine #jackpot{color:#FFF;font-weight:bold;position:absolute;left:235px;top:585px;width:300px}#game-area #wrapper #machine #jackpot img{float:left;margin-right:10px;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=76);opacity:0.76}#game-area #wrapper #machine #jackpot p{float:left;margin-top:19px}#game-area #wrapper #machine #spin{display:inline-block;background-image:url("../gfx/spin-btn.png");width:186px;height:84px;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=72);opacity:0.72;text-align:center;padding-top:20px;font-size:33px;color:#FFF;font-weight:bold;text-decoration:none;position:absolute;z-index:100;top:670px;left:409px}#game-area #wrapper #machine #spin:active{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=52);opacity:0.52;color:#eb7170}#game-area #wrapper #machine #bet-box{width:150px;height:150px;position:absolute;z-index:100;top:670px;left:50px;color:#FFF;text-transform:uppercase}#game-area #wrapper #machine #bet-box span,#game-area #wrapper #machine #bet-box a{display:block;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;border-radius:5px;-webkit-background-clip:padding;-moz-background-clip:padding;background-clip:padding-box;text-align:center}#game-area #wrapper #machine #bet-box #bet-lbl{display:block;background-color:#525456;width:75px;height:25px;padding-top:1px}#game-area #wrapper #machine #bet-box #bet{width:75px;height:55px;background-color:#c2c7c0;border:1px solid #535456;color:#535456;font-size:30px;padding-top:5px;margin-top:8px}#game-area #wrapper #machine #bet-box .btn{width:85px;height:90px;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=46);opacity:0.46;border:1px solid rgba(0,0,0,0.71);-webkit-border-radius:1.25;-moz-border-radius:1.25;-ms-border-radius:1.25;-o-border-radius:1.25;border-radius:1.25;-webkit-background-clip:padding;-moz-background-clip:padding;background-clip:padding-box;background-image:-webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, rgba(0,0,0,0.41)), color-stop(100%, rgba(255,255,255,0.41)));background-image:-webkit-linear-gradient(bottom, rgba(0,0,0,0.41) 0%,rgba(255,255,255,0.41) 100%);background-image:-moz-linear-gradient(bottom, rgba(0,0,0,0.41) 0%,rgba(255,255,255,0.41) 100%);background-image:-o-linear-gradient(bottom, rgba(0,0,0,0.41) 0%,rgba(255,255,255,0.41) 100%);background-image:linear-gradient(bottom, rgba(0,0,0,0.41) 0%,rgba(255,255,255,0.41) 100%);text-decoration:none;color:#FFF;font-size:40px;padding-top:15px;position:absolute;top:-2px;left:95px;left:195px}#game-area #wrapper #machine #bet-box #decrement-bet{top:47px;top:0;left:100px}#game-area #wrapper #machine #bet-box .btn:active{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=46);opacity:0.46;border:1px solid rgba(0,0,0,0.71);-webkit-border-radius:1.25;-moz-border-radius:1.25;-ms-border-radius:1.25;-o-border-radius:1.25;border-radius:1.25;-webkit-background-clip:padding;-moz-background-clip:padding;background-clip:padding-box;background-image:-webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(-25%, rgba(255,255,255,0.41)), color-stop(125%, rgba(0,0,0,0.41)));background-image:-webkit-linear-gradient(bottom, rgba(255,255,255,0.41) -25%,rgba(0,0,0,0.41) 125%);background-image:-moz-linear-gradient(bottom, rgba(255,255,255,0.41) -25%,rgba(0,0,0,0.41) 125%);background-image:-o-linear-gradient(bottom, rgba(255,255,255,0.41) -25%,rgba(0,0,0,0.41) 125%);background-image:linear-gradient(bottom, rgba(255,255,255,0.41) -25%,rgba(0,0,0,0.41) 125%)}#game-area #wrapper #controls{position:relative;width:100%;min-height:124px;position:absolute;top:695px;right:0;bottom:0;left:0;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=83);opacity:0.83;background-color:#7d91ab;-webkit-box-shadow:inset 0 2px 0 rgba(255,255,255,0.45);-moz-box-shadow:inset 0 2px 0 rgba(255,255,255,0.45);box-shadow:inset 0 2px 0 rgba(255,255,255,0.45);background-image:-webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(-25%, rgba(0,0,0,0.8)), color-stop(125%, rgba(255,255,255,0.8)));background-image:-webkit-linear-gradient(bottom, rgba(0,0,0,0.8) -25%,rgba(255,255,255,0.8) 125%);background-image:-moz-linear-gradient(bottom, rgba(0,0,0,0.8) -25%,rgba(255,255,255,0.8) 125%);background-image:-o-linear-gradient(bottom, rgba(0,0,0,0.8) -25%,rgba(255,255,255,0.8) 125%);background-image:linear-gradient(bottom, rgba(0,0,0,0.8) -25%,rgba(255,255,255,0.8) 125%)}@media (min-width: 10px) and (max-width: 700px){html{width:320px;height:430px;overflow:hidden}body{width:320px;height:430px;overflow:hidden}#game-area{-webkit-transform:scale(0.5, 0.5);-moz-transform:scale(0.5, 0.5);-ms-transform:scale(0.5, 0.5);-o-transform:scale(0.5, 0.5);transform:scale(0.5, 0.5);width:640px;height:960px;margin-left:-160px;margin-top:-240px}}.ir{background-color:transparent;border:0;overflow:hidden;*text-indent:-9999px}.ir:before{content:"";display:block;width:0;height:150%}.hidden{display:none !important;visibility:hidden}.visuallyhidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.invisible{visibility:hidden}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{*zoom:1}
+
+      
+The ProCSSor you know and love is now available as a native Mac application on the Mac App Store.
+ProCSSor
+Advertise Here
+
+
+
+
+
+
+DownloadCopyReturn
+html,
+button,
+input,
+select,
+textarea { color: #222 }
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+img { vertical-align: middle }
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+textarea { resize: vertical }
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "lucida grande";
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    -webkit-highlight: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+#game-area {
+    -webkit-box-shadow: inset 0 42px 36px 7px rgba(0,0,0,0.22);
+    -moz-box-shadow: inset 0 42px 36px 7px rgba(0,0,0,0.22);
+    box-shadow: inset 0 42px 36px 7px rgba(0,0,0,0.22);
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(255,0,0,0.5)), color-stop(66.99%, rgba(0,255,0,0.5)), color-stop(84.01%, rgba(255,255,0,0.5)), color-stop(100%, rgba(255,0,0,0.5)));
+    background-image: -webkit-radial-gradient(center center, 100% 100%, rgba(255,0,0,0.5) 0%,rgba(0,255,0,0.5) 66.99%,rgba(255,255,0,0.5) 84.01%,rgba(255,0,0,0.5) 100%);
+    background-image: -moz-radial-gradient(center center, 100% 100%, rgba(255,0,0,0.5) 0%,rgba(0,255,0,0.5) 66.99%,rgba(255,255,0,0.5) 84.01%,rgba(255,0,0,0.5) 100%);
+    background-image: -o-radial-gradient(center center, 100% 100%, rgba(255,0,0,0.5) 0%,rgba(0,255,0,0.5) 66.99%,rgba(255,255,0,0.5) 84.01%,rgba(255,0,0,0.5) 100%);
+    background-image: radial-gradient(center center, 100% 100%, rgba(255,0,0,0.5) 0%,rgba(0,255,0,0.5) 66.99%,rgba(255,255,0,0.5) 84.01%,rgba(255,0,0,0.5) 100%);
+}
+#game-area #wrapper {
+    min-height: 100%;
+    background-image: url("../gfx/icon-bg.png");
+}
+#game-area #wrapper #status {
+    color: #FFF;
+    width: 100%;
+    height: 88px;
+    height: 100px;
+    font-size: 1.8em;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=83);
+    opacity: 0.83;
+    background-color: #7d91ab;
+    -webkit-box-shadow: inset 0 2px 0 rgba(255,255,255,0.45);
+    -moz-box-shadow: inset 0 2px 0 rgba(255,255,255,0.45);
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.45);
+    background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(-25%, rgba(0,0,0,0.3)), color-stop(125%, rgba(255,255,255,0.8)));
+    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0.3) -25%,rgba(255,255,255,0.8) 125%);
+    background-image: -moz-linear-gradient(bottom, rgba(0,0,0,0.3) -25%,rgba(255,255,255,0.8) 125%);
+    background-image: -o-linear-gradient(bottom, rgba(0,0,0,0.3) -25%,rgba(255,255,255,0.8) 125%);
+    background-image: linear-gradient(bottom, rgba(0,0,0,0.3) -25%,rgba(255,255,255,0.8) 125%);
+    color: #000;
+}
+#game-area #wrapper #status .title { font-weight: bold }
+#game-area #wrapper #status .prev-jackpot {
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+#game-area #wrapper #status .cur-jackpot {
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #FFDC3D;
+}
+#game-area #wrapper #status .icon {
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    background-image: url("http://10.1.1.100:8888/gfx/user-avatar-1.png");
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    display: none;
+}
+#game-area #wrapper #status .user {
+    position: absolute;
+    left: 30px;
+    top: 33px;
+    display: none;
+}
+#game-area #wrapper #status .tab {
+    width: 39%;
+    height: 69px;
+    float: left;
+    margin-top: 10px;
+    border: 1px solid rgba(255,255,255,0.19);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    background-color: rgba(44,43,42,0.2);
+}
+#game-area #wrapper #status #cash-out {
+    margin-right: 1%;
+    margin-left: 1%;
+    cursor: pointer;
+}
+#game-area #wrapper #status #cash-out .btn {
+    float: left;
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    padding-top: 2px;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    top: 17px;
+    left: 17px;
+    border: 1px solid #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    background-color: #f9b549;
+}
+#game-area #wrapper #status #cash-out span {
+    float: left;
+    position: relative;
+    top: 21px;
+    left: 27px;
+    font-size: 21px;
+}
+#game-area #wrapper #status #gratii-coins {
+    margin-right: 1%;
+    width: 58%;
+}
+#game-area #wrapper #status #gratii-coins span {
+    float: right;
+    position: relative;
+    top: 10px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(245,237,125,0.62);
+}
+#game-area #wrapper #status #gratii-coins img {
+    float: right;
+    margin-right: 10px;
+    margin-left: 10px;
+    position: relative;
+    top: 9px;
+}
+#game-area #wrapper #lights {
+    position: absolute;
+    z-index: 500;
+    width: 640px;
+    height: 118px;
+    background-image: url("../gfx/lights.png");
+    margin-top: -60px;
+    left: 50%;
+    margin-left: -320px;
+}
+#game-area #wrapper #machine {
+    width: 640px;
+    height: 732px;
+    background-image: url("../gfx/machine-b.png");
+    margin: 0 auto;
+    margin-top: 58px;
+    margin-top: 0px;
+    position: relative;
+}
+#game-area #wrapper #machine #canvas {
+    width: 420px;
+    position: absolute;
+    left: 111px;
+    top: 168px;
+}
+#game-area #wrapper #machine #hurry {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+#game-area #wrapper #machine #screen {
+    position: absolute;
+    top: 158px;
+    left: 66px;
+}
+#game-area #wrapper #machine #legend {
+    color: #FFF;
+    font-weight: bold;
+    position: absolute;
+    top: 490px;
+    left: 102px;
+}
+#game-area #wrapper #machine #legend img,
+#game-area #wrapper #machine #legend p { float: left }
+#game-area #wrapper #machine #legend p {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#game-area #wrapper #machine #legend img {
+    margin-right: 10px;
+    margin-top: 6px;
+}
+#game-area #wrapper #machine #legend #a img { margin-top: 3px }
+#game-area #wrapper #machine #legend div {
+    width: 150px;
+    float: left;
+}
+#game-area #wrapper #machine #legend .win {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: scale(0.5, 0.5);
+    -moz-transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -o-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    position: absolute;
+    top: -60px;
+    left: -50px;
+    background-image: url("../gfx/points.png");
+    width: 179px;
+    height: 177px;
+    font-size: 30px;
+    padding-top: 70px;
+    text-align: center;
+}
+#game-area #wrapper #machine #legend #b .win { left: 110px }
+#game-area #wrapper #machine #legend #c .win { left: 280px }
+#game-area #wrapper #machine #jackpot {
+    color: #FFF;
+    font-weight: bold;
+    position: absolute;
+    left: 235px;
+    top: 585px;
+    width: 300px;
+}
+#game-area #wrapper #machine #jackpot img {
+    float: left;
+    margin-right: 10px;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=76);
+    opacity: 0.76;
+}
+#game-area #wrapper #machine #jackpot p {
+    float: left;
+    margin-top: 19px;
+}
+#game-area #wrapper #machine #spin {
+    display: inline-block;
+    background-image: url("../gfx/spin-btn.png");
+    width: 186px;
+    height: 84px;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=72);
+    opacity: 0.72;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 33px;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    position: absolute;
+    z-index: 100;
+    top: 670px;
+    left: 409px;
+}
+#game-area #wrapper #machine #spin:active {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=52);
+    opacity: 0.52;
+    color: #eb7170;
+}
+#game-area #wrapper #machine #bet-box {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 100;
+    top: 670px;
+    left: 50px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+#game-area #wrapper #machine #bet-box span,
+#game-area #wrapper #machine #bet-box a {
+    display: block;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    text-align: center;
+}
+#game-area #wrapper #machine #bet-box #bet-lbl {
+    display: block;
+    background-color: #525456;
+    width: 75px;
+    height: 25px;
+    padding-top: 1px;
+}
+#game-area #wrapper #machine #bet-box #bet {
+    width: 75px;
+    height: 55px;
+    background-color: #c2c7c0;
+    border: 1px solid #535456;
+    color: #535456;
+    font-size: 30px;
+    padding-top: 5px;
+    margin-top: 8px;
+}
+#game-area #wrapper #machine #bet-box .btn {
+    width: 85px;
+    height: 90px;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=46);
+    opacity: 0.46;
+    border: 1px solid rgba(0,0,0,0.71);
+    -webkit-border-radius: 1.25;
+    -moz-border-radius: 1.25;
+    -ms-border-radius: 1.25;
+    -o-border-radius: 1.25;
+    border-radius: 1.25;
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, rgba(0,0,0,0.41)), color-stop(100%, rgba(255,255,255,0.41)));
+    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0.41) 0%,rgba(255,255,255,0.41) 100%);
+    background-image: -moz-linear-gradient(bottom, rgba(0,0,0,0.41) 0%,rgba(255,255,255,0.41) 100%);
+    background-image: -o-linear-gradient(bottom, rgba(0,0,0,0.41) 0%,rgba(255,255,255,0.41) 100%);
+    background-image: linear-gradient(bottom, rgba(0,0,0,0.41) 0%,rgba(255,255,255,0.41) 100%);
+    text-decoration: none;
+    color: #FFF;
+    font-size: 40px;
+    padding-top: 15px;
+    position: absolute;
+    top: -2px;
+    left: 95px;
+    left: 195px;
+}
+#game-area #wrapper #machine #bet-box #decrement-bet {
+    top: 47px;
+    top: 0;
+    left: 100px;
+}
+#game-area #wrapper #machine #bet-box .btn:active {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=46);
+    opacity: 0.46;
+    border: 1px solid rgba(0,0,0,0.71);
+    -webkit-border-radius: 1.25;
+    -moz-border-radius: 1.25;
+    -ms-border-radius: 1.25;
+    -o-border-radius: 1.25;
+    border-radius: 1.25;
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(-25%, rgba(255,255,255,0.41)), color-stop(125%, rgba(0,0,0,0.41)));
+    background-image: -webkit-linear-gradient(bottom, rgba(255,255,255,0.41) -25%,rgba(0,0,0,0.41) 125%);
+    background-image: -moz-linear-gradient(bottom, rgba(255,255,255,0.41) -25%,rgba(0,0,0,0.41) 125%);
+    background-image: -o-linear-gradient(bottom, rgba(255,255,255,0.41) -25%,rgba(0,0,0,0.41) 125%);
+    background-image: linear-gradient(bottom, rgba(255,255,255,0.41) -25%,rgba(0,0,0,0.41) 125%);
+}
+#game-area #wrapper #controls {
+    position: relative;
+    width: 100%;
+    min-height: 124px;
+    position: absolute;
+    top: 740px;
+    /*margin-top: -52px;
+*/    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=83);
+    opacity: 0.83;
+    background-color: #7d91ab;
+    -webkit-box-shadow: inset 0 2px 0 rgba(255,255,255,0.45);
+    -moz-box-shadow: inset 0 2px 0 rgba(255,255,255,0.45);
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.45);
+    background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(-25%, rgba(0,0,0,0.8)), color-stop(125%, rgba(255,255,255,0.8)));
+    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0.8) -25%,rgba(255,255,255,0.8) 125%);
+    background-image: -moz-linear-gradient(bottom, rgba(0,0,0,0.8) -25%,rgba(255,255,255,0.8) 125%);
+    background-image: -o-linear-gradient(bottom, rgba(0,0,0,0.8) -25%,rgba(255,255,255,0.8) 125%);
+    background-image: linear-gradient(bottom, rgba(0,0,0,0.8) -25%,rgba(255,255,255,0.8) 125%);
+}
+@media (min-width: 10px) and (max-width: 700px) { 
+    html {
+        width: 320px;
+        height: 430px;
+        overflow: hidden;
+    }
+    body {
+        width: 320px;
+        height: 430px;
+        overflow: hidden;
+    }
+    #game-area {
+        -webkit-transform: scale(0.5, 0.5);
+        -moz-transform: scale(0.5, 0.5);
+        -ms-transform: scale(0.5, 0.5);
+        -o-transform: scale(0.5, 0.5);
+        transform: scale(0.5, 0.5);
+        width: 640px;
+        height: 960px;
+        margin-left: -160px;
+        margin-top: -240px;
+    }
+}
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+.invisible { visibility: hidden }
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after { clear: both }
+.clearfix { *zoom: 1 }
+Want more dev tools? Check out DevRef.
+
+463

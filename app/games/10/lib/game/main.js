@@ -17,7 +17,7 @@ window.eventHandler = {
 
         var request = $.ajax({
             type: "GET",
-            url: "../../../backend/public/api/v1/game/slots/start",
+            url: "../../"+parent.apiRoot+"game/slots/start",
             dataType: 'json',
         });
 
@@ -328,7 +328,8 @@ MyGame = ig.Game.extend({
         console.log( 'gratii start' );
         this.currentJackpot = data.results.currentJackpot;
         $('.cur-jackpot .amount').text(data.results.currentJackpot);
-        $('.prev-jackpot .amount').text(data.results.previousJackpot);
+        $('.prev-jackpot .amount').text(data.results.previousJackpot != 0 ? data.results.previousJackpot : "---");
+        $('.prev-jackpot .winner').text(data.results.previousWinnerNickname);
     },
 
     start: function (data){
