@@ -17,7 +17,7 @@ window.eventHandler = {
 
         var request = $.ajax({
             type: "GET",
-            url: "../../"+parent.apiRoot+"game/slots/start",
+            url: "../../../backend/public/api/v1/game/slots/start",
             dataType: 'json',
         });
 
