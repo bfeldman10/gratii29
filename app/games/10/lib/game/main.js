@@ -76,6 +76,8 @@ window.eventHandler = {
 
                 console.log( 'This is a PRO error' );
                 alert(errorMsg);
+                $("#spin").html("SPIN");
+                $("#spin").css({"color":"white"});
                 //app.Animation.showMessagePanel("generic", errorMsg);
 
                 return;
@@ -83,6 +85,8 @@ window.eventHandler = {
 
 
             alert(errorMsg);
+            $("#spin").html("SPIN");
+            $("#spin").css({"color":"white"});
             arcade.eventStorage.clearAllArcadeEvents('ArcadeEvents');
             // wipe everything
             localStorage.clear();
@@ -125,6 +129,9 @@ window.eventHandler = {
 
         request.fail(function(response, textStatus, jqXHR){
             console.log( 'failed to spin.' );
+            alert("Uh oh, there was an error");
+            $("#spin").html("SPIN");
+            $("#spin").css({"color":"white"});
             //TODO handle error
         });
 
@@ -149,10 +156,14 @@ window.eventHandler = {
 
         request.done(function(response, textStatus, jqXHR){
             console.log( 'placed result event successfully' );
+
         });
         request.fail(function(response, textStatus, jqXHR){
             //TODO handle erros
             console.log( 'failed to place result event.' );
+            alert("Uh oh, there was an error");
+            $("#spin").html("SPIN");
+            $("#spin").css({"color":"white"});
         });
 
     },
@@ -232,6 +243,7 @@ MyGame = ig.Game.extend({
         });
 
         $('#spin').bind('touchstart',function(e){
+            $(this).html('Wait..');
             $(this).css('color','#eb7170');
         });
 
@@ -240,7 +252,7 @@ MyGame = ig.Game.extend({
             e.preventDefault();
 
             if(ig.game.spinning) return false;
-
+            $(this).html('Wait..');
             $(this).css('color','#eb7170');
 
            window.eventHandler.spin(ig.game.wager);
@@ -399,7 +411,9 @@ MyGame = ig.Game.extend({
 
         $('#gratii-coins span').text(ig.game.usersCurrentGratii);
 
+        $("#spin").html("SPIN");
         $('#spin').css('color','#ffffff');
+
 
     },
 
