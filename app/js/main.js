@@ -24,11 +24,11 @@ var currentPage = 0,
 	apiRoot = "../backend/public/api/v1/",
 	inApp = true;
 
-// if (window.navigator.standalone) {
-//   	inApp = true;
-// } else {
+if (window.navigator.standalone) {
+  	inApp = true;
+} else {
 	
-// 	$(".homeScreen").hide();
+	$(".homeScreen").hide();
 
 	if($(window).width() == "320"){
 
