@@ -38,5 +38,6 @@ body {
     height: 65px;
     border-top: 1px solid #6e6e6e;
     background-color: #eee;
-    line-height: 65px;
+    padding: 5px;
+    /*line-height: 65px;*/
      }
