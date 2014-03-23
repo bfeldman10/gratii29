@@ -24,11 +24,11 @@ var currentPage = 0,
 	apiRoot = "../backend/public/api/v1/",
 	inApp = true;
 
-if (window.navigator.standalone) {
-  	inApp = true;
-} else {
+// if (window.navigator.standalone) {
+//   	inApp = true;
+// } else {
 	
-	$(".homeScreen").hide();
+// 	$(".homeScreen").hide();
 
 	if($(window).width() == "320"){
 
@@ -61,6 +61,30 @@ if (window.navigator.standalone) {
 		}, 4000);	
 	}
 
+}
+
+function createCookie(name, value, days) {
+    var expires;
+
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    } else {
+        expires = "";
+    }
+    document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = escape(name) + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return unescape(c.substring(nameEQ.length, c.length));
+    }
+    return null;
 }
 
 
@@ -197,6 +221,7 @@ function hideFunctions(){
 		event.preventDefault();
 		$(".homeScreenButtonWrapper").hide();
 		$(".loginWrapper").show();
+		$(".loginWrapper .emailInput").val(readCookie("username"));
 	});
 
 	$(".signUp.button").on('click', function(){
@@ -255,6 +280,7 @@ function hideFunctions(){
 	            return true;
 	        },
 	        success: function(data){ 
+	        	createCookie("username", userEmail, "100");
 	        	$(".signupWrapper").html('<font style="font-family:Trebuchet MS; font-size:18px"><b>Success!</b></br></br>You should receive an activation email shortly. You must open it to verify your account before you can log in. If you do not receive an email within 5 minutes (make sure you check your spam folders!), contact support: </br> info@gratii.com.');
 	        }
 	    });
@@ -295,7 +321,6 @@ function hideFunctions(){
 	        success: function(data){ 
 	        	$("#profile #save").css({color:"lightgreen"});
 	        	$("#profile #save").html('Success!');
-
 	        	
 	        	window.setTimeout(function () {
 			    	$("#profile #save").html('Save');
@@ -431,11 +456,28 @@ function hideFunctions(){
 	        success: function(data){ 
 	        	console.log(data['msg']);
 	        	$(".loginButton").html(data['msg']);
+	        	createCookie("username", userEmail, "100");
 	        	location.reload();
 	        }
 	    });
 	});
 	
+	// $(".gratiiCoin#header").click(function(){ //log out test
+	// 	$.ajax({
+	//         url: apiRoot+"user/logout",
+	//         type: 'GET',
+	//         dataType: 'json',
+	//         async: true,
+	//         cache: false,
+	//         timeout: 30000,
+	//         error: function(data){
+
+	//         },
+	//         success: function(data){ 
+
+	//         }
+	//     });
+	// });
 
 	$("#passwordReset").on('click', function(){
 		if(loggedIn === false){
