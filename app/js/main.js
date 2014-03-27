@@ -735,19 +735,29 @@ User.prototype.changeGratii = function(changeInGratii){
 	}
 	
 
-	
 	$(".header .gratiiScore").html(changeSymbol+changeInGratii);
-	$(".header .gratiiScore").css({color:changeColor});
-	$(".header .gratiiScore").animate({opacity:".2", fontSize:"60px"}, {
-	    queue:    false,
-	    duration: 1000,
-	    complete: function() { 
-	        var beforeGratii = parseInt(user.gratii);
-			user.gratii = beforeGratii + changeInGratii;
-			$(".header .gratiiScore").html(user.gratii);
-			$(".header .gratiiScore").css({color:"black", fontSize:"24px", opacity:"1", zIndex:""});
-	    }
-	});
+	$(".header .gratiiScore").css({"color":changeColor});
+	$(".header .gratiiScore").effect( "pulsate", {color:changeColor}, 1000, updateGratii);
+
+	function updateGratii(){
+		var beforeGratii = parseInt(user.gratii);
+		user.gratii = beforeGratii + changeInGratii;
+		$(".header .gratiiScore").html(user.gratii);
+		$(".header .gratiiScore").css({"color":"black"});
+	}
+	
+
+	// $(".header .gratiiScore").css({color:changeColor});
+	// $(".header .gratiiScore").animate({opacity:".2", fontSize:"60px"}, {
+	//     queue:    false,
+	//     duration: 1000,
+	//     complete: function() { 
+	//         var beforeGratii = parseInt(user.gratii);
+	// 		user.gratii = beforeGratii + changeInGratii;
+	// 		$(".header .gratiiScore").html(user.gratii);
+	// 		$(".header .gratiiScore").css({color:"black", fontSize:"24px", opacity:"1", zIndex:""});
+	//     }
+	// });
 
 }
 
