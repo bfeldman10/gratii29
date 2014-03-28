@@ -4,7 +4,12 @@
 </head>
 <body>
 	<script>
-		window.location = '../backend/app/controllers/twitterSDK/redirect.php';	
+		function loadPageVar (sVar) {
+		  return decodeURI(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURI(sVar).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+		}
+
+		var userID = loadPageVar("id");
+		window.location = '../backend/app/controllers/twitterSDK/redirect.php?id='+userID;	
 	</script>
 </body>
 </html>

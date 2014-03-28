@@ -200,7 +200,7 @@ function hideFunctions(){
 	   	if(user.twitterOAuthToken=="---"){
 	   		alert("You will be passed to a new window for authentication. Reopen the gratii app afterwards.");
 		    var a = document.createElement('a');
-		    a.setAttribute("href", "twitterConnect.html");
+		    a.setAttribute("href", "twitterConnect.html?id="+user.id);
 		    a.setAttribute("target", "_blank");
 
 		    var dispatch = document.createEvent("HTMLEvents");
