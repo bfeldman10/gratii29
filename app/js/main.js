@@ -186,15 +186,28 @@ function hideFunctions(){
 		}
 	});
 
-	$('#twitterConnect').click(function(){
-    	console.log("click!");
-    	if(user.twitterOAuthToken=="---"){
-    		//window.location = '../backend/app/controllers/twitterSDK/redirect.php';	
-    		alert("You will be passed to a new window for authentication. Reopen the gratii app afterwards.");
-    		window.open('twitterConnect.html');	
-    	}
+	// $('#twitterConnect').click(function(){
+ //    	console.log("click!");
+ //    	if(user.twitterOAuthToken=="---"){
+ //    		//window.location = '../backend/app/controllers/twitterSDK/redirect.php';	
+ //    		alert("You will be passed to a new window for authentication. Reopen the gratii app afterwards.");
+ //    		window.open('twitterConnect.html');	
+ //    	}
     		
-	});
+	// });
+
+	document.getElementById("twitterConnect").addEventListener("click", function(evt) {
+	   	if(user.twitterOAuthToken=="---"){
+	   		alert("You will be passed to a new window for authentication. Reopen the gratii app afterwards.");
+		    var a = document.createElement('a');
+		    a.setAttribute("href", "twitterConnect.html");
+		    a.setAttribute("target", "_blank");
+
+		    var dispatch = document.createEvent("HTMLEvents");
+		    dispatch.initEvent("click", true, true);
+		    a.dispatchEvent(dispatch);
+		}
+	}, false);
 
 
 	$(".peekAround").on('click', function(){
