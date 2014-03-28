@@ -738,7 +738,7 @@ function getBidsDailyForClient_Job($id, $receiver=NULL){
 		$dateCreatedAt = date('Y-m-d', strtotime($bid['createdAt']));
 		$unixCreatedAt = strtotime($dateCreatedAt);
 		foreach ($dailyBids as &$dailyBid) {
-			if($dailyBid['unixTimestamp']==$unixCreatedAt){
+			if(date('Y-m-d', $dailyBid['unixTimestamp'])==date('Y-m-d', $unixCreatedAt)){
 				$dailyBid['count']++;
 			}
 		}		
@@ -796,7 +796,7 @@ function getLikesDailyForClient_Job($id, $receiver=NULL){
 		$dateCreatedAt = date('Y-m-d', strtotime($like['createdAt']));
 		$unixCreatedAt = strtotime($dateCreatedAt);
 		foreach ($dailyLikes as &$dailyLike) {
-			if($dailyLike['unixTimestamp']==$unixCreatedAt){
+			if(date('Y-m-d', $dailyLike['unixTimestamp'])==date('Y-m-d', $unixCreatedAt)){
 				$dailyLike['count']++;
 			}
 		}		
@@ -854,7 +854,7 @@ function getFollowsDailyForClient_Job($id, $receiver=NULL){
 		$dateCreatedAt = date('Y-m-d', strtotime($follow['createdAt']));
 		$unixCreatedAt = strtotime($dateCreatedAt);
 		foreach ($dailyFollows as &$dailyFollow) {
-			if($dailyFollow['unixTimestamp']==$unixCreatedAt){
+			if(date('Y-m-d', $dailyFollow['unixTimestamp'])==date('Y-m-d', $unixCreatedAt)){
 				$dailyFollow['count']++;
 			}
 		}		
@@ -912,7 +912,7 @@ function getClickthrusDailyForClient_Job($id, $receiver=NULL){
 		$dateCreatedAt = date('Y-m-d', strtotime($clickthru['createdAt']));
 		$unixCreatedAt = strtotime($dateCreatedAt);
 		foreach ($dailyClickthrus as &$dailyClickthru) {
-			if($dailyClickthru['unixTimestamp']==$unixCreatedAt){
+			if(date('Y-m-d', $dailyClickthru['unixTimestamp'])==date('Y-m-d', $unixCreatedAt)){
 				$dailyClickthru['count']++;
 			}
 		}		
