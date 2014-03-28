@@ -1,5 +1,11 @@
 <?php
 
+function getAge($then) {
+    $then = date('Ymd', strtotime($then));
+    $diff = date('Ymd') - $then;
+    return substr($diff, 0, -4);
+}
+
 //SELECT QUERIES
 function getAllBidders(){
 
@@ -14,11 +20,18 @@ function getAllBidders(){
 													userState,
 													userCountry,
 													userLat,
-													userLong
+													userLong,
+													userBirthDate,
+													userBirthMonth,
+													userBirthYear
 											FROM bids
 											LEFT JOIN users ON users.id = bids.userID GROUP BY users.id');
 	$getAllBidders -> execute();
 	if($results = $getAllBidders -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -80,6 +93,9 @@ function getAllBiddersForPromoID($promoID){
 													userCountry,
 													userLat,
 													userLong,
+													userBirthDate,
+													userBirthMonth,
+													userBirthYear,
 													auctions.id as auctionID	
 											FROM bids
 											LEFT JOIN auctions ON bids.auctionID = auctions.id
@@ -88,6 +104,10 @@ function getAllBiddersForPromoID($promoID){
 											WHERE promos.id=? GROUP BY users.id');
 	$getAllBidders -> execute(array($promoID));
 	if($results = $getAllBidders -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -112,6 +132,9 @@ function getAllBiddersForClientID($clientID){
 														userCountry,
 														userLat,
 														userLong,
+														userBirthDate,
+														userBirthMonth,
+														userBirthYear,
 														auctions.id as auctionID	
 												FROM bids
 												LEFT JOIN auctions ON bids.auctionID = auctions.id
@@ -121,6 +144,10 @@ function getAllBiddersForClientID($clientID){
 												WHERE clients.id=? GROUP BY users.id');
 	$getAllBidders -> execute(array($clientID));
 	if($results = $getAllBidders -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);

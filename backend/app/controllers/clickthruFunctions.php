@@ -1,5 +1,11 @@
 <?php
 
+function getAge($then) {
+    $then = date('Ymd', strtotime($then));
+    $diff = date('Ymd') - $then;
+    return substr($diff, 0, -4);
+}
+
 //SELECT QUERIES
 function getAllClickers(){
 
@@ -14,11 +20,18 @@ function getAllClickers(){
 													userState,
 													userCountry,
 													userLat,
-													userLong	
+													userLong,
+													userBirthDate,
+													userBirthMonth,
+													userBirthYear	
 											FROM clickthrus
 											LEFT JOIN users ON users.id = clickthrus.userID GROUP BY users.id');
 	$getAllClickers -> execute();
 	if($results = $getAllClickers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -79,7 +92,10 @@ function getAllClickersForPromoID($promoID){
 													userState,
 													userCountry,
 													userLat,
-													userLong	
+													userLong,
+													userBirthDate,
+													userBirthMonth,
+													userBirthYear	
 											FROM clickthrus
 											LEFT JOIN auctions ON clickthrus.auctionID = auctions.id
 											LEFT JOIN promos ON auctions.promoID = promos.id
@@ -87,6 +103,10 @@ function getAllClickersForPromoID($promoID){
 											WHERE promos.id=? GROUP BY users.id');
 	$getAllClickers -> execute(array($promoID));
 	if($results = $getAllClickers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -110,7 +130,10 @@ function getAllClickersForClientID($clientID){
 														userState,
 														userCountry,
 														userLat,
-														userLong	
+														userLong,
+														userBirthDate,
+														userBirthMonth,
+														userBirthYear	
 												FROM clickthrus
 												LEFT JOIN auctions ON clickthrus.auctionID = auctions.id
 												LEFT JOIN promos ON auctions.promoID = promos.id
@@ -119,6 +142,10 @@ function getAllClickersForClientID($clientID){
 												WHERE clients.id=? GROUP BY users.id');
 	$getAllClickers -> execute(array($clientID));
 	if($results = $getAllClickers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -142,7 +169,10 @@ function getAllClickersForPromoWebsiteID($promoWebsiteID){
 														userState,
 														userCountry,
 														userLat,
-														userLong	
+														userLong,
+														userBirthDate,
+														userBirthMonth,
+														userBirthYear	
 												FROM clickthrus
 												LEFT JOIN auctions ON clickthrus.auctionID = auctions.id
 												LEFT JOIN promos ON auctions.promoID = promos.id
@@ -151,6 +181,10 @@ function getAllClickersForPromoWebsiteID($promoWebsiteID){
 												WHERE promos.promoWebsiteID=? GROUP BY users.id');
 	$getAllClickers -> execute(array($promoWebsiteID));
 	if($results = $getAllClickers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -174,7 +208,10 @@ function getAllClickthrusForPromoWebsiteID($promoWebsiteID){
 														userState,
 														userCountry,
 														userLat,
-														userLong	
+														userLong,
+														userBirthDate,
+														userBirthMonth,
+														userBirthYear	
 												FROM clickthrus
 												LEFT JOIN auctions ON clickthrus.auctionID = auctions.id
 												LEFT JOIN promos ON auctions.promoID = promos.id
@@ -183,6 +220,10 @@ function getAllClickthrusForPromoWebsiteID($promoWebsiteID){
 												WHERE promos.promoWebsiteID=?');
 	$getAllClickers -> execute(array($promoWebsiteID));
 	if($results = $getAllClickers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);

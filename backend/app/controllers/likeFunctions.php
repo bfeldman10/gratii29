@@ -1,5 +1,11 @@
 <?php
 
+function getAge($then) {
+    $then = date('Ymd', strtotime($then));
+    $diff = date('Ymd') - $then;
+    return substr($diff, 0, -4);
+}
+
 //SELECT QUERIES
 function getAllLikers(){
 
@@ -14,11 +20,18 @@ function getAllLikers(){
 													userState,
 													userCountry,
 													userLat,
-													userLong	
+													userLong,
+													userBirthDate,
+													userBirthMonth,
+													userBirthYear	
 											FROM likes
 											LEFT JOIN users ON users.id = likes.userID GROUP BY users.id');
 	$getAllLikers -> execute();
 	if($results = $getAllLikers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -79,7 +92,10 @@ function getAllLikersForPromoID($promoID){
 													userState,
 													userCountry,
 													userLat,
-													userLong	
+													userLong,
+													userBirthDate,
+													userBirthMonth,
+													userBirthYear
 											FROM likes
 											LEFT JOIN auctions ON likes.auctionID = auctions.id
 											LEFT JOIN promos ON auctions.promoID = promos.id
@@ -87,6 +103,10 @@ function getAllLikersForPromoID($promoID){
 											WHERE promos.id=? GROUP BY users.id');
 	$getAllLikers -> execute(array($promoID));
 	if($results = $getAllLikers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -110,7 +130,10 @@ function getAllLikersForClientID($clientID){
 														userState,
 														userCountry,
 														userLat,
-														userLong	
+														userLong,
+														userBirthDate,
+														userBirthMonth,
+														userBirthYear	
 												FROM likes
 												LEFT JOIN auctions ON likes.auctionID = auctions.id
 												LEFT JOIN promos ON auctions.promoID = promos.id
@@ -119,6 +142,10 @@ function getAllLikersForClientID($clientID){
 												WHERE clients.id=? GROUP BY users.id');
 	$getAllLikers -> execute(array($clientID));
 	if($results = $getAllLikers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -142,7 +169,10 @@ function getAllLikersForPromoFacebookID($promoFacebookID){
 														userState,
 														userCountry,
 														userLat,
-														userLong	
+														userLong,
+														userBirthDate,
+														userBirthMonth,
+														userBirthYear	
 												FROM likes
 												LEFT JOIN auctions ON likes.auctionID = auctions.id
 												LEFT JOIN promos ON auctions.promoID = promos.id
@@ -151,6 +181,10 @@ function getAllLikersForPromoFacebookID($promoFacebookID){
 												WHERE promos.promoFacebookID=? GROUP BY users.id');
 	$getAllLikers -> execute(array($promoFacebookID));
 	if($results = $getAllLikers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);

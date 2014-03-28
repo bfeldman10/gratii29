@@ -803,28 +803,28 @@ $(function(){
 
         _.each(data, function(userObject, key, list){
 
-            if (userObject.userAgeMin < 13) {
+            if (userObject.userAge < 13) {
                 preteen++;
             }
-            else if(userObject.userAgeMin >=13 && userObject.userAgeMax <= 17){
+            else if(userObject.userAge >=13 && userObject.userAge <= 17){
                 thirteenSeventeen++;
             }
-            else if(userObject.userAgeMin >17 && userObject.userAgeMax <= 20){
+            else if(userObject.userAge >17 && userObject.userAge <= 20){
                 eighteenTwenty++;
             }
-            else if(userObject.userAgeMin >20 && userObject.userAgeMax <= 25){
+            else if(userObject.userAge >20 && userObject.userAge <= 25){
                 twentyOneTwentyFive++;
             }
-            else if(userObject.userAgeMin >25 && userObject.userAgeMax <= 30){
+            else if(userObject.userAge >25 && userObject.userAge <= 30){
                 twentySixThirty++;
             }
-            else if(userObject.userAgeMin >30 && userObject.userAgeMax <= 40){
+            else if(userObject.userAge >30 && userObject.userAge <= 40){
                 thirtyOneFourty++;
             }
-            else if(userObject.userAgeMin >40 && userObject.userAgeMax <= 50){
+            else if(userObject.userAge >40 && userObject.userAge <= 50){
                 fourtyOneFifty++;
             }
-            else if(userObject.userAgeMin >50 && userObject.userAgeMax <= 60){
+            else if(userObject.userAge >50 && userObject.userAge <= 60){
                 fiftyOneSixty++;
             }
             else{

@@ -1,5 +1,11 @@
 <?php
 
+function getAge($then) {
+    $then = date('Ymd', strtotime($then));
+    $diff = date('Ymd') - $then;
+    return substr($diff, 0, -4);
+}
+
 //SELECT QUERIES
 function getAllFollowers(){
 
@@ -14,11 +20,18 @@ function getAllFollowers(){
 													userState,
 													userCountry,
 													userLat,
-													userLong	
+													userLong,
+													userBirthDate,
+													userBirthMonth,
+													userBirthYear	
 											FROM follows
 											LEFT JOIN users ON users.id = follows.userID GROUP BY users.id');
 	$getAllFollowers -> execute();
 	if($results = $getAllFollowers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -79,7 +92,10 @@ function getAllFollowersForPromoID($promoID){
 													userState,
 													userCountry,
 													userLat,
-													userLong	
+													userLong,
+													userBirthDate,
+													userBirthMonth,
+													userBirthYear	
 											FROM follows
 											LEFT JOIN auctions ON follows.auctionID = auctions.id
 											LEFT JOIN promos ON auctions.promoID = promos.id
@@ -87,6 +103,10 @@ function getAllFollowersForPromoID($promoID){
 											WHERE promos.id=? GROUP BY users.id');
 	$getAllFollowers -> execute(array($promoID));
 	if($results = $getAllFollowers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -110,7 +130,10 @@ function getAllFollowersForClientID($clientID){
 														userState,
 														userCountry,
 														userLat,
-														userLong	
+														userLong,
+														userBirthDate,
+														userBirthMonth,
+														userBirthYear	
 												FROM follows
 												LEFT JOIN auctions ON follows.auctionID = auctions.id
 												LEFT JOIN promos ON auctions.promoID = promos.id
@@ -119,6 +142,10 @@ function getAllFollowersForClientID($clientID){
 												WHERE clients.id=? GROUP BY users.id');
 	$getAllFollowers -> execute(array($clientID));
 	if($results = $getAllFollowers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
@@ -142,7 +169,10 @@ function getAllFollowersForPromoTwitterID($promoTwitterID){
 														userState,
 														userCountry,
 														userLat,
-														userLong	
+														userLong,
+														userBirthDate,
+														userBirthMonth,
+														userBirthYear	
 												FROM follows
 												LEFT JOIN auctions ON follows.auctionID = auctions.id
 												LEFT JOIN promos ON auctions.promoID = promos.id
@@ -151,6 +181,10 @@ function getAllFollowersForPromoTwitterID($promoTwitterID){
 												WHERE promos.promoTwitterID=? GROUP BY users.id');
 	$getAllFollowers -> execute(array($promoTwitterID));
 	if($results = $getAllFollowers -> fetchAll(PDO::FETCH_ASSOC)){ //Success
+		foreach ($results as $result=>$value) {
+			$birthday = $results[$result]['userBirthYear']."-".$results[$result]['userBirthMonth']."-".$results[$result]['userBirthDate'];
+			$results[$result]['userAge'] = getAge($birthday);
+		}
 		return array("error"=>false, 
 					"msg"=>"200",
 					"results"=>$results);
