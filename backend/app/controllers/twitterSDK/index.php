@@ -102,7 +102,7 @@ if($res['error']){ //Error
 	curl_close($ch); //Close curl
 	// $results = $res['results']; //Success data
 	// echo $results;
-	Header('Location:'.$rootURL.'/app');
+	Header('Location:'.$rootURL.'/app/twitterComplete.html');
 	echo $content->id;
 }
 
