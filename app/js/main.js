@@ -189,7 +189,9 @@ function hideFunctions(){
 	$('#twitterConnect').click(function(){
     	console.log("click!");
     	if(user.twitterOAuthToken=="---"){
-    		window.location = '../backend/app/controllers/twitterSDK/redirect.php';	
+    		//window.location = '../backend/app/controllers/twitterSDK/redirect.php';	
+    		alert("You will be passed to a new window for authentication. Reopen the gratii app afterwards.");
+    		window.open('twitterConnect.html');	
     	}
     		
 	});
