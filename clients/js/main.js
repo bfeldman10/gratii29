@@ -772,7 +772,7 @@ $(function(){
             case "fb":
                 $selector = $('.fb-row .facebook-table');
                 _.each(data, function(socialObject, key, list){
-                    items += '<tr data-id="'+socialObject.promoFacebookID+'" class="item"><td><a target="_blank" href="'+socialObject.promoFacebook+'">facebook.com/'+socialObject.promoFacebook+'</a></td><td id="item-'+socialObject.promoFacebookID+'"></td></tr>';
+                    items += '<tr data-id="'+socialObject.promoFacebookID+'" class="item"><td><a target="_blank" href="//'+socialObject.promoFacebook+'">'+socialObject.promoFacebook+'</a></td><td id="item-'+socialObject.promoFacebookID+'"></td></tr>';
                     adminApp.Data.retrieveTotalLikesForItem(socialObject.promoFacebookID, "item-"+socialObject.promoFacebookID);
                 });
                 $selector.append(items);
@@ -780,7 +780,7 @@ $(function(){
             case "twitter":
                 $selector = $('.twitter-row .twitter-table');
                 _.each(data, function(socialObject, key, list){
-                    items += '<tr data-id="'+socialObject.promoTwitterID+'" class="item"><td><a target="_blank" href="https://twitter.com/'+socialObject.promoTwitter+'">twitter.com/'+socialObject.promoTwitter+'</a></td><td id="item-'+socialObject.promoTwitterID+'"></td></tr>';
+                    items += '<tr data-id="'+socialObject.promoTwitterID+'" class="item"><td><a target="_blank" href="https://twitter.com/'+socialObject.promoTwitter+'">@'+socialObject.promoTwitter+'</a></td><td id="item-'+socialObject.promoTwitterID+'"></td></tr>';
                     adminApp.Data.retrieveTotalFollowsForItem(socialObject.promoTwitterID, "item-"+socialObject.promoTwitterID);
                 });
                 $selector.append(items);
@@ -788,7 +788,7 @@ $(function(){
             case "web":
                 $selector = $('.web-row .web-table');
                 _.each(data, function(socialObject, key, list){
-                    items += '<tr data-id="'+socialObject.promoWebsiteID+'" class="item"><td><a target="_blank" href="'+socialObject.promoWebsite+'">http://'+socialObject.promoWebsite+'</a></td><td id="item-'+socialObject.promoWebsiteID+'"></td></tr>';
+                    items += '<tr data-id="'+socialObject.promoWebsiteID+'" class="item"><td><a target="_blank" href=//'+socialObject.promoWebsite+'">'+socialObject.promoWebsite+'</a></td><td id="item-'+socialObject.promoWebsiteID+'"></td></tr>';
                     adminApp.Data.retrieveTotalClickThrusForItem(socialObject.promoWebsiteID, "item-"+socialObject.promoWebsiteID);
                 });
                 $selector.append(items);
