@@ -788,7 +788,7 @@ $(function(){
             case "web":
                 $selector = $('.web-row .web-table');
                 _.each(data, function(socialObject, key, list){
-                    items += '<tr data-id="'+socialObject.promoWebsiteID+'" class="item"><td><a target="_blank" href="'+socialObject.promoWebsite+'">'+socialObject.promoWebsite+'</a></td><td id="item-'+socialObject.promoWebsiteID+'"></td></tr>';
+                    items += '<tr data-id="'+socialObject.promoWebsiteID+'" class="item"><td><a target="_blank" href="//'+socialObject.promoWebsite+'">'+socialObject.promoWebsite+'</a></td><td id="item-'+socialObject.promoWebsiteID+'"></td></tr>';
                     adminApp.Data.retrieveTotalClickThrusForItem(socialObject.promoWebsiteID, "item-"+socialObject.promoWebsiteID);
                 });
                 $selector.append(items);
