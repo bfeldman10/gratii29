@@ -772,7 +772,7 @@ $(function(){
             case "fb":
                 $selector = $('.fb-row .facebook-table');
                 _.each(data, function(socialObject, key, list){
-                    items += '<tr data-id="'+socialObject.promoFacebookID+'" class="item"><td><a target="_blank" href="https://facebook.com/'+socialObject.promoFacebook+'">facebook.com/'+socialObject.promoFacebook+'</a></td><td id="item-'+socialObject.promoFacebookID+'"></td></tr>';
+                    items += '<tr data-id="'+socialObject.promoFacebookID+'" class="item"><td><a target="_blank" href="'+socialObject.promoFacebook+'">facebook.com/'+socialObject.promoFacebook+'</a></td><td id="item-'+socialObject.promoFacebookID+'"></td></tr>';
                     adminApp.Data.retrieveTotalLikesForItem(socialObject.promoFacebookID, "item-"+socialObject.promoFacebookID);
                 });
                 $selector.append(items);
@@ -788,7 +788,7 @@ $(function(){
             case "web":
                 $selector = $('.web-row .web-table');
                 _.each(data, function(socialObject, key, list){
-                    items += '<tr data-id="'+socialObject.promoWebsiteID+'" class="item"><td><a target="_blank" href="http://'+socialObject.promoWebsite+'">http://'+socialObject.promoWebsite+'</a></td><td id="item-'+socialObject.promoWebsiteID+'"></td></tr>';
+                    items += '<tr data-id="'+socialObject.promoWebsiteID+'" class="item"><td><a target="_blank" href="'+socialObject.promoWebsite+'">http://'+socialObject.promoWebsite+'</a></td><td id="item-'+socialObject.promoWebsiteID+'"></td></tr>';
                     adminApp.Data.retrieveTotalClickThrusForItem(socialObject.promoWebsiteID, "item-"+socialObject.promoWebsiteID);
                 });
                 $selector.append(items);
