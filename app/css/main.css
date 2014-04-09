@@ -1471,7 +1471,12 @@ td{
 
 #profile .settings .sectionText{
 	margin-top: 5px;
-	text-align: center;
+	color: black;
+	text-align: left;
+}
+
+#profile .settings .sectionText#didYouKnow{
+	margin-top: 5px;
 }
 
 #profile .settings .sectionHeader{
@@ -1515,6 +1520,11 @@ td{
 #profile #twitterShare{
 	color: white;
 	background-color: #4099FF;
+}
+
+#profile #emailShare{
+	color: white;
+	background-color: #aaaaaa;
 }
 
 .sectionInputText{
@@ -1585,6 +1595,12 @@ td{
 .social-login-button-wrapper{
 	position: relative;
 	width: 300px;
+	margin: 0px auto;
+}
+
+.social-login-button-wrapper#facebookConnect{
+	position: relative;
+	width: 200px;
 	margin: 0px auto;
 }
 

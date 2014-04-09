@@ -24,44 +24,44 @@ var currentPage = 0,
 	apiRoot = "../backend/public/api/v1/",
 	inApp = true;
 
-if (window.navigator.standalone) {
-  	inApp = true;
-} else {
+// if (window.navigator.standalone) {
+//   	inApp = true;
+// } else {
 	
-	$(".homeScreen").hide();
+// 	$(".homeScreen").hide();
 
-	if($(window).width() == "320"){
+// 	if($(window).width() == "320"){
 
-		if(navigator.userAgent.match('CriOS')) {
-		   //Mobile chrome
-		    $(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on mobile Safari at this time. Please reopen this link in Safari.");
-			$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
-			$(".downloadScreen").show();
-			window.setTimeout(function(){
-				$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
-				window.setTimeout(function(){
-					window.location = "../home/home";
-				}, 3000);
-			}, 4000);	
-		} else {
-			//Not mobile chrome
-			$(".downloadScreen").show();
-		}
+// 		if(navigator.userAgent.match('CriOS')) {
+// 		   //Mobile chrome
+// 		    $(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on mobile Safari at this time. Please reopen this link in Safari.");
+// 			$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
+// 			$(".downloadScreen").show();
+// 			window.setTimeout(function(){
+// 				$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
+// 				window.setTimeout(function(){
+// 					window.location = "../home/home";
+// 				}, 3000);
+// 			}, 4000);	
+// 		} else {
+// 			//Not mobile chrome
+// 			$(".downloadScreen").show();
+// 		}
 
-	}else{
+// 	}else{
 		
-		$(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on iPhone at this time.");
-		$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
-		$(".downloadScreen").show();
-		window.setTimeout(function(){
-			$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
-			window.setTimeout(function(){
-				window.location = "../home/home";
-			}, 3000);
-		}, 4000);	
-	}
+// 		$(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on iPhone at this time.");
+// 		$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
+// 		$(".downloadScreen").show();
+// 		window.setTimeout(function(){
+// 			$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
+// 			window.setTimeout(function(){
+// 				window.location = "../home/home";
+// 			}, 3000);
+// 		}, 4000);	
+// 	}
 
-}
+// }
 
 function createCookie(name, value, days) {
     var expires;
@@ -196,18 +196,18 @@ function hideFunctions(){
     		
 	// });
 
-	document.getElementById("twitterConnect").addEventListener("click", function(evt) {
-	   	if(user.twitterOAuthToken=="---"){
-	   		alert("You will be passed to a new window for authentication. Reopen the gratii app afterwards.");
-		    var a = document.createElement('a');
-		    a.setAttribute("href", "twitterConnect.html?id="+user.id);
-		    a.setAttribute("target", "_blank");
+	// document.getElementById("twitterConnect").addEventListener("click", function(evt) {
+	//    	if(user.twitterOAuthToken=="---"){
+	//    		alert("You will be passed to a new window for authentication. Reopen the gratii app afterwards.");
+	// 	    var a = document.createElement('a');
+	// 	    a.setAttribute("href", "twitterConnect.html?id="+user.id);
+	// 	    a.setAttribute("target", "_blank");
 
-		    var dispatch = document.createEvent("HTMLEvents");
-		    dispatch.initEvent("click", true, true);
-		    a.dispatchEvent(dispatch);
-		}
-	}, false);
+	// 	    var dispatch = document.createEvent("HTMLEvents");
+	// 	    dispatch.initEvent("click", true, true);
+	// 	    a.dispatchEvent(dispatch);
+	// 	}
+	// }, false);
 
 
 	$(".peekAround").on('click', function(){
@@ -656,8 +656,9 @@ User.prototype.completeProfile = function(){
 	$("#profile #year").val(this.year);
 	$("#profile #gender").val(this.gender);
 	$(".header .gratiiScore").html(this.gratii);
-	$("#profile #twitterShare").attr("href", "https://twitter.com/intent/tweet?button_hashtag=BonusGratii&text=When%20you%20signup%20for%20the%20new%20Gratii%20app%2C%20type%20%22"+this.username+"%22%20in%20as%20the%20referral%20please!%20Thanks%20http%3A//gratii.com");
-
+	$("#profile #twitterShareATag").attr("href", "https://twitter.com/intent/tweet?button_hashtag=Gratii&text=When%20you%20signup%20for%20the%20new%20Gratii%20app%2C%20type%20%22"+this.username+"%22%20in%20as%20the%20referral%20please!%20Go%20to%20http%3A//gratii.com%20to%20download%20it");
+	$("#profile #emailShareATag").attr("href","mailTo:?subject=You hear about gratii yet&body=You need to check out the new app called gratii. It's a mobile app but go to gratii.com to download it for free. You can win free gift cards and a bunch of stuff just by playing games on your phone. If you sign up can you put me down as a referral so I can get a bonus please! Just type "+this.username+" into the referral field on the sign up page. Thanks! Hope you enjoy it.");
+	$("#profile #facebookConnect").append("<div><fb:login-button show-faces='false' width='100' max-rows='1' data-size='xlarge' data-scope='read_friendlists, user_likes'></fb:login-button></div>");
 	if(loggedIn===true){
 		$("#profile .rank").html("My Gratii Rank: <b>"+this.rank+this.rankGrammarText+"</b> out of "+this.totalUsers+" players");
 	}
@@ -1375,7 +1376,7 @@ Auction.prototype.styleFB = function(){
 			}
 		);
 	}else{
-		var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small"></fb:login-button>';
+		var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small" data-scope="read_friendlists, user_likes"></fb:login-button>';
 	}
 
 	return likeBtn;
@@ -1427,9 +1428,22 @@ Auction.prototype.styleTwitter = function(){
 
 		followBtn.id = "twitterConnect";
 
-		$(followBtn).click(function(){
-			window.location = '../backend/app/controllers/twitterSDK/redirect.php';	
-		});
+		// $(followBtn).click(function(){
+		// 	window.location = '../backend/app/controllers/twitterSDK/redirect.php';	
+		// });
+
+		followBtn.addEventListener("click", function(evt) {
+		   	if(user.twitterOAuthToken=="---"){
+		   		alert("You will be passed to a new window for authentication. Reopen the gratii app afterwards.");
+			    var a = document.createElement('a');
+			    a.setAttribute("href", "twitterConnect.html?id="+user.id);
+			    a.setAttribute("target", "_blank");
+
+			    var dispatch = document.createEvent("HTMLEvents");
+			    dispatch.initEvent("click", true, true);
+			    a.dispatchEvent(dispatch);
+			}
+		}, false);
 
 		return followBtn;
 	}
