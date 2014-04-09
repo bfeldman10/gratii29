@@ -656,17 +656,18 @@ User.prototype.completeProfile = function(){
 	$("#profile #year").val(this.year);
 	$("#profile #gender").val(this.gender);
 	$(".header .gratiiScore").html(this.gratii);
-	$("#profile #twitterShareATag").attr("href", "https://twitter.com/intent/tweet?button_hashtag=Gratii&text=When%20you%20signup%20for%20the%20new%20Gratii%20app%2C%20type%20%22"+this.username+"%22%20in%20as%20the%20referral%20please!%20Go%20to%20http%3A//gratii.com%20to%20download%20it");
-	$("#profile #emailShareATag").attr("href","mailTo:?subject=You hear about gratii yet&body=You need to check out the new app called gratii. It's a mobile app but go to gratii.com to download it for free. You can win free gift cards and a bunch of stuff just by playing games on your phone. If you sign up can you put me down as a referral so I can get a bonus please! Just type "+this.username+" into the referral field on the sign up page. Thanks! Hope you enjoy it.");
-	$("#profile #facebookConnect").append("<div><fb:login-button show-faces='false' width='100' max-rows='1' data-size='xlarge' data-scope='read_friendlists, user_likes'></fb:login-button></div>");
+
 	if(loggedIn===true){
 		$("#profile .rank").html("My Gratii Rank: <b>"+this.rank+this.rankGrammarText+"</b> out of "+this.totalUsers+" players");
+		$("#profile #twitterShareATag").attr("href", "https://twitter.com/intent/tweet?button_hashtag=Gratii&text=When%20you%20signup%20for%20the%20new%20Gratii%20app%2C%20type%20%22"+this.username+"%22%20in%20as%20the%20referral%20please!%20Go%20to%20http%3A//gratii.com%20to%20download%20it");
+		$("#profile #emailShareATag").attr("href","mailTo:?subject=You hear about gratii yet&body=You need to check out the new app called gratii. It's a mobile app but go to gratii.com to download it for free. You can win free gift cards and a bunch of stuff just by playing games on your phone. If you sign up can you put me down as a referral so I can get a bonus please! Just type "+this.username+" into the referral field on the sign up page. Thanks! Hope you enjoy it.");
 	}
-	if(this.twitterOAuthToken!="---"){
-		$("#profile #twitterConnect").css("background-image", "none");
-		$("#profile #twitterConnect").html("Twitter account connected");
-		$("#profile #twitterConnect").css("width", "200px");
-	}
+	
+	// if(this.twitterOAuthToken!="---"){
+	// 	$("#profile #twitterConnect").css("background-image", "none");
+	// 	$("#profile #twitterConnect").html("Twitter account connected");
+	// 	$("#profile #twitterConnect").css("width", "200px");
+	// }
 
 	if(this.isPRO === true){
 		$("#profile .accountStatusText").html("You crush it! You got a <font style='color:lightgreen;font-weight:bold;font-family:boostsskregular;font-size:20px;text-align:center;'>Gratii PRO</font> account.</br>Expires: "+this.PRO);
