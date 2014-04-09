@@ -2213,6 +2213,29 @@ function updateFacebookTokens_Job($entity = NULL){
 }
 
 
+function checkIfTokenIsValid($userID, $fbTokenLong){
+	
+	$baseUrl = "https://graph.facebook.com/me?access_token=";
+	$url = $baseUrl.$fbTokenLong;
+	
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	// Set so curl_exec returns the result instead of outputting it.
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	// Get the response and close the channel.
+	$response = curl_exec($ch);
+	curl_close($ch);
+
+	$decodedResponse = json_decode($response, TRUE);
+	if(array_key_exists("id", $decodedResponse)){	
+		return true;
+	}else{
+		
+		return false;
+	}
+
+}
+
 function getFacebookLikes_Job($userID, $receiver=NULL){
 	if(!isset($receiver) || $receiver==""){ //No entity provided
 		return array("error"=>true,
@@ -2248,14 +2271,29 @@ function getFacebookLikes_Job($userID, $receiver=NULL){
 		'secret' => '713e2afb97e280c194a04054a45fe59e',
 	));
 
+
+	$tokenIsValid = checkIfTokenIsValid($userID, $userData['results']['fbTokenLong']);
+	if(!$tokenIsValid){
+
+		return array("error"=>false,
+				"results"=>array());
+	}
+
 	$fbLikes = $facebook->api($userData['results']['fbUserID'], array(
 		'fields'=>'likes.limit(5000)',
 		'access_token'=>$userData['results']['fbTokenLong']
 	));
-	 
-	return array("error"=>false,
+
+	if(array_key_exists('likes', $fbLikes)){
+		return array("error"=>false,
 				"results"=>$fbLikes['likes']['data']);
+	}else{
+		return array("error"=>false,
+				"results"=>array());
+	}
+
 }
+
 
 function getTwitterFollows_Job($userID, $receiver=NULL){
 	if(!isset($receiver) || $receiver==""){ //No entity provided
