@@ -24,44 +24,44 @@ var currentPage = 0,
 	apiRoot = "../backend/public/api/v1/",
 	inApp = true;
 
-// if (window.navigator.standalone) {
-//   	inApp = true;
-// } else {
+if (window.navigator.standalone) {
+  	inApp = true;
+} else {
 	
-// 	$(".homeScreen").hide();
+	$(".homeScreen").hide();
 
-// 	if($(window).width() == "320"){
+	if($(window).width() == "320"){
 
-// 		if(navigator.userAgent.match('CriOS')) {
-// 		   //Mobile chrome
-// 		    $(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on mobile Safari at this time. Please reopen this link in Safari.");
-// 			$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
-// 			$(".downloadScreen").show();
-// 			window.setTimeout(function(){
-// 				$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
-// 				window.setTimeout(function(){
-// 					window.location = "../home/home";
-// 				}, 3000);
-// 			}, 4000);	
-// 		} else {
-// 			//Not mobile chrome
-// 			$(".downloadScreen").show();
-// 		}
+		if(navigator.userAgent.match('CriOS')) {
+		   //Mobile chrome
+		    $(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on mobile Safari at this time. Please reopen this link in Safari.");
+			$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
+			$(".downloadScreen").show();
+			window.setTimeout(function(){
+				$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
+				window.setTimeout(function(){
+					window.location = "../home/home";
+				}, 3000);
+			}, 4000);	
+		} else {
+			//Not mobile chrome
+			$(".downloadScreen").show();
+		}
 
-// 	}else{
+	}else{
 		
-// 		$(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on iPhone at this time.");
-// 		$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
-// 		$(".downloadScreen").show();
-// 		window.setTimeout(function(){
-// 			$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
-// 			window.setTimeout(function(){
-// 				window.location = "../home/home";
-// 			}, 3000);
-// 		}, 4000);	
-// 	}
+		$(".downloadInstructions").html("</br></br>Sorry, Gratii is only available on iPhone at this time.");
+		$(".downloadInstructions").css({"font-size":"26px", "color":"red", "text-align":"center"});
+		$(".downloadScreen").show();
+		window.setTimeout(function(){
+			$(".downloadInstructions").append("</br></br><font style='font-size:18px; color:black'>Redirecting to gratii.com...</font>");
+			window.setTimeout(function(){
+				window.location = "../home/home";
+			}, 3000);
+		}, 4000);	
+	}
 
-// }
+}
 
 function createCookie(name, value, days) {
     var expires;
