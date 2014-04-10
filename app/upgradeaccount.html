@@ -2,6 +2,7 @@
 <head>
 	<title>Gratii - HTML Template</title>
 	<script src="https://sandbox.google.com/checkout/inapp/lib/buy.js"></script>
+	<!--<script src="https://wallet.google.com/inapp/lib/buy.js"></script> For production!! --> 
 	<script src="js/jquery.js.min?v=1"></script>
 	<script>
 		function loadPageVar (sVar) {
@@ -283,8 +284,8 @@
 
 	});
 
-	function purchaseFail(){
-			
+	function purchaseFail(result){
+	
 
 			//alert("Purchase Failed" + result.response.errorType);
 		console.log( result );
