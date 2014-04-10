@@ -1377,7 +1377,7 @@ Auction.prototype.styleFB = function(){
 			}
 		);
 	}else{
-		var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small" data-scope="read_friendlists, user_likes" onlogin="window.location.assign('+"http://www.mozilla.org"+');"></fb:login-button>';
+		var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small" data-scope="read_friendlists, user_likes"></fb:login-button>';
 		function redirect(){
 			window.location = "http://gratii.com/gratii29/app"
 		}
