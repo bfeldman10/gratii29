@@ -1989,7 +1989,7 @@ function completePurchase_Job($receiver=NULL){
 
 	include_once("msgFunctions.php");
 	if($userData['results']['promoterUserID']!="---"){
-		$body = "Your friend ".$userData['results']['userNickname']." just upgraded their PRO account. Here's a bonus since you referred them to Gratii!";
+		$body = "Your friend ".$userData['results']['userNickname']." just upgraded to a PRO account. Here's a bonus since you referred them to Gratii!";
 		$bonusMsg = createMsg_Job(array("senderID"=>"0", //Send challenge msg
 											"recipientIDs"=>array($userData['results']['promoterUserID']),
 											"senderEntity"=>"admin",
