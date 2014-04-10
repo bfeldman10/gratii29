@@ -115,7 +115,7 @@
 
 	function updateUserFBTokens(response){
 		console.log("Updating user Facebook tokens");
-
+		alert("Facebook login successful. Please close and reopen the Gratii app.");
 		var accessToken = response.authResponse['accessToken'];
 		var facebookID = response.authResponse['userID'];
 		
