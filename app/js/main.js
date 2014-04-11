@@ -1752,7 +1752,7 @@ $("#auctions .auctions").append(this.li);
 				if (!isMobile) {
 				    FB.login();
 				} else {
-				    var permissionUrl = "https://m.facebook.com/dialog/oauth?client_id=" + '460797110647944' + "&response_type=code&redirect_uri=" + 'http://gratii.com/gratii29/app' + "&scope=" + 'user_likes';
+				    var permissionUrl = "https://m.facebook.com/dialog/oauth?client_id=" + "460797110647944" + "&response_type=code&redirect_uri=" + "http://gratii.com/gratii29/app" + "&scope=" + "user_likes";
 				    window.location = permissionUrl;
 				    return;
 				}
