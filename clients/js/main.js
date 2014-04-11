@@ -916,7 +916,12 @@ $(function(){
             console.log( 'Auction ends at: '   + auctionEndDate);
 
             if (auctionObject.leaderGender == "m" || auctionObject.leaderGender == "f") {
-                auctionObject.leaderGender = auctionObject.leaderGender.toUpperCase();
+                // auctionObject.leaderGender = auctionObject.leaderGender.toUpperCase();
+                if(auctionObject.leaderGender == "m"){
+                    auctionObject.leaderGender = "Male";
+                }else{
+                    auctionObject.leaderGender = "Female";
+                }
             }
 
             items += '<tr id="item-'+auctionObject.id+'" data-id="'+auctionObject.id+'" class="auction-item">';
@@ -931,7 +936,7 @@ $(function(){
             items += '<td><h5>'+auctionObject.promoName+'</h5></td>';
             items += '<td><strong>Total Bids:</strong> '+auctionObject.totalBids+'<br><strong>Winning Bid:</strong> '+auctionObject.maxBid+'</td>';
 
-            items += '<td><strong>'+auctionObject.leaderNickname+'</strong><br>'+auctionObject.leaderGender+' ('+auctionObject.leaderAgeMin+' - '+auctionObject.leaderAgeMax+')';
+            items += '<td><strong>'+auctionObject.leaderNickname+'</strong><br>'+auctionObject.leaderGender+' : '+auctionObject.leaderAgeMin + " yo"; //+' - '+auctionObject.leaderAgeMax+')';
 
             if (auctionObject.leaderCity !== '-' && auctionObject.leaderState !== '-' && auctionObject.leaderCountry !== '-') {
                 items += '<br>'+auctionObject.leaderCity+', '+auctionObject.leaderState+', '+auctionObject.leaderCountry;
