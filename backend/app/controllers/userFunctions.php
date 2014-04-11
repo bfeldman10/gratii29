@@ -2663,11 +2663,11 @@ function checkSession(){
 		$session['results']['entity'] = "demo";
 		$session['results']['id'] = NULL;
 	}else{
-		if($_SESSION['twitterOAuthToken']!="---"){
-			require_once('twitterSDK/config.php');
-			require_once('twitterSDK/twitteroauth/twitteroauth.php');
-			$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['twitterOAuthToken'], $_SESSION['twitterOAuthTokenSecret']);
-		}
+		// if($_SESSION['twitterOAuthToken']!="---"){
+		// 	require_once('twitterSDK/config.php');
+		// 	require_once('twitterSDK/twitteroauth/twitteroauth.php');
+		// 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['twitterOAuthToken'], $_SESSION['twitterOAuthTokenSecret']);
+		// }
 		
 	}
 
