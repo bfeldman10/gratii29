@@ -1554,6 +1554,12 @@ function loginUser_Job(){
 	$_SESSION['userID'] = $userData['results']['id'];
 	$_SESSION['entity'] = "user";
 
+	if($userData['results']['twitterOAuthToken']!="---"){
+		require_once('twitterSDK/config.php');
+		require_once('twitterSDK/twitteroauth/twitteroauth.php');
+		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $userData['results']['twitterOAuthToken'], $userData['results']['twitterOAuthTokenSecret']);
+	}
+
 	return array("error"=>false,
 				"results"=>array("entity"=>$_SESSION['entity'],
 								"id"=>$_SESSION['userID'])); //Success
