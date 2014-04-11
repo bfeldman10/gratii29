@@ -2664,9 +2664,9 @@ function checkSession(){
 		$session['results']['id'] = NULL;
 	}else{
 		if(isset($_SESSION['twitterOAuthToken']) && $_SESSION['twitterOAuthToken']!="---"){
-		// 	require_once('twitterSDK/config.php');
-		// 	require_once('twitterSDK/twitteroauth/twitteroauth.php');
-		// 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['twitterOAuthToken'], $_SESSION['twitterOAuthTokenSecret']);
+			require_once('twitterSDK/config.php');
+			require_once('twitterSDK/twitteroauth/twitteroauth.php');
+			$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['twitterOAuthToken'], $_SESSION['twitterOAuthTokenSecret']);
 		}
 		
 	}
