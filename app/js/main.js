@@ -1377,11 +1377,25 @@ Auction.prototype.styleFB = function(){
 			}
 		);
 	}else{
+		
 		var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small" data-scope="read_friendlists, user_likes"></fb:login-button>';
-		function redirect(){
-			window.location = "http://gratii.com/gratii29/app"
-		}
+		
+		FB.login(function(response) {
+		   if (response.authResponse) {
+		     console.log('Welcome!  Fetching your information.... ');
+		     FB.api('/me', function(response) {
+		      console.log('Good to see you, ' + response.name + '.');
+		       FB.logout(function(response) {
+		         console.log('Logged out.');
+		       });
+		     });
+		  } else {
+		    console.log('User cancelled login or did not fully authorize.');
+		  }
+		}, {scope: 'user_likes' , redirect_uri: 'http://gratii.com/gratii29/app' , display : 'touch'});	
+
 	}
+		
 
 	return likeBtn;
 }
