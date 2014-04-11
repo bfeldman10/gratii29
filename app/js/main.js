@@ -1377,25 +1377,9 @@ Auction.prototype.styleFB = function(){
 			}
 		);
 	}else{
-		
-		// var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small" data-scope="read_friendlists, user_likes"></fb:login-button>';
-		var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small"></fb:login-button>';
-		FB.login(function(response) {
-		   if (response.authResponse) {
-		     console.log('Welcome!  Fetching your information.... ');
-		     FB.api('/me', function(response) {
-		      console.log('Good to see you, ' + response.name + '.');
-		       FB.logout(function(response) {
-		         console.log('Logged out.');
-		       });
-		     });
-		  } else {
-		    console.log('User cancelled login or did not fully authorize.');
-		  }
-		}, {scope: 'read_friendlists,user_likes' , redirect_uri: 'http://gratii.com/gratii29/app' , display : 'touch'});	
 
+		var likeBtn = '<fb:login-button show-faces="false" width="100" max-rows="1" data-size="small" data-scope="read_friendlists, user_likes"></fb:login-button>';
 	}
-		
 
 	return likeBtn;
 }
@@ -1742,22 +1726,8 @@ $("#auctions .auctions").append(this.li);
 			this.fbWrapperDiv.appendChild(this.fbTitleDiv);
 
 			this.fbButtonDiv = document.createElement('div');
-			this.fbButtonDiv.innerHTML = "<div class='fbLoginBtn'>";
+			this.fbButtonDiv.innerHTML = this.styleFB();
 			this.fbWrapperDiv.appendChild(this.fbButtonDiv);
-			$(".fbLoginBtn").click(function(){
-				var isMobile = false;
-				try {
-				    isMobile = (window.location.href == top.location.href && window.location.href.indexOf("/mobile/") != -1);
-				} catch (e) {}
-				if (!isMobile) {
-				    FB.login();
-				} else {
-				    var permissionUrl = "https://m.facebook.com/dialog/oauth?client_id=" + "460797110647944" + "&response_type=code&redirect_uri=" + "http://gratii.com/gratii29/app" + "&scope=" + "user_likes";
-				    window.location = permissionUrl;
-				    return;
-				}
-			});
-
 		}
 	}
 
