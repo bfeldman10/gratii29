@@ -1553,11 +1553,13 @@ function loginUser_Job(){
 
 	$_SESSION['userID'] = $userData['results']['id'];
 	$_SESSION['entity'] = "user";
+	$_SESSION['twitterOAuthToken'] = $userData['results']['twitterOAuthToken'];
+	$_SESSION['twitterOAuthTokenSecret'] = $userData['results']['twitterOAuthTokenSecret'];
 
-	if($userData['results']['twitterOAuthToken']!="---"){
+	if($_SESSION['twitterOAuthToken']!="---"){
 		require_once('twitterSDK/config.php');
 		require_once('twitterSDK/twitteroauth/twitteroauth.php');
-		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $userData['results']['twitterOAuthToken'], $userData['results']['twitterOAuthTokenSecret']);
+		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['twitterOAuthToken'], $_SESSION['twitterOAuthTokenSecret']);
 	}
 
 	return array("error"=>false,
@@ -2660,6 +2662,13 @@ function checkSession(){
 		$_SESSION['entity'] = "demo";
 		$session['results']['entity'] = "demo";
 		$session['results']['id'] = NULL;
+	}else{
+		if($_SESSION['twitterOAuthToken']!="---"{
+			require_once('twitterSDK/config.php');
+			require_once('twitterSDK/twitteroauth/twitteroauth.php');
+			$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['twitterOAuthToken'], $_SESSION['twitterOAuthTokenSecret']);
+		}
+		
 	}
 
 	return array("error"=>false,
