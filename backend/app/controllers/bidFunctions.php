@@ -582,8 +582,22 @@ function injectBidData($auctionsList, $receiver=NULL){
 			$auction['leaderAvatar'] = $maxBidData['results']['userAvatar']; //Injecting leader avatar
 			$auction['leaderID'] = $maxBidData['results']['userID']; //Injecting leader ID
 			if($receiver=="client" || $receiver=="admin"){ //If client or admin
-				$auction['leaderAgeMin'] = $maxBidData['results']['userAgeMin']; //Injecting leader age min
-				$auction['leaderAgeMax'] = $maxBidData['results']['userAgeMax']; //Injecting leader age max
+				$userBirthYear = $maxBidData['results']['userBirthYear'];
+				$userBirthMonth = $maxBidData['results']['userBirthMonth'];
+				$userBirthDate = $maxBidData['results']['userBirthDate'];
+				$userDOB = $userBirthYear."-".$userBirthMonth."-".$userBirthDate;
+				$userDOBUnix= strtotime($userDOB);
+				$currentUnix = time();
+				$yearsDiffUnix = $currentUnix-$userDOBUnix;
+				$years = floor($yearsDiffUnix / (365*60*60*24));
+			
+				$userAgeMin = $years;
+				$userAgeMax = $years;
+				$auction['leaderAgeMin'] = $userAgeMin; //Injecting leader age min
+				$auction['leaderAgeMax'] = $userAgeMax; //Injecting leader age max
+
+				//$auction['leaderAgeMin'] = $maxBidData['results']['userAgeMin']; //Injecting leader age min
+				//$auction['leaderAgeMax'] = $maxBidData['results']['userAgeMax']; //Injecting leader age max
 				$auction['leaderGender'] = $maxBidData['results']['userGender']; //Injecting leader gender
 				$auction['leaderCity'] = $maxBidData['results']['userCity']; //Injecting leader city
 				$auction['leaderState'] = $maxBidData['results']['userState']; //Injecting leader state
