@@ -222,7 +222,7 @@ function getMaxBid($auctionID){
 
 	$getMaxBid = $GLOBALS['db'] -> prepare('SELECT bids.id AS bidID, bidAmount, userNickname, userAvatar, userID,
 												userEmail, userAgeMin, userAgeMax, userGender, userCity, userState,
-												userCountry, userLat, userLong
+												userCountry, userLat, userLong, userBirthDate, userBirthMonth, userBirthYear
 												FROM bids
 												LEFT JOIN users ON users.id = bids.userID
 												WHERE auctionID=? ORDER BY bidAmount DESC LIMIT 1');
