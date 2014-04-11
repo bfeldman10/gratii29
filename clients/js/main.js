@@ -896,7 +896,7 @@ $(function(){
 
     adminApp.Data.renderPastAuctions = function(data){
 
-        console.log( 'Rendering Auctions: ' + data );
+        console.log( data );
 
         var items = '<tr><th>Photo</th><th>Auction Item</th><th>Bids</th><th>Winner Demographics</th><th>Details</th></tr>';
 
