@@ -936,7 +936,7 @@ $(function(){
             items += '<td><h5>'+auctionObject.promoName+'</h5></td>';
             items += '<td><strong>Total Bids:</strong> '+auctionObject.totalBids+'<br><strong>Winning Bid:</strong> '+auctionObject.maxBid+'</td>';
 
-            items += '<td><strong>'+auctionObject.leaderNickname+'</strong><br>'+auctionObject.leaderGender+' : '+auctionObject.leaderAgeMin + " yo"; //+' - '+auctionObject.leaderAgeMax+')';
+            items += '<td><strong>'+auctionObject.leaderNickname+'</strong><br>'+auctionObject.leaderGender+': '+auctionObject.leaderAgeMin + " yo"; //+' - '+auctionObject.leaderAgeMax+')';
 
             if (auctionObject.leaderCity !== '-' && auctionObject.leaderState !== '-' && auctionObject.leaderCountry !== '-') {
                 items += '<br>'+auctionObject.leaderCity+', '+auctionObject.leaderState+', '+auctionObject.leaderCountry;
