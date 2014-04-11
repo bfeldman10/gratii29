@@ -1614,6 +1614,16 @@ td{
 	background-repeat: no-repeat;
 }
 
+.fbLoginBtn{
+	position: relative;
+	width: 160px;
+	height: 30px;
+	margin: 0px auto;
+	background-image:url('../images/signInWithTwitter.png');
+	background-size: 158px 28px;
+	background-repeat: no-repeat;
+}
+
 .transactions{
 	width: 100%;
 	display: none;
