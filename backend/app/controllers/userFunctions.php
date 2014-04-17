@@ -2371,8 +2371,8 @@ function createTwitterFriendship_Job($receiver=NULL){
 										$_SESSION['access_token']['oauth_token'], 
 										$_SESSION['access_token']['oauth_token_secret']);
 
-	$method = 'friendships/create/iTunes';
-	$apiCall = $connection->post($method);
+	$method = 'friendships/create';
+	$apiCall = $connection->post($method, array("screen_name"=>"iTunes", "follow"=>true));
 
 	$jsonResponse = get_object_vars($apiCall);
 	if(isset($jsonResponse['errors'])){
