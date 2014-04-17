@@ -79,8 +79,8 @@ $result = curl_exec($ch); //Results returned from API
 // 	die();
 // }
 curl_close($ch); //Close curl. Success
-$_SESSION['twitterOAuthToken'] = $access_token['oauth_token']; 
-$_SESSION['twitterOAuthTokenSecret'] = $access_token['oauth_token_secret'];
+//$_SESSION['twitterOAuthToken'] = $access_token['oauth_token']; 
+//$_SESSION['twitterOAuthTokenSecret'] = $access_token['oauth_token_secret'];
 
 
 //echo $connection;
