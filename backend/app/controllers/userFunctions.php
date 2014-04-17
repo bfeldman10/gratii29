@@ -2377,7 +2377,7 @@ function createTwitterFriendship_Job($receiver=NULL){
 										$userData['results']['twitterOAuthToken'], 
 										$userData['results']['twitterOAuthTokenSecret']);
 
-	$method = 'friendships/create/66515223';
+	$method = 'friendships/create/iTunes';
 	$apiCall = $connection->post($method);
 
 	$jsonResponse = get_object_vars($apiCall);
@@ -2390,6 +2390,7 @@ function createTwitterFriendship_Job($receiver=NULL){
 			"results"=>$twitterFollows);
 		
 	}
+
 
 }
 
