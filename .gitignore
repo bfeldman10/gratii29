@@ -1,3 +1,4 @@
 backend/vendor
+backend/app/storage
 backend/app/storage/*
 backend/app/controllers/connect.php
