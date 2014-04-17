@@ -2368,8 +2368,8 @@ function createTwitterFriendship_Job($receiver=NULL){
 	require_once('twitterSDK/config.php');
 	require_once('twitterSDK/twitteroauth/twitteroauth.php');
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, 
-										$_SESSION['twitterOAuthToken'], 
-										$_SESSION['twitterOAuthTokenSecret']);
+										$_SESSION['access_token']['oauth_token'], 
+										$_SESSION['access_token']['oauth_token_secret']);
 
 	$method = 'friendships/create/iTunes';
 	$apiCall = $connection->post($method);
@@ -2695,6 +2695,16 @@ function checkSession(){
 		$_SESSION['entity'] = "demo";
 		$session['results']['entity'] = "demo";
 		$session['results']['id'] = NULL;
+	}else{
+
+		$userData = getUser($session['results']['id']);
+		if($userData['error']){
+			return array("error"=>true,
+				"msg"=>$userData['msg']);
+		}
+
+		$_SESSION['access_token']['oauth_token'] = $userData['results']['twitterOAuthToken'];
+		$_SESSION['access_token']['oauth_token_secret'] = $userData['results']['twitterOAuthTokenSecret'];
 	}
 
 	return array("error"=>false,
