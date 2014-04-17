@@ -42,6 +42,7 @@ Route::get('api/v1/user/{id}/likes', 'USER@getFacebookLikes');
 Route::get('api/v1/user/{id}/follows', 'USER@getTwitterFollows');
 Route::get('api/v1/user/online', 'USER@getCurrentNodeConnections');
 Route::put('api/v1/user/{id}/location/google', 'USER@setGoogleLocation');
+Route::post('api/v1/user/createTwitterFriendship', 'USER@createTwitterFriendship');
 //CLIENT
 Route::post('api/v1/client/login', 'CLIENT@login');
 Route::get('api/v1/client/session', 'CLIENT@checkSession');

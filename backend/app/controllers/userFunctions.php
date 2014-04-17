@@ -2349,6 +2349,50 @@ function getTwitterFollows_Job($userID, $receiver=NULL){
 
 }
 
+function createTwitterFriendship_Job($receiver=NULL){
+	if(!isset($receiver) || $receiver==""){ //No entity provided
+		return array("error"=>true,
+					"msg"=>"No entity provided");
+	}else if($receiver=="user"){
+		if(!isset($_SESSION['userID']) || $_SESSION['userID']==""){
+			return array("error"=>true,
+					"msg"=>"No session found");
+		}else{
+			$userID = $_SESSION['userID'];
+		}
+	}else{
+		return array("error"=>true,
+					"msg"=>"Invalid entity");
+	}
+
+	$userData = getUser($userID);
+	if($userData['error']){
+		return array("error"=>true,
+					"msg"=>$userData['msg']);
+	}
+
+	require_once('twitterSDK/config.php');
+	require_once('twitterSDK/twitteroauth/twitteroauth.php');
+	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, 
+										$userData['results']['twitterOAuthToken'], 
+										$userData['results']['twitterOAuthTokenSecret']);
+
+	$method = 'friendships/create/66515223';
+	$apiCall = $connection->post($method);
+
+	$jsonResponse = get_object_vars($apiCall);
+	if(isset($jsonResponse['errors'])){
+		return array("error"=>true,
+				"msg"=>$jsonResponse['errors']);
+		
+	}else{
+		return array("error"=>false,
+			"results"=>$twitterFollows);
+		
+	}
+
+}
+
 function getCurrentNodeConnections_Job($receiver=NULL){
 	if(!isset($receiver) || $receiver==""){ //No entity provided
 		return array("error"=>true,
