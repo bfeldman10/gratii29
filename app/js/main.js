@@ -1390,7 +1390,8 @@ Auction.prototype.styleTwitter = function(){
 
 		var followBtn = this.twitterButtonDiv;
 		var thisTwitter = this.twitter;
-
+		var thisAuctionID = this.id;
+		
 		$(followBtn).html("<a href='#' onclick=''>click here</a>");
 		
 		$(followBtn).click(function(){
@@ -1411,7 +1412,26 @@ Auction.prototype.styleTwitter = function(){
 		        },
 		        success: function(data){ 
 		        	
-		        	console.log(data);
+        			$.ajax({
+				        url: apiRoot+"follow",
+				        type: 'POST',
+				        dataType: 'json',
+				        data: { auctionID: thisAuctionID },
+				        async: true,
+				        cache: false,
+				        timeout: 30000,
+				        error: function(data){
+				        	console.log(data);
+
+				        	triggerErrorMessage("default", data.responseJSON['msg']);
+				            return true;
+				        },
+				        success: function(data){ 
+				        	
+				        	console.log(data);
+				        	
+				        }
+				    });
 		        	
 		        }
 		    });
