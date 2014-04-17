@@ -2365,17 +2365,11 @@ function createTwitterFriendship_Job($receiver=NULL){
 					"msg"=>"Invalid entity");
 	}
 
-	$userData = getUser($userID);
-	if($userData['error']){
-		return array("error"=>true,
-					"msg"=>$userData['msg']);
-	}
-
 	require_once('twitterSDK/config.php');
 	require_once('twitterSDK/twitteroauth/twitteroauth.php');
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, 
-										$userData['results']['twitterOAuthToken'], 
-										$userData['results']['twitterOAuthTokenSecret']);
+										$_SESSION['twitterOAuthToken'], 
+										$_SESSION['twitterOAuthTokenSecret']);
 
 	$method = 'friendships/create/iTunes';
 	$apiCall = $connection->post($method);
