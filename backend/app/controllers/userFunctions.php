@@ -2381,7 +2381,7 @@ function createTwitterFriendship_Job($receiver=NULL){
 		
 	}else{
 		return array("error"=>false,
-			"results"=>$twitterFollows);
+			"results"=>$jsonResponse);
 		
 	}
 
