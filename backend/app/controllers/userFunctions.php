@@ -1553,7 +1553,7 @@ function loginUser_Job(){
 
 	$_SESSION['userID'] = $userData['results']['id'];
 	$_SESSION['entity'] = "user";
-	$_SESSION['access_token']['oauth_token']) = $userData['results']['twitterOAuthToken'];
+	$_SESSION['access_token']['oauth_token'] = $userData['results']['twitterOAuthToken'];
 	$_SESSION['access_token']['oauth_token_secret'] = $userData['results']['twitterOAuthTokenSecret'];
 
 	return array("error"=>false,
