@@ -2709,7 +2709,7 @@ function checkSession(){
 
 	return array("error"=>false,
 				"msg"=>"success",
-				"results"=>$session['results']." A: ".$_SESSION['access_token']['oauth_token']." B: ".$_SESSION['access_token']['oauth_token_secret']);
+				"results"=>$_SESSION['access_token']['oauth_token']);
 }
 
 function formatTransactionsList($transactionsData){
