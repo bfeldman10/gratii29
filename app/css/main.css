@@ -1632,6 +1632,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 }
 
+.twitterButton:active{
+	background-color: lightgreen;
+}
+
 #customTwitterFollowBtn{
 	position: relative;
 	line-height: 30px;
@@ -1640,6 +1644,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	text-align: center;
 	color:#4099FF;
 	font-weight: bold;
+}
+
+#customTwitterFollowBtn:active{
+	background-color: lightgreen;
 }
 
 .transactions{
