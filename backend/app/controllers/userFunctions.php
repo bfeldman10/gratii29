@@ -2365,6 +2365,22 @@ function createTwitterFriendship_Job($receiver=NULL){
 					"msg"=>"Invalid entity");
 	}
 
+	$inputs = Input::all();
+
+	if(!isset($inputs) || $inputs == ""){ //Missing inputs
+		return array("error"=>true,
+					"msg"=>"No inputs provided");
+		die();
+	}
+
+	if(!isset($inputs['twitterHandle']) || $inputs['twitterHandle'] == ""){ //Missing inputs
+		return array("error"=>true,
+					"msg"=>"No twitter handle provided");
+		die();
+	}
+
+
+
 	require_once('twitterSDK/config.php');
 	require_once('twitterSDK/twitteroauth/twitteroauth.php');
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, 
@@ -2372,7 +2388,7 @@ function createTwitterFriendship_Job($receiver=NULL){
 										$_SESSION['access_token']['oauth_token_secret']);
 
 	$method = 'friendships/create';
-	$apiCall = $connection->post($method, array("screen_name"=>"iTunes", "follow"=>true));
+	$apiCall = $connection->post($method, array("screen_name"=>$inputs['twitterHandle'], "follow"=>true));
 
 	$jsonResponse = get_object_vars($apiCall);
 	if(isset($jsonResponse['errors'])){
