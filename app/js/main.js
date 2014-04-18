@@ -1391,8 +1391,8 @@ Auction.prototype.styleTwitter = function(){
 		var followBtn = this.twitterButtonDiv;
 		var thisTwitter = this.twitter;
 		var thisAuctionID = this.id;
-		
-		$(followBtn).html("<a href='#' onclick=''>click here</a>");
+
+		$(followBtn).html("<a href='#' id='customTwitterFollowBtn'>Follow @"+thisTwitter+"</a>");
 		
 		$(followBtn).click(function(){
 
