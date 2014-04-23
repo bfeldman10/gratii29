@@ -41,7 +41,7 @@
 	margin-top: 10px;
 	height:80px;
 	width:800px;
-	font-family: Century Gothic, Arial;
+	font-family: 'Trebuchet MS';
 	font-weight: regular;
 	font-size: 24px;
 	color: blue;
@@ -109,7 +109,7 @@
 	margin: 0 auto;
 	width: 100%;
 	min-width:960px;
-	height: 820px;
+/*	height: 820px;*/
 	background: rgb(255,255,255); /* Old browsers */
 	background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 25%, rgba(244,244,244,1) 54%, rgba(255,255,255,1) 69%, rgba(193,193,193,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, right bottom, color-stop(25%,rgba(255,255,255,1)), color-stop(54%,rgba(244,244,244,1)), color-stop(69%,rgba(255,255,255,1)), color-stop(100%,rgba(193,193,193,1))); /* Chrome,Safari4+ */
@@ -122,48 +122,93 @@
 
 #content-beta-content-wrapper{
 	width: 960px;
-	height: 100%;
+/*	height: 100%;*/
 	margin: 0 auto;
 }
 
 #content-beta-title{
-	font-family: Century Gothic, Arial;
+	font-family: 'Trebuchet MS';
+	/*font-family: Century Gothic, Arial;*/
 	font-size: 64px;
 	text-align: center;
 	font-weight: bold;
 }
 
 #content-beta-subtitle{
-	font-family: Century Gothic, Arial;
+	font-family: 'Trebuchet MS';
+	/*font-family: Century Gothic, Arial;*/
 	font-size: 46px;
 	text-align: center;
 }
 
 #content-beta-subtitle2{
-	font-family: Century Gothic, Arial;
+	font-family: 'Trebuchet MS';
+	/*font-family: Century Gothic, Arial;*/
 	font-size: 24px;
 	text-align: center;
 }
 
-#content-beta-image{
+/*#content-beta-image{
 	margin: 0 auto;
 	width:629px;
 	height: 427px;
 	background-image: url('images/trialTriangle.png');
 	background-size: 629px 427px;
 }
+*/
 
-#content-beta-subtitle3{
-	font-family: Century Gothic, Arial;
-	font-size: 18px;
+#content-share-flyer-wrapper{
+	margin: 0 auto;
+	width:900px;
+	height: 50px;
+	background-color: black;
+	line-height: 50px;
+	font-weight: bold;
+}
+
+#content-share-text-wrapper{
+	margin: 0 auto;
+	width:600px;
+	height: 100%;
+}
+
+#content-share-flyer-1{
+	font-family: 'Trebuchet MS';
+	/*font-family: Century Gothic, Arial;*/
+	font-size: 24px;
 	text-align: left;
-	width: 400px;
-	height: 30px;
+	width: 45%;
+	float: left;
+}
+
+#content-share-flyer-2{
+	font-family: 'Trebuchet MS';
+	/*font-family: Century Gothic, Arial;*/
+	font-size: 24px;
+	text-align: right;
+	width: 45%;
 	float: right;
 }
 
+#content-beta-flyer{
+	margin: 0 auto;
+	display: block;
+	width:900px;
+	height: 1165px;
+	background-image: url('docs/GratiiFlyer_4_8.png');
+	background-size: 900px 1165px;
+}
+
+#content-beta-subtitle3{
+	font-family: 'Trebuchet MS';
+	/*font-family: Century Gothic, Arial;*/
+	font-size: 18px;
+	text-align: center;
+}
+
 #content-contact-content{
-	font-family: Century Gothic, Arial;
+	font-family: 'Trebuchet MS';
+	/*font-family: Century Gothic, Arial;*/
 	font-size: 45px;
 	text-align: center;
 	font-weight: bold;
