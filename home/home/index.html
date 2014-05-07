@@ -66,22 +66,22 @@
 	<div id="content-scroller-wrapper">
 		<div id="content-scroller-content-wrapper">
 			<div id="content-scroller-logos-wrapper">
-				<div id="content-scroller-logos" class="l1" style="width:142px;height:80px;background-image:url(images/clients/DraftStreetLogo.jpg);background-size: 142px 80px;">
-				</div>
-				<div id="content-scroller-logos" class="l2" style="width:160px;height:80px;background-image:url(images/clients/NiceLaundryLogo.jpg);background-size:160px 80px;">
-				</div>
-				<div id="content-scroller-logos" class="l3" style="width:120px;height:80px;background-image:url(images/clients/PlndrLogo.jpg);background-size:120px 80px;">
-				</div>
-				<div id="content-scroller-logos" class="l4" style="width:80px;height:80px;background-image:url(images/clients/RevRunLogo.png);background-size:80px 80px;">
-				</div>
-				<div id="content-scroller-logos" class="l5" style="width:228px;height:80px;background-image:url(images/clients/RuckusLogo.png);background-size:228px 80px;">
-				</div>
+				<a href="http://www.draftstreet.com/" target="_blank"><div id="content-scroller-logos" class="l1" style="width:142px;height:80px;background-image:url(images/clients/DraftStreetLogo.jpg);background-size: 142px 80px;">
+				</div></a>
+				<a href="http://www.nicelaundry.com/" target="_blank"><div id="content-scroller-logos" class="l2" style="width:160px;height:80px;background-image:url(images/clients/NiceLaundryLogo.jpg);background-size:160px 80px;">
+				</div></a>
+				<a href="http://www.plndr.com/" target="_blank"><div id="content-scroller-logos" class="l3" style="width:120px;height:80px;background-image:url(images/clients/PlndrLogo.jpg);background-size:120px 80px;">
+				</div></a>
+				<a href="http://www.dgimanagement.com/roster/artist/rev-run" target="_blank"><div id="content-scroller-logos" class="l4" style="width:80px;height:80px;background-image:url(images/clients/RevRunLogo.png);background-size:80px 80px;">
+				</div></a>
+				<a href="http://www.djruckus.com/" target="_blank"><div id="content-scroller-logos" class="l5" style="width:228px;height:80px;background-image:url(images/clients/RuckusLogo.png);background-size:228px 80px;">
+				</div></a>
 				<div id="content-scroller-logos" class="l6" style="width:132px;height:80px;background-image:url(images/clients/VaperfyLogo.png);background-size:132px 80px;">
 				</div>
-				<div id="content-scroller-logos" class="l7" style="width:123px;height:80px;background-image:url(images/clients/KwameDarkoLogo.jpg);background-size:123px 80px;">
-				</div>
-				<div id="content-scroller-logos" class="l8" style="width:230px;height:80px;background-image:url(images/clients/CampusMDwithBG.png);background-size:230px 80px;">
-				</div>
+				<a href="http://kwamedarko.com/" target="_blank"><div id="content-scroller-logos" class="l7" style="width:123px;height:80px;background-image:url(images/clients/KwameDarkoLogo.jpg);background-size:123px 80px;">
+				</div></a>
+				<a href="http://www.campusmd.com/" target="_blank"><div id="content-scroller-logos" class="l8" style="width:230px;height:80px;background-image:url(images/clients/CampusMDwithBG.png);background-size:230px 80px;">
+				</div></a>
 			</div>
 		</div>
 	</div>
@@ -199,7 +199,7 @@
 
 	preloadImages([
 	    'images/arcadeScreenshot.png',
-	    'images/arcadeScreenshot.png',
+	    'images/auctionsScreenshot.png',
 	    'images/titleScreenshot.png'
 	]);
 
@@ -209,7 +209,7 @@
 
     var $logos = $('#content-scroller-logos-wrapper');
     function animateLogos() {
-        if ($logos.css('margin-left') == -1*scrollerLogosWidth+'px') {
+        if ($logos.css('margin-left') <= -1*scrollerLogosWidth+'px') {
         	$logos.css('margin-left',browserWidth+'px');
         	animateLogos();
         }else {
